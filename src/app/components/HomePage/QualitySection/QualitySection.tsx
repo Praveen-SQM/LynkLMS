@@ -1,0 +1,92 @@
+import React from "react";
+import Image from "next/image";
+import instantSupportIcon from "@/app/utilities/icons/instant-support.svg"
+import availabilityIcon from "@/app/utilities/icons/availablity.svg"
+import qualityAssuranceIcon from "@/app/utilities/icons/quality-assurance.svg"
+import ladki from "@/app/utilities/images/ladki.png"
+import rightIcon from "@/app/utilities/icons/right.svg"
+
+
+const QualitySection = () => {
+
+    const qualities = [
+        {
+            icon: instantSupportIcon,
+            title: "Instant support",
+            description: "Lynk LMS ensures the best user experience with instant support."
+        },
+        {
+            icon: availabilityIcon,
+            title: "24/7 availability",
+            description: "Our support team is available 24/7. Contact us at support@lynklms.com."
+        },
+        {
+            icon: qualityAssuranceIcon,
+            title: "Quality assurance",
+            description: "Enjoy 99.99% uptime and scalable products for uninterrupted service."
+        }
+    ]
+
+    const qualityPoints = [
+        {
+            text: "Seamless Learning Experience – Intuitive and user-friendly interface for effortless navigation."
+        },
+        {
+            text: "Get personalized assistance for onboarding, troubleshooting, and optimizing your LMS for maximum efficiency."
+        },
+        {
+            text: "Access learning anytime, anywhere with a responsive and mobile-friendly design."
+        }
+    ]
+
+    return (
+        <div className="xl:py-[100px] sm:py-[72px] py-[42px] flex flex-col xl:gap-[92px] sm:gap-[52px] gap-[46px] items-center">
+            <div className="flex flex-col xl:gap-[68px] sm:gap-[38px] gap-7 items-center">
+                <div className="flex flex-col xl:gap-4 sm:gap-[10px] gap-2 items-center">
+                    <p className="font-bold 3xl:text-[48px] 3xl:leading-10 xl:text-[36px] xl:leading-[40px] sm:text-[32px] sm:leading-[43.71px] text-[24px] leading-[32.8px] text-[#1D1A27]">Fast. Reliable. Effective.</p>
+                    <p className="font-normal 3xl:text-[20px] 3xl:leading-[27.32px] xl:text-[16px] xl:leading-[21.86px] text-[14px] leading-[19.12px] text-[#1D1A27CC] xl:max-w-full sm:max-w-[612px] max-w-[343px]">With 24/7 customer support, robust quality assurance, and a user-friendly interface, we ensure a hassle-free and effective learning experience. </p>
+                </div>
+                <div className="grid sm:grid-cols-3 grid-cols-2 justify-between 3xl:max-w-[1590px] 3xl:gap-[60px] xl:max-w-[1110px] xl:gap-[15px] sm:max-w-[750px] max-w-[343px] gap-[12px]">
+                    {qualities?.map((quality, index) => {
+                        return (
+                            <div key={index} className={`3xl:rounded-[58px] xl:rounded-[42px] rounded-[25px] 3xl:py-[54.5px] xl:py-10 py-6 3xl:px-[46.3px] xl:px-[34px] px-5 bg-[#635BFF] flex flex-col 3xl:gap-[32.7px] xl:gap-6 gap-3 w-full ${index === qualities.length - 1 ? "col-span-2 sm:col-span-1" : ""} `}>
+                                <div className="flex flex-col 3xl:gap-[38px] xl:gap-7 gap-4">
+                                    <div className="xl:h-10 xl:w-10 3xl:h-[54px] 3xl:w-[54px] w-6 h-6">
+                                        <Image src={quality?.icon} alt="image" width={40} height={40} className="w-full h-full object-cover" />
+                                    </div>
+                                    <p className="font-bold 3xl:text-[24px] 3xl:leading-8 xl:text-[18px] xl:leading-6 text-[16px] leading-[14px] text-[#FFFFFF]">{quality?.title}</p>
+                                </div>
+                                <p className="font-normal 3xl:text-[22px] 3xl:leading-8 xl:text-[16px] xl:leading-6 sm:text-[14px] sm:leading-[19.12px] text-[13px] leading-[17.76px] text-[#ffffff]">{quality?.description}</p>
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>
+            <div className="flex sm:flex-row flex-col items-center justify-between gap-[46px] 3xl:max-w-[1590px] xl:max-w-[1110px] sm:max-w-[750px] max-w-[343px] w-full">
+                <div className="3xl:w-[470px] 3xl:h-[546px] xl:w-[365px] xl:h-[424px] w-[268px] h-[311px]">
+                    <Image src={ladki} alt="image" width={365} height={424} className="w-full h-full object-cover" />
+                </div>
+                <div className="flex flex-col sm:items-start items-center xl:gap-[42px] gap-6 xl:max-w-[442px] 3xl:max-w-[740px] sm:max-w-[399px] max-w-[343px]">
+                    <div className="flex flex-col xl:gap-[32px] sm:gap-5 gap-6">
+                        <p className="font-bold 3xl:text-[42px] 3xl:leading-10 xl:text-[36px] xl:leading-10 text-[26px] leading-[35.5px] text-[#1D1A27]">Reliable Assistance. Uninterrupted Learning.</p>
+                        <div className="flex flex-col gap-4">
+                            {qualityPoints?.map((quality, index) => {
+                                return (
+                                    <div key={index} className="flex items-start xl:gap-[5px] gap-[3px]">
+                                        <div className="w-[19px] h-[24px]">
+                                            <Image src={rightIcon} alt="right icon" width={19} height={24} className="w-full h-full object-cover" />
+                                        </div>
+                                        <p className="font-normal 3xl:text-[20px] 3xl:leading-8 xl:text-[16px] xl:leading-6 text-[14px] leading-[19.12px] text-[#1D1A27CC]">{quality?.text}</p>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                    <div className="bg-[#EE3CD1] 3xl:h-[57px] xl:h-12 h-[37.5px] xl:rounded-[8px] rounded-[4.63px] xl:px-6 px-[14px] w-fit flex items-center justify-center font-bold 3xl:text-[18px] 3xl:leading-[25px] xl:text-[16px] xl:leading-4 text-[14px] leading-[19.12px] text-center text-[#FFFFFF]">Contact Us</div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default QualitySection;

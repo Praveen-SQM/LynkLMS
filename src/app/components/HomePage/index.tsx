@@ -6,6 +6,9 @@ import LandingHero from "./HeroSection/LandingHero";
 import LMSFeatures from "./LMSFeatures/LMSFeatures";
 import LMSBenefits from "./LMSBenifits/LMSBenifits";
 import FAQSection from "./FAQSeaction";
+import LMSOptions from "./LMSOptions/LMSOptions";
+import QualitySection from "./QualitySection/QualitySection";
+import Footer from "./footer";
 
 const HomePage = () => {
   return (
@@ -23,6 +26,9 @@ const HomePage = () => {
       <div className="w-full  bg-gray-50">
         <FAQSection />
       </div>
+      <LMSOptions/>
+      <QualitySection/>
+      <Footer/>
     </div>
   );
 };

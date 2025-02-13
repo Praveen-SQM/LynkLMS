@@ -6,6 +6,9 @@ interface FeatureItem {
   image: string;
 }
 import feature1 from "@/app/utilities/images/feature-1.svg";
+import feature2 from "@/app/utilities/images/feature-2.svg";
+import feature3 from "@/app/utilities/images/feature-3.svg";
+import feature4 from "@/app/utilities/images/feature-4.svg";
 import Image from "next/image";
 
 const features: FeatureItem[] = [
@@ -25,7 +28,7 @@ const features: FeatureItem[] = [
       "Analytics and reporting to track effectiveness",
       "Supports growing user bases and tools",
     ],
-    image: feature1,
+    image: feature2,
   },
   {
     title: "Compliance Ready",
@@ -34,7 +37,7 @@ const features: FeatureItem[] = [
       "Ensures smooth integration with e-learning tools",
       "Meets global compliance requirements",
     ],
-    image: feature1,
+    image: feature3,
   },
   {
     title: "Coast Effective & Engagement Focused",
@@ -43,38 +46,38 @@ const features: FeatureItem[] = [
       "Reduces long-term operational costs",
       "Provides better ROI with needed infrastructure",
     ],
-    image: feature1,
+    image: feature4,
   },
 ];
 const WhyChooseLynk = () => {
   return (
-    <section className="w-full bg-[#FAFAFA] py-[72px]">
-      <div className="xl:w-[1110px] xl:h-[1259px] gap-[24px] mx-auto">
-        <div className="h-[100px] xl:w-[670px] xl:h-[137px] mx-auto">
-          <h2 className=" font-bold text-[24px] md:text-[32px] lg:text-[42px] xl:leading-[57.37px] text-center">
-            Why choose{" "}
-            <span className="bg-gradient-to-r from-[#635BFF] via-[#635BFF] to-[#EE3CD1] bg-clip-text text-transparent">
-              Lynk
-            </span>
-            ?
-          </h2>
-          <p className="xl:mt-[24px] font-manrope font-normal md:text-[14px] lg:text-[16px] leading-[28px] text-center">
-            Empowering businesses with a future-ready, customizable learning
-            platform built for scalability, insights, and results.
-          </p>
-        </div>
+    <section className="w-full bg-[#FAFAFA] xl:py-[72px] sm:py-[42px] py-6 flex">
+      <div className="xl:w-[1440px] mx-auto bg-[#FAFAFA] ">
+        <div className="xl:w-[1110px] xl:h-[1259px] gap-[24px] mx-auto">
+          <div className="xl:w-[670px] xl:h-[137px] sm:w-[564px] sm:h-[96px] w-[330px] h-[102px] mx-auto">
+            <h2 className=" font-bold xl:text-[42px] xl:leading-[57.37px] sm:text-[32px] sm:leading-[43.7px] text-[24px] leading-[32.8px] text-center">
+              Why choose{" "}
+              <span className="bg-gradient-to-r from-[#635BFF] via-[#635BFF] to-[#EE3CD1] bg-clip-text text-transparent">
+                Lynk
+              </span>
+              ?
+            </h2>
+            <p className="xl:mt-[24px] font-manrope font-normal xl:text-[16px] xl:leading-[28px] text-[14px] leading-[19.12px] text-center">
+              Empowering businesses with a future-ready, customizable learning
+              platform built for scalability, insights, and results.
+            </p>
+          </div>
 
-        {/* feature cards  */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 mt-[72px] gap-10 lg:gap-24">
-          {features?.map((feature, index) => (
-            <div className="w-full flex justify-center">
+          {/* feature cards  */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 xl:mt-[72px] sm:mt-[29px] mt-6">
+            {features?.map((feature, index) => (
               <div
                 key={index}
-                className="bg-[#FFFFFF] rounded-[42px] p-[12px] pb-[27px] max-w-[350px] lg:max-w-[485.5px]"
+                className="bg-[#FFFFFF] xl:rounded-[42px] sm:rounded-[30px] rounded-[20px] xl:p-[12px] sm:p-2 p-1 xl:w-[485.5px] sm:w-[348.28px] xl:h-[500px] sm:h-[400px] w-[340.3px] h-[400px]"
               >
-                <section className="flex flex-col gap-[37px]">
+                <section className="flex flex-col xl:gap-[37px] gap-[30px]">
                   <div
-                    className="flex justify-center p-6 px-12 pb-0 rounded-[24px]"
+                    className="flex items-end justify-center xl:w-[461px] w-[332px] xl:h-[291px] h-[210px] xl:rounded-[24px] rounded-[17px]"
                     style={{
                       background:
                         "linear-gradient(180deg, rgba(184, 181, 245, 0.8) 0%, rgba(250, 251, 255, 0.8) 100%)",
@@ -83,20 +86,20 @@ const WhyChooseLynk = () => {
                     <Image
                       src={feature.image}
                       alt=""
-                      className="w-[340px] h-[180px] lg:h-[260px] rounded-[24px]"
+                      className="xl:w-[340px] xl:h-[260px] w-[251px] h-[188px] xl:rounded-[24px] rounded-[17px]"
                     />
                   </div>
                   <div>
-                    <h1 className="font-family-Manrope font-[700] xl:text-[20px] xl:leading-[28px] xl:tracking-[-0.28px] mb-[9px] md:mb-[12px] lg:mb-[23px] xl:mb-[23px]">
+                    <h1 className="font-family-Manrope font-weight-700 xl:text-[20px] xl:leading-[28px] text-[16px] leading-[21.9px] xl:tracking-[-0.28px] mb-[12px]">
                       {feature.title}
                     </h1>
-                    <div className="flex flex-col gap-[6px] md:gap-[8px] lg:gap-[12px]">
+                    <div className="flex flex-col xl:gap-[12px] gap-[8.64px]">
                       {feature.points.map((point, index) => (
                         <p
                           key={index}
-                          className="flex justify-start font-Manrope font-semibold text-[14px] leading-[19.12px] tracking-[-0.28px]  text-[#1d1a27b9]"
+                          className="flex items-center justify-start font-Manrope font-semibold text-[14px] leading-[19.12px] tracking-[-0.28px] text-[#1D1A27CC]"
                         >
-                          <CheckCircle2Icon className="mr-2 h-4 w-4 text-green-500"/>{" "}
+                          <CheckCircle2Icon className="xl:mr-2 mr-1 h-4 w-4 text-green-500" />{" "}
                           {point}
                         </p>
                       ))}
@@ -104,10 +107,10 @@ const WhyChooseLynk = () => {
                   </div>
                 </section>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div></div>
         </div>
-        <div></div>
       </div>
     </section>
   );
