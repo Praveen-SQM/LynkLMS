@@ -22,12 +22,12 @@ const HomePage = () => {
       <LMSFeatures />
       <TabSwitch />
       <WhyChooseLynk />
+      <LMSOptions/>
+      <QualitySection/>
       <LMSBenefits />
       <div className="w-full  bg-gray-50">
         <FAQSection />
       </div>
-      <LMSOptions/>
-      <QualitySection/>
       <Footer/>
     </div>
   );

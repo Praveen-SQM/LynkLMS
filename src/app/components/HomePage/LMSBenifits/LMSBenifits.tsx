@@ -60,7 +60,7 @@ const LMSBenefits = () => {
 
         {/* Benefits Cards */}
         {benefitsData.map((benefit, index) => (
-          <div
+          <div key={index}
             className={`flex h-[100px] sm:h-[160px] item-center ${index % 2 !== 0 && "justify-end"} `}
           >
             <div
