@@ -4,6 +4,8 @@ import TabSwitch from "./tabSwitch";
 import { NavbarTop } from "./NavbarMenu/Navbar";
 import LandingHero from "./HeroSection/LandingHero";
 import LMSFeatures from "./LMSFeatures/LMSFeatures";
+import LMSBenefits from "./LMSBenifits/LMSBenifits";
+import FAQSection from "./FAQSeaction";
 
 const HomePage = () => {
   return (
@@ -15,8 +17,12 @@ const HomePage = () => {
         </div>
       </div>
       <LMSFeatures />
-      <WhyChooseLynk />
       <TabSwitch />
+      <WhyChooseLynk />
+      <LMSBenefits />
+      <div className="w-full  bg-gray-50">
+        <FAQSection />
+      </div>
     </div>
   );
 };

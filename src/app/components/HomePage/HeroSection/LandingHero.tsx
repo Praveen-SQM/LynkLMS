@@ -6,11 +6,11 @@ const LandingHero = () => {
   return (
     <div className="container mx-auto flex flex-col md:flex-row items-center bg-gray-50 justify-between">
       {/* Left Content Section */}
-      <div className="flex flex-col gap-[112px]">
-        <div className="flex flex-col gap-[42px]">
-          <div className="flex flex-col gap-[12px]">
+      <div className="flex flex-col gap-10 sm:gap-[112px]">
+        <div className="flex flex-col items-center sm:items-start gap-[42px]">
+          <div className="flex justify-center items-center sm:items-start sm:justify-start flex-col gap-[12px]">
             <motion.div
-              className="rounded-full bg-gray-200 w-fit px-6 py-2 text-gray-950"
+              className="rounded sm:rounded-full bg-gray-200 w-fit px-6 py-2 text-[14px] sm:text-base text-gray-950"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
@@ -19,8 +19,7 @@ const LandingHero = () => {
             </motion.div>
 
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl w-full"
-              style={{ lineHeight: "71.35px" }}
+              className="text-center sm:text-start text-3xl sm:text-4xl md:text-5xl lg:text-6xl w-full font-bold md:font-normal sm:leading-[71.35px]"
               initial={{
                 opacity: 0,
                 y: 20,
@@ -50,7 +49,7 @@ const LandingHero = () => {
             </motion.h1>
           </div>
           <motion.p
-            className="text-gray-500 font-[400] max-w-[576px] text-lg"
+            className="text-gray-500 font-[400] max-w-[340px] sm:max-w-[576px] text-[14px] sm:text-lg text-center sm:text-start"
             initial={{
               opacity: 0,
               scale: 1.2,
@@ -76,9 +75,10 @@ const LandingHero = () => {
           </motion.p>
         </div>
 
-        <div className="flex items-center gap-10">
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-10 pb-4 sm:pb-0">
+
           <motion.button
-            className="bg-black text-white px-[12px] py-[8px] min-w-[160px] rounded-2xl"
+            className="bg-black text-white px-[12px] py-[10px] min-w-[160px] rounded-xl font-[600]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -89,7 +89,7 @@ const LandingHero = () => {
           </motion.button>
 
           <motion.div
-            className="flex items-end gap-8 text-gray-500"
+            className="flex  flex-col sm:flex-row items-center sm:items-end gap-4 sm:gap-8 text-gray-500"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -116,7 +116,7 @@ const LandingHero = () => {
       </div>
 
       {/* Right Logo Animation */}
-      <div className="max-w-sm h-[394px] rounded-full bg-blue-200 w-full"></div>
+      <div className="max-w-sm h-[280px] md:h-[394px] rounded-full bg-blue-200 w-full"></div>
     </div>
   );
 };

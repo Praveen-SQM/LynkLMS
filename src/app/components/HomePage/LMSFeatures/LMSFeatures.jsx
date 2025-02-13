@@ -4,19 +4,19 @@ import { Sparkles, Rocket, Users, Heart } from "lucide-react";
 
 const FeatureCard = ({ icon: Icon, title, description, delay }) => (
   <motion.div
-    className="group flex flex-col items-center text-center shadow-[#6459ff16] transition-all hover:shadow-gray-400 hover:bg-[#6559FF] text-gray-900 shadow-2xl rounded-xl p-6 py-20"
+    className="group flex flex-col items-center text-center shadow-[#6459ff16] transition-all hover:shadow-gray-400 hover:bg-[#6559FF] text-gray-900 shadow-2xl rounded-3xl p-6 py-12 lg:py-20"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay }}
     viewport={{ once: true }}
   >
-    <div className="w-20 h-20 bg-[#6559FF] rounded-full flex items-center justify-center mb-4 group-hover:bg-white transition-all">
-      <Icon className="w-6 h-6 text-white group-hover:text-[#6559FF] transition-all" />
+    <div className="w-14 h-14 lg:w-20 lg:h-20 bg-[#6559FF] rounded-full flex items-center justify-center mb-4 group-hover:bg-white transition-all">
+      <Icon className="w-5 h-5 lg:w-6 lg:h-6 text-white group-hover:text-[#6559FF] transition-all" />
     </div>
-    <h3 className="text-lg font-semibold mb-2 group-hover:text-white transition-all">
+    <h3 className="lg:text-lg font-bold sm:font-semibold mb-2 group-hover:text-white transition-all">
       {title}
     </h3>
-    <p className="text-gray-600 text-sm max-w-xs group-hover:text-white transition-all">
+    <p className="text-gray-600 text-[13px] lg:text-sm max-w-xs group-hover:text-white transition-all">
       {description}
     </p>
   </motion.div>
@@ -47,7 +47,7 @@ const LMSFeatures = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-16">
+    <div className="max-w-6xl mx-auto px-4 py-16 flex flex-col items-center ">
       <motion.p
         className="text-center text-pink-500 font-medium mb-2"
         initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ const LMSFeatures = () => {
       </motion.p>
 
       <motion.h2
-        className="text-3xl md:text-4xl font-bold text-center mb-16"
+        className="text-3xl md:text-4xl w-full max-w-[440px] lg:max-w-full font-bold text-center mb-16"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
@@ -68,7 +68,7 @@ const LMSFeatures = () => {
         Unleash training with a powerful LMS.
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-8">
         {features.map((feature, index) => (
           <FeatureCard
             key={feature.title}
