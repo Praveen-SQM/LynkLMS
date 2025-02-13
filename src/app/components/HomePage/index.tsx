@@ -4,6 +4,9 @@ import TabSwitch from "./tabSwitch";
 import { NavbarTop } from "./NavbarMenu/Navbar";
 import LandingHero from "./HeroSection/LandingHero";
 import LMSFeatures from "./LMSFeatures/LMSFeatures";
+import LMSOptions from "./LMSOptions/LMSOptions";
+import QualitySection from "./QualitySection/QualitySection";
+import Footer from "./footer";
 
 const HomePage = () => {
   return (
@@ -17,6 +20,9 @@ const HomePage = () => {
       <LMSFeatures />
       <WhyChooseLynk />
       <TabSwitch />
+      <LMSOptions/>
+      <QualitySection/>
+      <Footer/>
     </div>
   );
 };

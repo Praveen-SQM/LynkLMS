@@ -111,7 +111,7 @@ const TabSwitch = () => {
                 )
             })}
         </div>
-        <div className='bg-[#F7F7F7] xl:rounded-[34.38px] sm:rounded-[14px] flex items-center 3xl:gap-[146.11px] xl:gap-[102px] sm:gap-[40px] xl:max-w-[1140px] sm:max-w-[750px] xl:px-[40px] sm:px-[20px] xl:pb-5 sm:pb-2'>
+        <div className='bg-[#F7F7F7] xl:rounded-[34.38px] sm:rounded-[14px] flex items-center 3xl:gap-[146.11px] xl:gap-[102px] sm:gap-[40px] 3xl:max-w-[1500px] xl:max-w-[1140px] sm:max-w-[750px] xl:px-[40px] sm:px-[20px] xl:pb-5 sm:pb-2'>
             <div className='3xl:w-[842px] 3xl:h-[868px] xl:w-[588px] xl:h-[606px] sm:w-[367px] sm:h-[358px] object-cover'>
                 <Image src={tabOptions?.[activeTab]?.img} alt='image' width={842} height={868} className='h-full w-full object-cover'/>
             </div>
