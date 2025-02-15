@@ -1,9 +1,14 @@
 import React from "react";
+import JourneySection from "./journeySection";
+import LMSFeatures from "./LMSFeatures";
+import WhatYouGetSection from "./WhatYouGetSection";
 
 const ContactPage = () => {
   return (
     <div>
-      <h1>contact us page</h1>
+      <JourneySection/>
+      <LMSFeatures/>
+      <WhatYouGetSection/>
     </div>
   );
 };
