@@ -3,14 +3,16 @@ import JourneySection from "./journeySection";
 import LMSFeatures from "./LMSFeatures";
 import WhatYouGetSection from "./WhatYouGetSection";
 import TrainingSection from "./TrainingSection";
+import LMSQualitySection from "./LMSQualitySection";
 
 const ContactPage = () => {
   return (
     <div>
       <JourneySection/>
       <LMSFeatures/>
-      <WhatYouGetSection/>
+      <LMSQualitySection/>
       <TrainingSection/>
+      <WhatYouGetSection/>
     </div>
   );
 };
