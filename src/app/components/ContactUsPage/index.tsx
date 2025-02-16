@@ -2,6 +2,7 @@ import React from "react";
 import JourneySection from "./journeySection";
 import LMSFeatures from "./LMSFeatures";
 import WhatYouGetSection from "./WhatYouGetSection";
+import TrainingSection from "./TrainingSection";
 
 const ContactPage = () => {
   return (
@@ -9,6 +10,7 @@ const ContactPage = () => {
       <JourneySection/>
       <LMSFeatures/>
       <WhatYouGetSection/>
+      <TrainingSection/>
     </div>
   );
 };
