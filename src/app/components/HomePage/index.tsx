@@ -12,7 +12,7 @@ import Footer from "./footer";
 
 const HomePage = () => {
   return (
-    <div>
+  <div>
       <NavbarTop />
       <div className="w-full bg-gray-50 px-4">
         <div className="flex items-center h-screen max-h-[1053px] w-full pt-16 mx-auto max-w-6xl">

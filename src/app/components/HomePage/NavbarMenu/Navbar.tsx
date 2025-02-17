@@ -175,7 +175,7 @@ function Navbar({ className }: { className?: string }) {
                 </motion.a>
                 <motion.a
                   variants={mobileLinkVariants}
-                  href="/seo"
+                  href="/about-us"
                   className="hover:scale-110 transition-transform"
                 >
                   About Us
@@ -183,7 +183,7 @@ function Navbar({ className }: { className?: string }) {
               </motion.div>
               <motion.a
                 variants={mobileLinkVariants}
-                href="/contact"
+                href="/contact-us"
                 className="border-2 mb-4 bg-[#6559FF] border-white text-white text-center  font-[600] p-3 px-6 rounded-lg hover:bg-white hover:text-[#6559FF] transition-colors"
               >
                 Contact Us
