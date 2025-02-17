@@ -134,7 +134,7 @@ const MainContent = ({ activeTab }: any) => {
 };
 
 const DefaultView = () => (
-  <div className="p-4 md:p-6 pr-0">
+  <div className="p-4 sm:p-6 pr-0">
     <div className="mb-3 md:mb-6">
       <h2 className="text-[10px] md:text-[13px] font-medium">Welcome Adam</h2>
       <p className="text-[9px] md:text-[12px] text-gray-500">You Are Signed In As Admin.</p>
