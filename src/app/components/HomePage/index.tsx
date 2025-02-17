@@ -26,7 +26,6 @@ const HomePage = () => {
       <div className="w-full  bg-gray-50">
         <FAQSection />
       </div>
-      <Footer/>
     </div>
   );
 };
