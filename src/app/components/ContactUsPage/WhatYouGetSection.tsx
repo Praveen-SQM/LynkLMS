@@ -50,13 +50,13 @@ const WhatYouGetSection = () => {
                     <button className="bg-[#EE3CD1] 3xl:py-[21px] xl:py-4 sm:py-[9.4px] py-4 3xl:px-8 xl:px-6 sm:px-[14px] px-6 3xl:rounded-[10.6px] xl:rounded-[8px] sm:rounded-[4.7px] rounded-[8px] 3xl:w-[373px] xl:w-[280px] sm:w-[164px] h-fit font-bold 3xl:text-[22px] 3xl:leading-[30px] xl:text-[16px] xl:leading-4 sm:text-[13px] sm:leading-[17.8px] text-[#FFFFFF]">Contact Us</button>
                 </div>
                 <div className="relative">
-                    <div className="w-7 h-7 absolute top-[22%] left-[0] animate-float">
+                    <div className="3xl:w-9 3xl:h-9 xl:w-7 xl:h-7 w-5 h-5 absolute top-[22%] left-[0] animate-float">
                         <Image src={PhoneIcon} alt="phone-icon" width={28} height={28} className="w-full h-full object-cover" />
                     </div>
-                    <div className="w-7 h-7 absolute top-[39%] right-[0] animate-float">
+                    <div className="3xl:w-9 3xl:h-9 xl:w-7 xl:h-7 w-5 h-5 absolute top-[39%] right-[0] animate-float">
                         <Image src={chatIcon} alt="phone-icon" width={28} height={28} className="w-full h-full object-cover" />
                     </div>
-                    <div className="w-7 h-7 absolute bottom-[13%] left-[60%] animate-float">
+                    <div className="3xl:w-9 3xl:h-9 xl:w-7 xl:h-7 w-5 h-5 absolute bottom-[13%] left-[60%] animate-float">
                         <Image src={checkIcon} alt="phone-icon" width={28} height={28} className="w-full h-full object-cover" />
                     </div>
                     <div className="3xl:w-[437px] 3xl:h-[710px] xl:w-[328px] xl:h-[533px] sm:w-[208px] sm:h-[312px] w-[265px] h-[397px]">

@@ -3,8 +3,11 @@ import Image from "next/image";
 import instantSupportIcon from "@/app/utilities/icons/instant-support.svg"
 import availabilityIcon from "@/app/utilities/icons/availablity.svg"
 import qualityAssuranceIcon from "@/app/utilities/icons/quality-assurance.svg"
-import ladki from "@/app/utilities/images/ladki.png"
+import qualitySectionImage from "@/app/utilities/images/Quality-section-image.svg"
 import rightIcon from "@/app/utilities/icons/right.svg"
+import phoneCallIcon from "@/app/utilities/icons/phone-call-home.svg"
+import annotationCheckIcon from "@/app/utilities/icons/annotation-check-home.svg"
+import chatIcon from "@/app/utilities/icons/message-chat-circle.svg"
 
 
 const QualitySection = () => {
@@ -63,8 +66,19 @@ const QualitySection = () => {
                 </div>
             </div>
             <div className="flex sm:flex-row flex-col items-center justify-between gap-[46px] 3xl:max-w-[1590px] xl:max-w-[1110px] sm:max-w-[750px] max-w-[343px] w-full">
-                <div className="3xl:w-[470px] 3xl:h-[546px] xl:w-[365px] xl:h-[424px] w-[268px] h-[311px]">
-                    <Image src={ladki} alt="image" width={365} height={424} className="w-full h-full object-cover" />
+                <div className="relative">
+                    <div className="3xl:w-9 3xl:h-9 xl:w-7 xl:h-7 w-5 h-5 absolute left-[0px] top-[31%] animate-float">
+                        <Image src={phoneCallIcon} alt="image" width={28} height={28} className="w-full h-full object-cover"/>
+                    </div>
+                    <div className="3xl:w-9 3xl:h-9 xl:w-7 xl:h-7 w-5 h-5 absolute right-[27px] top-[10%] animate-float">
+                        <Image src={annotationCheckIcon} alt="image" width={28} height={28} className="w-full h-full object-cover"/>
+                    </div>
+                    <div className="3xl:w-9 3xl:h-9 xl:w-7 xl:h-7 w-5 h-5 absolute right-[0px] bottom-[40%] animate-float">
+                        <Image src={chatIcon} alt="image" width={28} height={28} className="w-full h-full object-cover"/>
+                    </div>
+                    <div className="3xl:w-[470px] 3xl:h-[546px] xl:w-[365px] xl:h-[424px] w-[268px] h-[311px]">
+                        <Image src={qualitySectionImage} alt="image" width={365} height={424} className="w-full h-full object-cover" />
+                    </div>
                 </div>
                 <div className="flex flex-col sm:items-start items-center xl:gap-[42px] gap-6 xl:max-w-[442px] 3xl:max-w-[740px] sm:max-w-[399px] max-w-[343px]">
                     <div className="flex flex-col xl:gap-[32px] sm:gap-5 gap-6">
