@@ -9,6 +9,7 @@ import LMSFeatures from "./LMSFeatures";
 import WhatYouGetSection from "./WhatYouGetSection";
 import TrainingSection from "./TrainingSection";
 import LMSQualitySection from "./LMSQualitySection";
+import FAQSection from "./FAQSeaction";
 
 const ContactPage = () => {
   return (
@@ -23,6 +24,7 @@ const ContactPage = () => {
       <LMSQualitySection/>
       <TrainingSection/>
       <WhatYouGetSection/>
+      <FAQSection/>
     </div>
   );
 };
