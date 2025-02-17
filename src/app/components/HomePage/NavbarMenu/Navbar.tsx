@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { AlignJustify, X } from "lucide-react";
-
+import Link from "next/link";
 export function NavbarTop() {
   return (
     <div className="">
@@ -127,12 +127,14 @@ function Navbar({ className }: { className?: string }) {
               variants={menuItemVariants}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
             >
-              <MenuItem
-                setActive={setActive}
-                active={null}
-                item="Contact Us"
-                className="bg-[#6559FF] p-2 px-4 text-white rounded-full"
-              />
+              <Link href={"/contact-us"}>
+                <MenuItem
+                  setActive={setActive}
+                  active={null}
+                  item="Contact Us"
+                  className="bg-[#6559FF] p-2 px-4 text-white rounded-full"
+                />
+              </Link>
             </motion.div>
           </div>
 

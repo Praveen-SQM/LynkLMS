@@ -15,14 +15,14 @@ const DashboardPreview = () => {
     if (!autoChange) return;
 
     const tabs = ["dashboard", "course", "learning-plans", "content-library"];
-    const interval = setInterval(() => {
-      setActiveTab((current) => {
-        const currentIndex = tabs.indexOf(current);
-        return tabs[(currentIndex + 1) % tabs.length];
-      });
-    }, 3000);
+    // const interval = setInterval(() => {
+    //   setActiveTab((current) => {
+    //     const currentIndex = tabs.indexOf(current);
+    //     return tabs[(currentIndex + 1) % tabs.length];
+    //   });
+    // }, 3000);
 
-    return () => clearInterval(interval);
+    // return () => clearInterval(interval);
   }, [autoChange]);
 
   return (
@@ -39,14 +39,14 @@ const DashboardPreview = () => {
             <span className="text-pink-500 font-semibold">Lynk</span>
             <span className="font-semibold">LMS</span>
           </div>
-          <button
+          {/* <button
             onClick={() => setAutoChange(!autoChange)}
             className={`text-[6px] md:text-[10px] px-2 py-1 rounded ${
               autoChange ? "bg-violet-100 text-[#433BDB]" : "bg-gray-100"
             }`}
           >
             {autoChange ? "Auto-Cycling" : "Manual"}
-          </button>
+          </button> */}
         </div>
 
         {/* Dashboard Content */}
