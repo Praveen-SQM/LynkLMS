@@ -43,7 +43,7 @@ const TrainingPlatform = () => {
   const duplicatedSlides = [...slides, ...slides];
 
   useEffect(() => {
-    let interval;
+    let interval: string | number | NodeJS.Timeout | undefined;
     if (isAutoPlaying) {
       interval = setInterval(() => {
         paginate(1);
@@ -53,7 +53,7 @@ const TrainingPlatform = () => {
   }, [isAutoPlaying, currentIndex]);
 
   const slideVariants = {
-    enter: (direction) => ({
+    enter: (direction: number) => ({
       x: direction > 0 ? 1000 : -1000,
       opacity: 0
     }),
@@ -62,7 +62,7 @@ const TrainingPlatform = () => {
       x: 0,
       opacity: 1
     },
-    exit: (direction) => ({
+    exit: (direction: number) => ({
       zIndex: 0,
       x: direction < 0 ? 1000 : -1000,
       opacity: 0
@@ -70,14 +70,13 @@ const TrainingPlatform = () => {
   };
 
   const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset, velocity) => {
+  const swipePower = (offset: number, velocity: number) => {
     return Math.abs(offset) * velocity;
   };
-
-  const paginate = (newDirection) => {
+  const paginate = (newDirection: number) => {
     setDirection(newDirection);
     setCurrentIndex((prevIndex) => {
-      const nextIndex = prevIndex + newDirection;
+      const nextIndex = prevIndex + (newDirection as number);
       const maxIndex = isMobile ? duplicatedSlides.length - 1 : duplicatedSlides.length - 2;
       
       if (nextIndex >= maxIndex) {

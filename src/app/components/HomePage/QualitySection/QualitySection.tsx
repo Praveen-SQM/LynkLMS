@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import instantSupportIcon from "@/app/utilities/icons/instant-support.svg"
 import availabilityIcon from "@/app/utilities/icons/availablity.svg"
 import qualityAssuranceIcon from "@/app/utilities/icons/quality-assurance.svg"
@@ -43,7 +44,7 @@ const QualitySection = () => {
     ]
 
     return (
-        <div className="xl:py-[100px] sm:py-[72px] py-[42px] flex flex-col xl:gap-[92px] sm:gap-[52px] gap-[46px] items-center">
+        <div className="xl:py-[100px] sm:py-[72px] py-[42px] flex flex-col xl:gap-[92px] sm:gap-[52px] gap-[46px] xl:px-0 sm:px-4 items-center">
             <div className="flex flex-col xl:gap-[68px] sm:gap-[38px] gap-7 items-center">
                 <div className="flex flex-col xl:gap-4 sm:gap-[10px] gap-2 items-center">
                     <p className="font-bold 3xl:text-[48px] 3xl:leading-10 xl:text-[36px] xl:leading-[40px] sm:text-[32px] sm:leading-[43.71px] text-[24px] leading-[32.8px] text-[#1D1A27]">Fast. Reliable. Effective.</p>
@@ -96,7 +97,7 @@ const QualitySection = () => {
                             })}
                         </div>
                     </div>
-                    <div className="bg-[#EE3CD1] 3xl:h-[57px] xl:h-12 h-[37.5px] xl:rounded-[8px] rounded-[4.63px] xl:px-6 px-[14px] w-fit flex items-center justify-center font-bold 3xl:text-[18px] 3xl:leading-[25px] xl:text-[16px] xl:leading-4 text-[14px] leading-[19.12px] text-center text-[#FFFFFF]">Contact Us</div>
+                    <Link href={"/contact-us"} className="bg-[#EE3CD1] 3xl:h-[57px] xl:h-12 h-[37.5px] xl:rounded-[8px] rounded-[4.63px] xl:px-6 px-[14px] w-fit flex items-center justify-center font-bold 3xl:text-[18px] 3xl:leading-[25px] xl:text-[16px] xl:leading-4 text-[14px] leading-[19.12px] text-center text-[#FFFFFF]">Contact Us</Link>
                 </div>
             </div>
         </div>
