@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -27,7 +27,10 @@ export const MenuItem = ({
   className?: string;
 }) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className={`relative ${className}`}>
+    <div
+      onMouseEnter={() => setActive(item)}
+      className={`relative ${className}`}
+    >
       <motion.p
         transition={{ duration: 0.3 }}
         className="cursor-pointer font-[500] hover:opacity-[0.9] dark:text-white"
@@ -65,18 +68,39 @@ export const MenuItem = ({
 export const Menu = ({
   setActive,
   children,
+  className,
 }: {
   setActive: (item: string | null) => void;
   children: React.ReactNode;
+  className?: string;
 }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <nav
-    onMouseLeave={() => setActive(null)} // resets the state
-    className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white/70 backdrop-blur-lg shadow-input flex justify-between space-x-4 px-8 py-3"
-  >
-    {children}
-  </nav>
-  
+      onMouseLeave={() => setActive(null)} // resets the state
+      className={`relative border border-transparent dark:bg-black transition-all duration-300 dark:border-white/[0.2] ${
+        isScrolled ? "bg-white/70 backdrop-blur-lg shadow-input" : "bg-white"
+      } flex justify-between space-x-4 px-8 md:px-2 py-2 sm:mx-2 ${className}`}
+    >
+      {children}
+    </nav>
   );
 };
 

@@ -80,7 +80,7 @@ const TabSwitch = () => {
           {tabOptions?.map((tab, index) => {
             return (
               <div key={index} onClick={() => { setActiveTab(index) }} className='flex flex-col 3xl:gap-[23px] xl:gap-4 sm:gap-[9px] cursor-pointer'>
-                <p className={`font-bold 3xl:text-[28px] 3xl:leading-[38.25px] xl:text-[20px] xl:leading-5 sm:text-[16px] sm:leading-[21.86px] ${activeTab === index ? "text-[#1D1A27]" : "text-[#1D1A2799]"}`}>{tab?.name}</p>
+                <p className={`font-[600] 3xl:text-[28px] 3xl:leading-[38.25px] xl:text-[20px] xl:leading-5 sm:text-[16px] sm:leading-[21.86px] ${activeTab === index ? "text-[#1D1A27]" : "text-[#1D1A2799]"}`}>{tab?.name}</p>
                 <div className={`w-full 3xl:h-[5.73px] xl:h-[4px] sm:h-[2.32px] xl:rounded-b-[4.3px] sm:rounded-b-[1.74px] bg-[#1D1A27] ${activeTab === index ? "" : "hidden"}`}></div>
               </div>
             )

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "@/utills/Icons/LynkLogo.svg";
 import {
   HoveredLink,
@@ -12,10 +12,11 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { AlignJustify, X } from "lucide-react";
 import Link from "next/link";
+
 export function NavbarTop() {
   return (
     <div className="">
-      <Navbar className="top-2" />
+      <Navbar className="md:top-2 z-[100]" />
     </div>
   );
 }
@@ -23,6 +24,7 @@ export function NavbarTop() {
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const menuItemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -60,19 +62,42 @@ function Navbar({ className }: { className?: string }) {
     open: { opacity: 1, y: 0 },
   };
 
+  // Scroll event listener to track if the user has scrolled
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div
         className={cn(
-          "fixed inset-x-0 max-w-6xl mx-4 lg:mx-auto z-50",
-          className
+          "fixed inset-x-0 max-w-6xl md:mx-4 lg:mx-auto z-50  " + className
         )}
       >
-        <Menu setActive={setActive}>
-          <div className="flex items-center">
+        <Menu setActive={setActive} className=" md:rounded-full">
+          <Link
+            href={"/"}
+            onClick={() => {
+              setActive(null);
+              setIsMobileMenuOpen(false);
+            }}
+            className="flex items-center"
+          >
             <Image height={25} width={25} src={logo} alt="logo" />
             <p className="font-bold">Lynk</p>
-          </div>
+          </Link>
 
           <div className="hidden sm:flex text-[14px] items-center gap-6">
             <motion.div
@@ -81,11 +106,13 @@ function Navbar({ className }: { className?: string }) {
               variants={menuItemVariants}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
             >
-              <MenuItem
-                setActive={setActive}
-                item="LMS"
-                active={null}
-              ></MenuItem>
+              <Link href={"/lms"}>
+                <MenuItem
+                  setActive={setActive}
+                  item="LMS"
+                  active={null}
+                ></MenuItem>
+              </Link>
             </motion.div>
             <motion.div
               initial="hidden"
@@ -106,29 +133,14 @@ function Navbar({ className }: { className?: string }) {
               initial="hidden"
               animate="visible"
               variants={menuItemVariants}
-              transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
             >
               <MenuItem
                 setActive={setActive}
                 active={null}
-                item="About Us"
-              ></MenuItem>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={menuItemVariants}
-              transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
-            >
-              <Link href={"/contact-us"}>
-                <MenuItem
-                  setActive={setActive}
-                  active={null}
-                  item="Contact Us"
-                  className="bg-[#6559FF] p-2 px-4 text-white rounded-full"
-                />
-              </Link>
+                item="Contact Us"
+                className="bg-[#6559FF] p-2 px-4 text-white rounded-full"
+              />
             </motion.div>
           </div>
 
@@ -151,24 +163,30 @@ function Navbar({ className }: { className?: string }) {
             animate="open"
             exit="exit"
             variants={mobileMenuVariants}
-            className="fixed inset-0 bg-[#6559FF] dark:bg-black dark:border-white/[0.2] bg-white/70 backdrop-blur-lg  sm:hidden z-40"
+            className={`
+              fixed inset-0 bg-white sm:hidden z-50 flex justify-between space-x-4 px-8 py-2 transition-all duration-300`}
           >
-            <div className="flex flex-col px-14 justify-between h-full">
-              <motion.div className="flex flex-col mt-24 space-y-8 text-black font-[600] text-gray-900">
-                <motion.a
-                  variants={mobileLinkVariants}
-                  href="/web-dev"
-                  className="hover:scale-110 transition-transform"
+            <div className="flex flex-col justify-between h-full w-full">
+              <motion.div className="flex flex-col mt-24 space-y-8 font-[600] text-gray-900">
+                <Link href="/lms" onClick={() => setIsMobileMenuOpen(false)}>
+                  <motion.a
+                    variants={mobileLinkVariants}
+                    className="hover:scale-110 transition-transform"
+                  >
+                    LMS
+                  </motion.a>
+                </Link>
+                <Link
+                  href="/e-learning"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  LMS
-                </motion.a>
-                <motion.a
-                  variants={mobileLinkVariants}
-                  href="/interface-design"
-                  className="hover:scale-110 transition-transform"
-                >
-                  E-Learning
-                </motion.a>
+                  <motion.a
+                    variants={mobileLinkVariants}
+                    className="hover:scale-110 transition-transform"
+                  >
+                    E-Learning
+                  </motion.a>
+                </Link>
                 <motion.a
                   variants={mobileLinkVariants}
                   href="/about-us"
@@ -180,7 +198,7 @@ function Navbar({ className }: { className?: string }) {
               <motion.a
                 variants={mobileLinkVariants}
                 href="/contact-us"
-                className="border-2 mb-4 bg-[#6559FF] border-white text-white text-center  font-[600] p-3 px-6 rounded-lg hover:bg-white hover:text-[#6559FF] transition-colors"
+                className="border-2 mb-4 bg-[#6559FF] border-white text-white text-center w-full font-[600] p-3 px-6 rounded-lg hover:bg-white hover:text-[#6559FF] transition-colors"
               >
                 Contact Us
               </motion.a>

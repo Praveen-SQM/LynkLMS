@@ -18,7 +18,7 @@ const TrainingContent = () => {
   };
 
   return (
-    <div className="max-w-6xl flex flex-col items-center justify-center mx-auto px-4 py-24">
+    <div className="max-w-6xl flex flex-col items-center justify-center mx-auto py-24">
       <motion.div
         className="text-center mb-16 max-w-2xl "
         initial={{ opacity: 0, y: -20 }}
@@ -34,7 +34,7 @@ const TrainingContent = () => {
         </p>
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="w-full md:flex gap-[18px]">
           {/* First Feature Card */}
           <motion.div
