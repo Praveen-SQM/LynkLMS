@@ -1,5 +1,7 @@
 import React from "react";
 import TrainingContent from "./ELearning";
+import DevelopmentProcessSection from "./DevelopmentProcessSection";
+import BenefitsSection from "./BenefitsSection";
 import ELearningLanding from "./ELearningLanding";
 
 const ELearning = () => {
@@ -8,6 +10,8 @@ const ELearning = () => {
       {" "}
       <ELearningLanding />
       <TrainingContent />
+      <DevelopmentProcessSection/>
+      <BenefitsSection/>
     </div>
   );
 };

@@ -29,7 +29,7 @@ const WhatYouGetSection = () => {
     ]
 
     return (
-        <div className="w-full bg-[#534BEF] 3xl:py-[96px] xl:py-[72px] py-[42px]">
+        <div className="w-full bg-[#534BEF] 3xl:py-[96px] xl:py-[72px] py-[42px] xl:px-0 sm:px-4">
             <div className="flex items-center sm:flex-row flex-col justify-between 3xl:max-w-[1600px] xl:max-w-[1200px] sm:max-w-[750px] max-w-[343px] mx-auto">
                 <div className="flex flex-col sm:items-start items-center 3xl:gap-[56px] xl:gap-[42px] sm:gap-[57px] gap-8 sm:mb-0 mb-[32px]">
                     <div className="flex flex-col items-start 3xl:gap-[42px] xl:gap-[32px] sm:gap-[18px] gap-3">

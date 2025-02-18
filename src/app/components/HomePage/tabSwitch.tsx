@@ -70,7 +70,7 @@ const TabSwitch = () => {
   const [activeTab, setActiveTab] = useState(0)
 
   return (
-    <div className='xl:pt-[72px] xl:pb-[165px] sm:pt-[48px] pt-[42px] sm:pb-[70px] flex flex-col justify-center items-center xl:gap-[58px] sm:gap-[33.6px] gap-[32px]'>
+    <div className='xl:pt-[72px] xl:pb-[165px] sm:pt-[48px] pt-[42px] sm:pb-[70px] flex flex-col justify-center items-center xl:gap-[58px] sm:gap-[33.6px] gap-[32px] xl:px-0 sm:px-2'>
       <div className='flex flex-col items-center gap-1'>
         <p className='font-semibold 3xl:text-[18px] sm:text-[16px] text-[12px] sm:leading-[24px] leading-[16.39px] text-[#F47FD9]'>INTUITIVE LMS</p>
         <p className='font-bold 3xl:text-[52px] 3xl:leading-[71px] xl:text-[42px] xl:leading-[57.37px] sm:text-[32px] sm:leading-[43.71px] text-[24px] leading-[32.78px] text-[#1D1A27] 3xl:max-w-[698px] xl:max-w-[588px] sm:max-w-[430px] max-w-[323px] text-center'>Built for everyone,<br />crafted for flexible learning.</p>
@@ -86,7 +86,7 @@ const TabSwitch = () => {
             )
           })}
         </div>
-        <AnimatePresence mode="wait">
+        {/* <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
             initial={{ opacity: 0, x: 50 }} // Fade in + Slide from Right
@@ -104,7 +104,42 @@ const TabSwitch = () => {
               <div className='bg-[#ffffff] flex items-center justify-center cursor-pointer 3xl:h-[76.84px] xl:h-[53px] sm:h-[37px] 3xl:rounded-[17.19px] xl:rounded-[16px] sm:rounded-[7px] 3xl:border-[1.43px] xl:border-[1px] sm:border-[0.58px] 3xl:px-[17.19px] sm:px-3 w-fit font-semibold xl:text-[16px] xl:leading-[21px] sm:text-[12px] sm:leading-[12.16px] text-[#1D1A27]'>Connect Now</div>
             </div>
           </motion.div>
+        </AnimatePresence> */}
+        <AnimatePresence mode="wait">
+          <div
+            key={activeTab}
+            className="bg-[#F7F7FF] xl:rounded-[34.38px] sm:rounded-[14px] flex items-center 3xl:gap-[146.11px] xl:gap-[102px] sm:gap-[40px] xl:max-w-[1140px] sm:max-w-[750px] xl:px-[40px] sm:px-[20px] xl:pb-5 sm:pb-2"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              transition={{ duration: 0.6 }}
+              className='3xl:w-[842px] 3xl:h-[868px] xl:w-[588px] xl:h-[606px] sm:w-[367px] sm:h-[358px] object-cover'
+            >
+              <Image src={tabOptions?.[activeTab]?.img} alt='image' width={842} height={868} className='h-full w-full object-cover' />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }} // Slightly slower fade-in for text
+              className='flex flex-col 3xl:gap-[34.38px] xl:gap-6 sm:gap-4 xl:max-w-[330px] sm:max-w-[302px]'
+            >
+              <p className='font-bold xl:text-[36px] xl:leading-[41.4px] sm:text-[20px] sm:leading-[24px] text-[#1D1A27]'>
+                {highlightText(tabOptions?.[activeTab]?.title)}
+              </p>
+              <p className='font-normal xl:text-[16px] xl:leading-6 sm:text-[14px] sm:leading-[19.12px] text-[#1D1A27CC]'>
+                {tabOptions?.[activeTab]?.description}
+              </p>
+              <div className='bg-[#ffffff] flex items-center justify-center cursor-pointer 3xl:h-[76.84px] xl:h-[53px] sm:h-[37px] 3xl:rounded-[17.19px] xl:rounded-[16px] sm:rounded-[7px] 3xl:border-[1.43px] xl:border-[1px] sm:border-[0.58px] 3xl:px-[17.19px] sm:px-3 w-fit font-semibold xl:text-[16px] xl:leading-[21px] sm:text-[12px] sm:leading-[12.16px] text-[#1D1A27]'>
+                Connect Now
+              </div>
+            </motion.div>
+          </div>
         </AnimatePresence>
+
       </div>
 
       <div className='sm:hidden block flex flex-col bg-[#F7F7FF] border-b px-4'>
