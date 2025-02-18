@@ -56,6 +56,9 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      screens: {
+        "3xl": "1920px" // New custom breakpoint
+      },
       keyframes: {
         expand: {
           "0%": {
