@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import img from "@/utills/images/Authoring-tool.png.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 const TabContent = {
   "Price Point": {
@@ -50,12 +51,14 @@ const MarketGapAnalysis = () => {
       <div className="flex flex-col w-full">
         <h2 className="text-xl font-semibold mb-4">{title}</h2>
         <p className="text-gray-900 mb-6 text-sm">{description}</p>
-        <button className="hidden md:flex items-center text-sm justify-between gap-2 bg-black text-white pl-4 pr-1 py-1 rounded-full w-fit hover:bg-gray-800 transition-colors">
-          Contact Us
-          <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
-            <ArrowRight className="w-4 h-4 text-black" />
-          </div>
-        </button>
+        <Link href="/contact-us">
+          <button className="hidden md:flex items-center text-sm justify-between gap-2 bg-black text-white pl-4 pr-1 py-1 rounded-full w-fit hover:bg-gray-800 transition-colors">
+            Contact Us
+            <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
+              <ArrowRight className="w-4 h-4 text-black" />
+            </div>
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -81,31 +81,25 @@ function Navbar({ className }: { className?: string }) {
               variants={menuItemVariants}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
             >
-              <MenuItem setActive={setActive} active={active} item="LMS">
-                <div className="flex flex-col space-y-4 text-sm">
-                  <HoveredLink href="/web-dev">Web Development</HoveredLink>
-                  <HoveredLink href="/interface-design">
-                    Interface Design
-                  </HoveredLink>
-                  <HoveredLink href="/seo">
-                    Search Engine Optimization
-                  </HoveredLink>
-                  <HoveredLink href="/branding">Branding</HoveredLink>
-                </div>
-              </MenuItem>
+              <MenuItem
+                setActive={setActive}
+                item="LMS"
+                active={null}
+              ></MenuItem>
             </motion.div>
-
             <motion.div
               initial="hidden"
               animate="visible"
               variants={menuItemVariants}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
             >
-              <MenuItem
-                setActive={setActive}
-                active={null}
-                item="E-Learning"
-              ></MenuItem>
+              <Link href="/e-learning">
+                <MenuItem
+                  setActive={setActive}
+                  active={null}
+                  item="E-Learning"
+                ></MenuItem>
+              </Link>
             </motion.div>
 
             <motion.div
