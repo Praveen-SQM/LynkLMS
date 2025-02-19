@@ -116,7 +116,7 @@ const ContactForm: React.FC = () => {
                                         value={formData.firstName}
                                         onChange={handleInputChange}
                                         placeholder="Enter First Name"
-                                        className="w-full sm:px-4 px-3 py-3 border border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
+                                        className="w-full sm:px-4 px-3 py-3 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
                                         required
                                     />
                                 </div>
@@ -132,7 +132,7 @@ const ContactForm: React.FC = () => {
                                         value={formData.lastName}
                                         onChange={handleInputChange}
                                         placeholder="Enter last name"
-                                        className="w-full sm:px-4 px-3 py-3 border border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
+                                        className="w-full sm:px-4 px-3 py-3 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
                                     />
                                 </div>
                             </div>
@@ -149,7 +149,7 @@ const ContactForm: React.FC = () => {
                                         value={formData.email}
                                         onChange={handleInputChange}
                                         placeholder="Enter email"
-                                        className="w-full sm:px-4 px-3 py-3 border border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
+                                        className="w-full sm:px-4 px-3 py-3 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
                                         required
                                     />
                                 </div>
@@ -190,7 +190,7 @@ const ContactForm: React.FC = () => {
                                         country={"in"}
                                         value={formData.phoneNumber}
                                         containerClass="flex-1 w-full text-[15px] relative "
-                                        inputClass="flex-1 w-full relative text-[14px] p-1 ml-0 bg-[#FFFFFF] border border-[#CACACA]"
+                                        inputClass="flex-1 w-full sm:px-4 px-3 py-3 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
                                         onChange={(value: string, data: {}, event: React.ChangeEvent<HTMLInputElement>, formattedValue: string) => handleInputChange(event)}
                                     />
                                 </div>
@@ -211,7 +211,7 @@ const ContactForm: React.FC = () => {
                                     placeholder="Type your message here"
                                     rows={3}
                                     maxLength={1000}
-                                    className="w-full px-4 py-6 border border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600 resize-none"
+                                    className="w-full px-4 py-6 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600 resize-none"
                                 ></textarea>
                             </div>
 
