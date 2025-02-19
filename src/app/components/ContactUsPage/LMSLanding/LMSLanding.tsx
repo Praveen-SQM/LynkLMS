@@ -6,7 +6,7 @@ import { FloatingBackground } from "./FloatingTriangles";
 
 const LMSLanding = () => {
   return (
-    <div className="relative min-h-screen bg-[#433BDB] bg-gradient-to-br from-[#433BDB] to-[#635BFF] overflow-hidden w-full">
+    <div className="relative min-h-[600px] xl:min-h-screen bg-[#433BDB] bg-gradient-to-br from-[#433BDB] to-[#635BFF] overflow-hidden w-full">
         <FloatingBackground/>
       <div className="md:pl-[5vw] xl:pl-[12vw] md:pt-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 pt-28">

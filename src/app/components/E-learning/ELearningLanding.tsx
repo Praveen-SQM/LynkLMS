@@ -8,7 +8,7 @@ import Link from "next/link";
 import GradientBorder from "@/components/ui/gradient-border";
 const ELearningLanding = () => {
   return (
-    <div className="relative min-h-[100vh] lg:min-h-[110vh] 2xl-min-h-[80vh] max-h-[600px] flex items-center justify-center bg-[#433BDB] bg-gradient-to-br from-[#433BDB] to-[#635BFF] overflow-hidden w-full">
+    <div className="relative min-h-[80vh] lg:min-h-[110vh] 2xl-min-h-[600px] max-h-[600px] flex items-center justify-center bg-[#433BDB] bg-gradient-to-br from-[#433BDB] to-[#635BFF] overflow-hidden w-full">
       <FloatingBackground />
       <div className="w-full h-full absolute flex flex-col justify-between max-w-6xl text-white px-4">
         <div className="h-[400px] w-2"></div>
