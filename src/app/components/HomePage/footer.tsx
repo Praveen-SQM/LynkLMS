@@ -49,8 +49,9 @@ const Footer = () => {
                 <p className='font-bold xl:text-[37.5px] xl:leading-[52px] text-[16px] leading-[22px] text-[#ffffff]'>Receive inquiries and <br />
                     <span className='text-[#635BFF]'>respond promptly.</span> </p>
                 <div className='xl:h-[75px] h-[36px] xl:rounded-[16px] rounded-[7px] xl:border-[1.34px] border-[0.58px] border-[#2B2D31] xl:p-[10.7px] p-[4px] flex items-center justify-between xl:max-w-[498px] sm:max-w-[236px] max-w-[278px] w-full'>
-                    <p className='font-normal xl:text-[17.27px] xl:leading-[23.6px] text-[12px] leading-[16.4px] text-[#7A8089]'>Email address</p>
-                    <div className='xl:h-[53.5px] sm:h-[26px] xl:rounded-[10.7px] rounded-[4px] xl:py-[10.7px] xl:px-[10.7px] sm:py-1 py-[6px] sm:px-2 px-3 bg-[#635BFF] cursor-pointer font-medium xl:text-[18.73px] xl:leading-[25.6px] sm:text-[13px] sm:leading-[17.6px] text-[12px] leading-[16.3px] text-[#ffffff] flex justify-center items-center'>Connect Now</div>
+                    {/* <p className='font-normal xl:text-[17.27px] xl:leading-[23.6px] text-[12px] leading-[16.4px] text-[#7A8089]'>Email address</p> */}
+                    <input type='text' placeholder='Email address' className='font-normal xl:text-[17.27px] xl:leading-[23.6px] text-[12px] leading-[16.4px] text-[#7A8089] bg-transparent outline-none'/>
+                    <div className='xl:h-[53.5px] sm:h-[26px] xl:rounded-[10.7px] rounded-[4px] xl:py-[10.7px] xl:px-[10.7px] sm:py-1 py-[6px] sm:px-2 px-3 bg-[#635BFF] cursor-pointer font-medium xl:text-[18.73px] xl:leading-[25.6px] sm:text-[13px] sm:leading-[17.6px] text-[12px] leading-[16.3px] text-[#ffffff] flex justify-center items-center text-nowrap'>Connect Now</div>
                 </div>
             </div>
             <div className='flex flex-col xl:gap-[42px] sm:gap-[46px] gap-6 w-full items-center'>
