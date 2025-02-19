@@ -5,6 +5,7 @@ import PhoneIcon from "@/app/utilities/icons/Phone-Icon.svg"
 import chatIcon from "@/app/utilities/icons/Chat-Icon.svg"
 import checkIcon from "@/app/utilities/icons/Check-Icon.svg"
 import Image from "next/image";
+import Link from "next/link";
 
 
 const WhatYouGetSection = () => {
@@ -47,7 +48,7 @@ const WhatYouGetSection = () => {
                             })}
                         </div>
                     </div>
-                    <button className="bg-[#EE3CD1] 3xl:py-[21px] xl:py-4 sm:py-[9.4px] py-4 3xl:px-8 xl:px-6 sm:px-[14px] px-6 3xl:rounded-[10.6px] xl:rounded-[8px] sm:rounded-[4.7px] rounded-[8px] 3xl:w-[373px] xl:w-[280px] sm:w-[164px] h-fit font-bold 3xl:text-[22px] 3xl:leading-[30px] xl:text-[16px] xl:leading-4 sm:text-[13px] sm:leading-[17.8px] text-[#FFFFFF]">Contact Us</button>
+                    <Link href={'/contact-us'} className="bg-[#EE3CD1] 3xl:py-[21px] xl:py-4 sm:py-[9.4px] py-4 3xl:px-8 xl:px-6 sm:px-[14px] px-6 3xl:rounded-[10.6px] xl:rounded-[8px] sm:rounded-[4.7px] rounded-[8px] 3xl:w-[373px] xl:w-[280px] sm:w-[164px] h-fit font-bold 3xl:text-[22px] 3xl:leading-[30px] xl:text-[16px] xl:leading-4 sm:text-[13px] sm:leading-[17.8px] text-[#FFFFFF] flex justify-center">Contact Us</Link>
                 </div>
                 <div className="relative">
                     <div className="3xl:w-9 3xl:h-9 xl:w-7 xl:h-7 w-5 h-5 absolute top-[22%] left-[0] animate-float">
