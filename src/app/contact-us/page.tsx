@@ -158,7 +158,7 @@ const ContactForm: React.FC = () => {
                                     <label htmlFor="phoneNumber" className="block font-normal sm:text-[13.9px] sm:leading-[14.2px] text-[14px] leading-[19px] text-[#131313] mb-2">
                                         Phone Number<span className="text-red-500">*</span>
                                     </label>
-                                    <div className="flex">
+                                    {/* <div className="flex">
                                         <div className="flex items-center border border-gray-300 rounded-l-md px-3 bg-gray-50">
                                             <img src="https://flagcdn.com/w20/in.png" alt="India flag" className="w-5 h-auto mr-1" />
                                             <span>+91</span>
@@ -173,7 +173,7 @@ const ContactForm: React.FC = () => {
                                             className="flex-1 w-full sm:px-4 px-3 py-3 border border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
                                             required
                                         />
-                                    </div>
+                                    </div> */}
                                     {/* <PhoneInput
                                         country={'in'}
                                         value={formData.phoneNumber}
@@ -182,17 +182,17 @@ const ContactForm: React.FC = () => {
                                         inputStyle={{width: '100%', height: '69%'}}
                                         className="flex-1 w-full h-full border border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
                                     /> */}
-                                    {/* <PhoneInput
+                                    <PhoneInput
                                         inputStyle={{
                                             width: "100%",
-                                            height: "40px",
+                                            height: "50px"
                                         }}
                                         country={"in"}
                                         value={formData.phoneNumber}
-                                        containerClass="flex-1 w-full text-[15px] relative"
-                                        inputClass="flex-1 w-full relative text-[14px] pl-[48px] ml-0 bg-[#FFFFFF] border border-[#CACACA]"
+                                        containerClass="flex-1 w-full text-[15px] relative "
+                                        inputClass="flex-1 w-full relative text-[14px] p-1 ml-0 bg-[#FFFFFF] border border-[#CACACA]"
                                         onChange={(value: string, data: {}, event: React.ChangeEvent<HTMLInputElement>, formattedValue: string) => handleInputChange(event)}
-                                    /> */}
+                                    />
                                 </div>
                             </div>
 
