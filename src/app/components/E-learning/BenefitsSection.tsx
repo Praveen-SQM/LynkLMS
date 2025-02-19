@@ -2,6 +2,7 @@ import React from "react";
 import rightIcon from "@/app/utilities/icons/Checkmark.svg"
 import BenefitsImage from "@/app/utilities/images/Benefits-image.svg"
 import Image from "next/image";
+import Link from "next/link";
 
 
 const BenefitsSection = () => {
@@ -48,7 +49,7 @@ const BenefitsSection = () => {
                             })}
                         </div>
                     </div>
-                    <button className="bg-[#EE3CD1] 3xl:py-[21px] xl:py-4 sm:py-[9.4px] py-4 3xl:px-8 xl:px-6 sm:px-[14px] px-6 3xl:rounded-[10.6px] xl:rounded-[8px] sm:rounded-[4.7px] rounded-[8px] 3xl:w-[373px] xl:w-[176px] sm:w-[164px] h-fit font-bold 3xl:text-[22px] 3xl:leading-[30px] xl:text-[16px] xl:leading-4 sm:text-[13px] sm:leading-[17.8px] text-[#FFFFFF]">Contact Now</button>
+                    <Link href={'/contact-us'} className="bg-[#EE3CD1] 3xl:py-[21px] xl:py-4 sm:py-[9.4px] py-4 3xl:px-8 xl:px-6 sm:px-[14px] px-6 3xl:rounded-[10.6px] xl:rounded-[8px] sm:rounded-[4.7px] rounded-[8px] 3xl:w-[373px] xl:w-[176px] sm:w-[164px] h-fit font-bold 3xl:text-[22px] 3xl:leading-[30px] xl:text-[16px] xl:leading-4 sm:text-[13px] sm:leading-[17.8px] text-[#FFFFFF] flex justify-center">Contact Now</Link>
                 </div>
                 <div className="3xl:w-[437px] 3xl:h-[710px] xl:w-[328px] xl:h-[533px] sm:w-[208px] sm:h-[312px] w-[265px] h-[397px]">
                     <Image src={BenefitsImage} alt="whatYouGetImage" width={356} height={533} className="w-full h-full object-contain" />

@@ -37,7 +37,7 @@ const MarketGapAnalysis = () => {
   const [activeTab, setActiveTab] = useState("Price Point");
 
   // Content section component for mobile view
-  const ContentSection = ({ title, description, image }) => (
+  const ContentSection = ({ title, description, image }: { title: string, description: string, image: string }) => (
     <div className="flex flex-col items-center gap-8 py-8 border-b border-gray-200 last:border-b-0">
       <div className="relative rounded-2xl overflow-hidden bg-white shadow-sm w-full">
         <Image
@@ -116,7 +116,7 @@ const MarketGapAnalysis = () => {
               <Image
                 width={1000}
                 height={1000}
-                src={TabContent[activeTab].image}
+                src={TabContent[activeTab as keyof typeof TabContent].image}
                 alt="Content preview"
                 className="w-[450px] h-[450px] object-cover"
               />
@@ -124,17 +124,17 @@ const MarketGapAnalysis = () => {
 
             <div className="flex flex-col justify-center max-w-[360px]">
               <h2 className="text-4xl font-semibold mb-6">
-                {TabContent[activeTab].title}
+                {TabContent[activeTab as keyof typeof TabContent].title}
               </h2>
               <p className="text-gray-900 mb-8 text-base">
-                {TabContent[activeTab].description}
+                {TabContent[activeTab as keyof typeof TabContent].description}
               </p>
-              <button className="flex items-center text-base justify-between gap-2 bg-black text-white pl-4 pr-1 py-1 rounded-full w-fit hover:bg-gray-800 transition-colors">
+              <Link href={'/contact-us'} className="flex items-center text-base justify-between gap-2 bg-black text-white pl-4 pr-1 py-1 rounded-full w-fit hover:bg-gray-800 transition-colors">
                 Contact Us
                 <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
                   <ArrowRight className="w-4 h-4 text-black" />
                 </div>
-              </button>
+              </Link>
             </div>
           </motion.div>
         </AnimatePresence>
