@@ -7,7 +7,7 @@ import LMSBenefits from "./LMSBenifits/LMSBenifits";
 import FAQSection from "./FAQSeaction";
 import LMSOptions from "./LMSOptions/LMSOptions";
 import QualitySection from "./QualitySection/QualitySection";
-import Footer from "./footer";
+import LMSComparisonTable from "./TableComponent";
 
 const HomePage = () => {
   return (
@@ -23,6 +23,7 @@ const HomePage = () => {
       <LMSOptions/>
       <QualitySection/>
       <LMSBenefits />
+      <LMSComparisonTable/>
       <div className="w-full  bg-gray-50">
         <FAQSection />
       </div>
