@@ -8,6 +8,7 @@ import salesIconMobile from "@/app/utilities/icons/sales-icon-mobile.svg"
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Image from 'next/image';
+import {FloatingBackground} from '@/app/components/ContactUsPage/LMSLanding/FloatingTriangles';
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -51,7 +52,8 @@ const ContactForm: React.FC = () => {
     ]
 
     return (
-        <div className='w-full sm:bg-[#534BEF] bg-[#FAFAFA] flex flex-col items-center pt-[91px] xl:pb-[111px] sm:pb-[91px]'>
+        <div className='w-full sm:bg-[#534BEF] bg-gradient-to-br from-[#433BDB] to-[#635BFF] bg-[#FAFAFA] flex flex-col items-center pt-[91px] xl:pb-[111px] sm:pb-[91px]'>
+            <FloatingBackground/>
             <div className="h-full w-full flex xl:flex-row flex-col items-center justify-center 3xl:gap-[221px] xl:gap-[156px] sm:gap-[48px] gap-[42px]">
                 {/* Left Section */}
                 <motion.div
@@ -98,7 +100,7 @@ const ContactForm: React.FC = () => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="w-full sm:max-w-[662px] max-w-[343px]"
+                    className="w-full sm:max-w-[662px] max-w-[343px] z-10"
                 >
                     <div className="sm:bg-white rounded-[24px] sm:p-6 p-0 sm:shadow-lg">
                         <h2 className="max-w-[276px] font-medium text-[22px] leading-[32px] text-[#131313] mb-[40px] sm:block hidden">We’d love to hear from you! Let’s Get in touch</h2>
