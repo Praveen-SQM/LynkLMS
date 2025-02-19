@@ -1,4 +1,8 @@
 import React from 'react';
+import logo from "@/app/utilities/icons/table-logo.svg";
+import moodleIcon from "@/app/utilities/icons/moodle-icon.svg"
+import talentLMSIcon from "@/app/utilities/icons/talentLMS.svg"
+import Image from 'next/image';
 
 interface LMSFeature {
     feature: string;
@@ -104,41 +108,45 @@ const features: LMSFeature[] = [
 
 const LMSComparisonTable = () => {
     return (
-        <div className='w-full py-[72px] bg-[#FAFAFA] flex flex-col items-center gap-[72px]'>
-            <div className='flex flex-col items-center gap-4 max-w-[670px]'>
-                <p className='font-bold text-[42px] leading-[57.37px] text-[#1D1A27] text-center'>LMS <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">Comparison</span>: Make an Informed Decision</p>
-                <p className='font-normal text-[16px] leading-7 text-[#1D1A27CC] text-center'>Compare LMS platforms to find the best fit for your needs.</p>
+        <div className='w-full xl:py-[72px] sm:py-[42px] py-6 bg-[#FAFAFA] flex flex-col items-center sm:gap-[72px] gap-[42px] xl:px-[120px] sm:px-[42px] px-4'>
+            <div className='flex flex-col items-center sm:gap-4 gap-2 xl:max-w-[670px] sm:max-w-[544px] max-w-[343px]'>
+                <p className='font-bold 3xl:text-[52px] 3xl:leading-[71px] xl:text-[42px] xl:leading-[57.37px] sm:text-[32px] sm:leading-[43.7px] text-[20px] leading-[27.3px] text-[#1D1A27] text-center'>LMS <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">Comparison</span>: Make an Informed Decision</p>
+                <p className='font-normal sm:text-[16px] sm:leading-7 text-[14px] leading-[19px] text-[#1D1A27CC] text-center'>Compare LMS platforms to find the best fit for your needs.</p>
             </div>
-            <div className="w-full max-w-[1200px] overflow-hidden border-[2px] border-[#E8E8E8] bg-[#FFFFFF] rounded-lg">
+            <div className="w-full 3xl:max-w-[1590px] sm:max-w-[1200px] overflow-hidden border-[2px] border-[#E8E8E8] bg-[#FFFFFF] rounded-lg">
                 <div className="overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-50">
                             <tr>
-                                <th className="sticky left-0 z-10 bg-gray-50 px-6 py-3 text-left text-sm font-semibold text-gray-900">
+                                <th className="sticky left-0 z-10 bg-[#635BFF] sm:pl-[22px] pl-3 font-bold xl:text-[20px] xl:leading-[27.3px] sm:text-[18px] sm:leading-[24.6px] text-[14px] leading-[19px] text-[#FFFFFF] text-start border-r-[1px] border-[#E5E7EB] w-[240px] h-[83px]">
                                     Features
                                 </th>
-                                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">
-                                    <div className="flex items-center space-x-2">
-                                        <span className="text-indigo-600">Lynx</span>
-                                        <span className="text-gray-500 text-xs">(OBL White-Labeled)</span>
+                                <th className="sm:px-[22px] px-3 py-[18.5px] border-r-[1px] border-[#E5E7EB] 3xl:w-[303px] sm:w-[240px] h-[83px] flex items-center justify-center">
+                                    <div className="flex items-start gap-[10px]">
+                                        <div className='w-[35.5px] h-[37.5px]'>
+                                            <Image src={logo} alt="Lynk Logo" width={35.5} height={37.5} className="w-full h-full object-contain"/>
+                                        </div>
+                                        <p className='font-medium text-[16px] leading-[22px] text-[#222222] text-start'>Lynk 
+                                        <br/><span className='text-[14px] text-[#88898A] text-nowrap'>(₹8L, White-Labeled)</span></p>
                                     </div>
                                 </th>
-                                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">
-                                    <div>
-                                        Typical Subscription LMS
-                                        <div className="text-gray-500 text-xs">(e.g., SaaS)</div>
+                                <th className="pl-[22px] pr-[27px] pt-[22px] pb-4 border-r-[1px] border-[#E5E7EB] 3xl:w-[349px] sm:w-[240px] h-[83px]">
+                                        <p className='font-medium text-[16px] leading-[22px] text-[#222222] text-nowrap text-start'>Typical Subscription LMS<br/><span className='text-[14px] text-[#88898A]'>(e.g., SaaS)</span></p>
+                                </th>
+                                <th className="pl-[22px] pr-[74px] pt-[22px] pb-4 border-r-[1px] border-[#E5E7EB] 3xl:w-[349px] sm:w-[240px] h-[83px]">
+                                    <div className='flex items-start gap-[10px]'>
+                                        <div className='w-[38px] h-[38px]'>
+                                            <Image src={moodleIcon} width={38} height={38} alt="Moodle Logo" className='w-full h-full object-contain'/>
+                                        </div>
+                                        <p className='font-medium text-[16px] leading-[22px] text-[#222222] text-nowrap text-start'>Moodle<br/><span className='text-[14px] text-[#88898A]'>(Open Source)</span></p>
                                     </div>
                                 </th>
-                                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">
-                                    <div>
-                                        Moodle
-                                        <div className="text-gray-500 text-xs">(Open Source)</div>
-                                    </div>
-                                </th>
-                                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">
-                                    <div>
-                                        Competitor LMS
-                                        <div className="text-gray-500 text-xs">(e.g., TalentLMS)</div>
+                                <th className="px-[22.5px] py-[19px] border-r-[1px] border-[#E5E7EB] 3xl:w-[349px] sm:w-[240px] h-[83px]">
+                                    <div className='flex items-center gap-[10px]'>
+                                        <div className='w-[60px] h-[30px]'>
+                                            <Image src={talentLMSIcon} width={60} height={30} alt="TalentLMS Logo" className="w-full h-full object-contain"/>
+                                        </div>
+                                        <p className='font-medium text-[16px] leading-[22px] text-[#222222] text-nowrap text-start'>Competitor LMS<br/><span className='text-[14px] text-[#88898A]'>(e.g., TalentLMS)</span></p>
                                     </div>
                                 </th>
                             </tr>
@@ -146,19 +154,19 @@ const LMSComparisonTable = () => {
                         <tbody className="divide-y divide-gray-200 bg-white">
                             {features.map((item, index) => (
                                 <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                                    <td className="sticky left-0 z-10 whitespace-normal px-6 py-4 text-sm font-medium text-gray-900 bg-inherit">
+                                    <td className="sticky left-0 z-10 whitespace-normal w-[240px] h-[82px] border-r-[1px] border-[#E5E7EB] sm:px-[22px] px-3 font-bold sm:text-[16px] sm:leading-[21.9px] text-[14px] leading-[19px] text-[#222222] bg-inherit">
                                         {item.feature}
                                     </td>
-                                    <td className="whitespace-normal px-6 py-4 text-sm text-gray-500">
+                                    <td className="whitespace-normal 3xl:w-[303px] sm:w-[240px] h-[82px] border-r-[1px] border-[#E5E7EB] sm:px-[22px] px-3 font-medium text-[14px] leading-[19px] text-[#222222]">
                                         {item.lynx}
                                     </td>
-                                    <td className="whitespace-normal px-6 py-4 text-sm text-gray-500">
+                                    <td className="whitespace-normal 3xl:w-[349px] sm:w-[240px] h-[82px] border-r-[1px] border-[#E5E7EB] sm:px-[22px] px-3 font-medium text-[14px] leading-[19px] text-[#222222] text-center">
                                         {item.typical}
                                     </td>
-                                    <td className="whitespace-normal px-6 py-4 text-sm text-gray-500">
+                                    <td className="whitespace-normal 3xl:w-[349px] sm:w-[240px] h-[82px] border-r-[1px] border-[#E5E7EB] sm:px-[22px] px-3 font-medium text-[14px] leading-[19px] text-[#222222] text-center">
                                         {item.moodle}
                                     </td>
-                                    <td className="whitespace-normal px-6 py-4 text-sm text-gray-500">
+                                    <td className="whitespace-normal 3xl:w-[349px] sm:w-[240px] h-[82px] border-r-[1px] border-[#E5E7EB] sm:px-[22px] px-3 font-medium text-[14px] leading-[19px] text-[#222222] text-center">
                                         {item.competitor}
                                     </td>
                                 </tr>
