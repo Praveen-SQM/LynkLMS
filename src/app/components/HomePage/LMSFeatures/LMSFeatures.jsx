@@ -47,7 +47,8 @@ const LMSFeatures = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-16 flex flex-col items-center ">
+    <div
+    className="max-w-6xl mx-auto px-4 py-16 flex flex-col items-center ">
       <motion.p
         className="text-center text-pink-500 font-medium mb-2"
         initial={{ opacity: 0, y: 20 }}

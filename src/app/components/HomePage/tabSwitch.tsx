@@ -86,7 +86,10 @@ const TabSwitch = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="xl:pt-[72px] xl:pb-[165px] sm:pt-[48px] pt-[42px] sm:pb-[70px] flex flex-col justify-center items-center xl:gap-[58px] sm:gap-[33.6px] gap-[32px] xl:px-0 sm:px-2">
+    <div
+      id="intuitive-lms"
+      className="xl:pt-[72px] xl:pb-[165px] sm:pt-[48px] pt-[42px] sm:pb-[70px] flex flex-col justify-center items-center xl:gap-[58px] sm:gap-[33.6px] gap-[32px] xl:px-0 sm:px-2"
+    >
       <div className="flex flex-col items-center gap-1">
         <p className="font-semibold 3xl:text-[18px] sm:text-[16px] text-[12px] sm:leading-[24px] leading-[16.39px] text-[#F47FD9]">
           INTUITIVE LMS
@@ -178,8 +181,9 @@ const TabSwitch = () => {
                 {tabOptions?.[activeTab]?.description}
               </p>
               <div
-              onClick={()=>setContactModalOpen(true)}
-              className="bg-[#ffffff] flex items-center justify-center cursor-pointer 3xl:h-[76.84px] xl:h-[53px] sm:h-[37px] 3xl:rounded-[17.19px] xl:rounded-[16px] sm:rounded-[7px] 3xl:border-[1.43px] xl:border-[1px] sm:border-[0.58px] 3xl:px-[17.19px] sm:px-3 w-fit font-semibold xl:text-[16px] xl:leading-[21px] sm:text-[12px] sm:leading-[12.16px] text-[#1D1A27]">
+                onClick={() => setContactModalOpen(true)}
+                className="bg-[#ffffff] flex items-center justify-center cursor-pointer 3xl:h-[76.84px] xl:h-[53px] sm:h-[37px] 3xl:rounded-[17.19px] xl:rounded-[16px] sm:rounded-[7px] 3xl:border-[1.43px] xl:border-[1px] sm:border-[0.58px] 3xl:px-[17.19px] sm:px-3 w-fit font-semibold xl:text-[16px] xl:leading-[21px] sm:text-[12px] sm:leading-[12.16px] text-[#1D1A27]"
+              >
                 Connect Now
               </div>
             </motion.div>

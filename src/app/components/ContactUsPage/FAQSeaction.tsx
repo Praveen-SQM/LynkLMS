@@ -99,7 +99,7 @@ const FAQSection = () => {
             </div>
           </div>
           <button
-            onClick={() => setContactModal(false)}
+            onClick={() => setContactModal(true)}
             className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors"
           >
             Get in touch
@@ -167,7 +167,7 @@ const FAQSection = () => {
           </div>
         </div>
         <button
-          onClick={() => setContactModal(false)}
+          onClick={() => setContactModal(true)}
           className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors"
         >
           Get in touch

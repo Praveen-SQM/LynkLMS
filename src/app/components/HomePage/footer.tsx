@@ -17,11 +17,15 @@ const Footer = () => {
       items: [
         {
           text: "Features",
-          href: "/",
+          href: "/#features",
         },
         {
           text: "Intuitive LMS",
-          href: "/",
+          href: "/#intuitive-lms",
+        },
+        {
+          text: "LMS Comparison",
+          href: "/#lms-comparison",
         },
       ],
     },
