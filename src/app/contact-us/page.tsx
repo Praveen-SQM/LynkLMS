@@ -10,6 +10,7 @@ import 'react-phone-input-2/lib/style.css'
 import Image from 'next/image';
 import { FloatingBackground } from '@/app/components/ContactUsPage/LMSLanding/FloatingTriangles';
 import toast from "react-hot-toast";
+import { Loader2 } from "lucide-react";
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -44,8 +45,8 @@ const ContactForm: React.FC = () => {
         }
 
         console.log("formData.phoneNumber.length", formData.phoneNumber)
-        if (formData.phoneNumber.length < 10) {
-            toast.error('Phone number should be at least 10 characters', { duration: 3000 });
+        if (formData.phoneNumber.replace(/\D/g, '').length < 12) {
+            toast.error('Phone number should consist of at least 10 digits', { duration: 3000 });
             return;
         }
 
@@ -296,11 +297,19 @@ const ContactForm: React.FC = () => {
 
                             <motion.button
                                 type="submit"
+                                disabled={loading}
                                 className="sm:w-auto w-full inline-block px-6 py-4 bg-[#EE3CD1] rounded-[8px] text-white font-medium text-[14px] leading-4 hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                Send Message
+                                {loading ? (
+                                    <div className="flex items-center">
+                                        <Loader2 className="animate-spin" />
+                                        <span className="ml-2">Please wait...</span>
+                                    </div>
+                                ) : (
+                                    <span>Send Message</span>
+                                )}
                             </motion.button>
                         </form>
                     </div>
