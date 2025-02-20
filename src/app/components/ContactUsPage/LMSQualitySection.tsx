@@ -65,7 +65,7 @@ const LMSQualitySection = () => {
   const dots=Array(4).fill(0)
 
   return (
-    <div className="w-full 3xl:pt-[120px] 3xl:pb-[120px] xl:pt-[42px] xl:pb-[218px] sm:pt-[24px] sm:pb-[92px] pt-[42px] pb-[42px] flex flex-col items-center justify-center xl:px-0 px-4 3xl:gap-[72px] xl:gap-[54px] sm:gap-8 gap-7">
+    <div className="w-full 3xl:pt-[120px] 3xl:pb-[120px] xl:pt-[42px] xl:pb-[218px] sm:pt-[24px] sm:pb-[92px] pt-[42px] pb-[42px] flex flex-col items-center 3xl:gap-[72px] xl:gap-[54px] sm:gap-8 gap-7">
       <div className="flex flex-col items-center 3xl:gap-8 xl:gap-6 sm:gap-[14px] gap-6 3xl:max-w-[1018px] xl:max-w-[771px] sm:max-w-[750px] max-w-[343px]">
         <p className="font-bold 3xl:text-[56px] 3xl:leading-[81.9px] xl:text-[42px] xl:leading-[57.4px] text-[24px] leading-[32.8px] text-[#1D1A27] text-center">
           Train diverse user groups efficiently.
@@ -76,7 +76,7 @@ const LMSQualitySection = () => {
         </p>
       </div>
 
-      <div className="relative w-full max-w-6xl xl:px-0 px-4 overflow-hidden sm:block hidden">
+      <div className="relative w-full 3xl:max-w-[1650px] xl:max-w-[1250px] sm:max-w-[767px] overflow-hidden sm:block hidden">
         {/* Prev Button */}
         <button
           className="3xl:w-[42px] 3xl:h-[42px] xl:w-9 xl:h-9 sm:h-[21px] sm:w-[21px] absolute top-[50%] left-[4px] z-10"
@@ -145,7 +145,7 @@ const LMSQualitySection = () => {
         </div>
       </div>
 
-      <div className="items-center xl:gap-2 sm:gap-[4.7px] xl:px-0 px-4 sm:flex hidden">
+      <div className="flex items-center xl:gap-2 sm:gap-[4.7px] sm:flex hidden">
         {dots?.map((_,index)=>{
             return(
                 <div key={index} className={`${currentIndex===index?"3xl:w-[20px] 3xl:h-[8px] xl:w-[15px] xl:h-[6px] sm:w-[8.8px] sm:h-[3.5px] rounded-full bg-[#000000]":"3xl:w-[8px] 3xl:h-[8px] xl:w-[6px] xl:h-[6px] sm:w-[3.5px] sm:h-[3.5px] rounded-full bg-[#000000] opacity-20"}`}></div>
