@@ -182,7 +182,7 @@ const Footer = () => {
             )}
             {submitted && (
               <p className="text-green-500 text-xs xl:text-sm mt-1">
-                Thank you! We'll be in touch soon.
+                Thank you! We&apos;ll be in touch soon.
               </p>
             )}
           </div>

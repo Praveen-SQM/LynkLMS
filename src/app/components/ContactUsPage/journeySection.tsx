@@ -4,7 +4,6 @@ import digitalTrainingImage from "@/app/utilities/images/Employee-training.svg";
 import performanceImage from "@/app/utilities/images/perfomance.svg";
 import certificateImage from "@/app/utilities/images/certificate.svg";
 import Image from "next/image";
-import { div } from "framer-motion/client";
 
 const JourneySection = () => {
   const journeyItems = [

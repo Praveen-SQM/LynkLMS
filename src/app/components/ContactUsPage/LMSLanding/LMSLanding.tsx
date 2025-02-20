@@ -1,7 +1,6 @@
 import React from "react";
 import MarketingContent from "./MarketingContent";
 import DashboardPreview from "./DashboardPreview";
-import FloatingStatsCard from "./FloatingStatsCard";
 import { FloatingBackground } from "./FloatingTriangles";
 
 const LMSLanding = () => {

@@ -127,7 +127,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
           </button>
 
           <h2 className="font-medium text-2xl md:text-[22px] leading-[32px] text-[#131313] mb-6 md:mb-[40px]">
-            We'd love to hear from you! Let's Get in touch
+            We&apos;d love to hear from you! Let&lsquo;s Get in touch
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -218,7 +218,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
                   value={formData.phoneNumber}
                   containerClass="flex-1 w-full text-[15px] relative"
                   inputClass="flex-1 w-full sm:px-4 px-3 py-3 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
-                  onChange={(value: string, data: {}, event: React.ChangeEvent<HTMLInputElement>, formattedValue: string) => handleInputChange(event)}
+                  onChange={(value: string, event: React.ChangeEvent<HTMLInputElement>) => handleInputChange(event)}
                   inputProps={{
                     name: "phoneNumber",
                     required: true

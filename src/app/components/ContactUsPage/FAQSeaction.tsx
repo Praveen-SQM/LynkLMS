@@ -73,7 +73,7 @@ const FAQSection = () => {
             <span className="text-black">.</span>
           </h1>
           <p className="text-gray-600 text-sm">
-            Let's do our best to answer your most frequently asked questions.
+            Let&apos;s do our best to answer your most frequently asked questions.
           </p>
         </div>
         <motion.div
@@ -93,7 +93,7 @@ const FAQSection = () => {
                 Still have questions?
               </h3>
               <p className="text-gray-600 text-start text-sm mb-4">
-                Can't find the answer you're looking for? Please chat to our
+                Can&apos;t find the answer you&apos;re looking for? Please chat to our
                 friendly team!
               </p>
             </div>
@@ -161,7 +161,7 @@ const FAQSection = () => {
               Still have questions?
             </h3>
             <p className="text-gray-600 text-start text-sm mb-4">
-              Can't find the answer you're looking for? Please chat to our
+              Can&apos;t find the answer you&apos;re looking for? Please chat to our
               friendly team!
             </p>
           </div>
