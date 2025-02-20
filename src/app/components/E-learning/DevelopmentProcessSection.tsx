@@ -132,7 +132,7 @@ const DevelopmentProcessSection = () => {
             <div className="flex flex-col 3xl:gap-[187px] xl:gap-[140px] sm:gap-[81px] gap-[62px]">
                 {ProcessPoints?.map((point, sectionIndex) => {
                     return (
-                        <div key={sectionIndex} className={`w-full 3xl:max-w-[1600px] xl:max-w-[1200px] sm:max-w-[750px] max-w-[343px] flex items-center 3xl:gap-[145px] xl:gap-[108px] sm:gap-[100px] sm:px-4 gap-6 ${sectionIndex === 0 ? "sm:flex-row flex-col" : "sm:flex-row-reverse flex-col"}`}>
+                        <div key={sectionIndex} className={`w-full max-w-6xl lg:px-0 px-4 flex items-center 3xl:gap-[145px] xl:gap-[108px] sm:gap-[100px] sm:px-4 gap-6 ${sectionIndex === 0 ? "sm:flex-row flex-col" : "sm:flex-row-reverse flex-col"}`}>
                             <div className="flex flex-col 3xl:gap-[56px] xl:gap-[42px] gap-6">
                                 <div className="flex flex-col 3xl:gap-4 gap-3">
                                     <p className="font-medium 3xl:text-[42px] 3xl:leading-[57.4px] xl:text-[32px] xl:leading-[43.7px] text-[18px] leading-[24px] text-[#1D1A27]">{point?.text}</p>

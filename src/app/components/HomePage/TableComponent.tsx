@@ -108,12 +108,12 @@ const features: LMSFeature[] = [
 
 const LMSComparisonTable = () => {
     return (
-        <div className='w-full xl:py-[72px] sm:py-[42px] py-6 bg-[#FAFAFA] flex flex-col items-center sm:gap-[72px] gap-[42px] xl:px-[120px] sm:px-[42px] px-4'>
+        <div className='w-full lg:px-0 pl-4 xl:py-[72px] sm:py-[42px] py-6 bg-[#FAFAFA] flex flex-col justify-center  items-center sm:gap-[72px] gap-[42px]'>
             <div className='flex flex-col items-center sm:gap-4 gap-2 xl:max-w-[670px] sm:max-w-[544px] max-w-[343px]'>
                 <p className='font-bold 3xl:text-[52px] 3xl:leading-[71px] xl:text-[42px] xl:leading-[57.37px] sm:text-[32px] sm:leading-[43.7px] text-[20px] leading-[27.3px] text-[#1D1A27] text-center'>LMS <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">Comparison</span>: Make an Informed Decision</p>
                 <p className='font-normal sm:text-[16px] sm:leading-7 text-[14px] leading-[19px] text-[#1D1A27CC] text-center'>Compare LMS platforms to find the best fit for your needs.</p>
             </div>
-            <div className="w-full 3xl:max-w-[1590px] sm:max-w-[1200px] overflow-hidden border-[2px] border-[#E8E8E8] bg-[#FFFFFF] rounded-lg">
+            <div className="overflow-hidden w-full border-[2px] max-w-6xl border-[#E8E8E8] bg-[#FFFFFF] rounded-lg">
                 <div className="overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-50">

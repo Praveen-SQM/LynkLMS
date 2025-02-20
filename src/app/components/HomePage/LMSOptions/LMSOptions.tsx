@@ -62,7 +62,7 @@ const LMSOptions = () => {
     ]
 
     return (
-        <div className="xl:py-[120px] sm:py-[92px] py-[42px] flex flex-col xl:gap-[48px] sm:gap-[55px] gap-[34px] bg-[#FAFAFA] items-center">
+        <div className="xl:py-[120px] sm:py-[92px] py-[42px] flex flex-col justify-between xl:gap-[48px] sm:gap-[55px] gap-[34px] bg-[#FAFAFA] items-center">
             <p className="font-bold 3xl:text-[52px] 3xl:leading-[71px] xl:text-[42px] xl:leading-[57.37px] sm:text-[32px] sm:leading-[43.71px] text-[24px] leading-[32.78px] text-center text-[#1D1A27]">Boost Learning with Custom <br />
                 LMS <span style={{
                     background: "linear-gradient(89.86deg, #EE3CD1 6.14%, #635BFF 84.43%)",
@@ -71,7 +71,7 @@ const LMSOptions = () => {
                     fontWeight: "bold",
                 }}>Features</span></p>
 
-            <div className="grid sm:grid-cols-3 grid-cols-2 xl:gap-6 sm:gap-3 gap-2 xl:max-w-[1110px] 3xl:max-w-[1590px] sm:max-w-[713px] max-w-[347px]">
+            <div className="grid sm:grid-cols-3 max-w-6xl grid-cols-2 xl:gap-6 sm:gap-3 gap-2 w-full px-4 lg:px-0 ">
                 {lmsFeatures?.map((feature,index)=>{
                     return(
                         <div key={index} className="flex flex-col sm:rounded-[20px] rounded-[12px] xl:p-10 p-4 xl:gap-5 gap-2 bg-[#ffffff]">

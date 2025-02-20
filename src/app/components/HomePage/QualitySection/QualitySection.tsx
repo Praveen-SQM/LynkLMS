@@ -44,13 +44,13 @@ const QualitySection = () => {
     ]
 
     return (
-        <div className="xl:py-[100px] sm:py-[72px] py-[42px] flex flex-col xl:gap-[92px] sm:gap-[52px] gap-[46px] xl:px-0 sm:px-4 items-center">
-            <div className="flex flex-col xl:gap-[68px] sm:gap-[38px] gap-7 items-center">
+        <div className="xl:py-[100px] sm:py-[72px] py-[42px] flex flex-col xl:gap-[92px] sm:gap-[52px] gap-[46px] xl:px-0 sm:px-4 justify-center items-center">
+            <div className="flex flex-col xl:px-0 px-4 max-w-6xl xl:gap-[68px] sm:gap-[38px] gap-7 items-center">
                 <div className="flex flex-col xl:gap-4 sm:gap-[10px] gap-2 items-center">
                     <p className="font-bold 3xl:text-[48px] 3xl:leading-10 xl:text-[36px] xl:leading-[40px] sm:text-[32px] sm:leading-[43.71px] text-[24px] leading-[32.8px] text-[#1D1A27]">Fast. Reliable. Effective.</p>
                     <p className="font-normal 3xl:text-[20px] 3xl:leading-[27.32px] xl:text-[16px] xl:leading-[21.86px] text-[14px] leading-[19.12px] text-[#1D1A27CC] xl:max-w-full sm:max-w-[612px] max-w-[343px]">With 24/7 customer support, robust quality assurance, and a user-friendly interface, we ensure a hassle-free and effective learning experience. </p>
                 </div>
-                <div className="grid sm:grid-cols-3 grid-cols-2 justify-between 3xl:max-w-[1590px] 3xl:gap-[60px] xl:max-w-[1110px] xl:gap-[15px] sm:max-w-[750px] max-w-[343px] gap-[12px]">
+                <div className="grid sm:grid-cols-3 grid-cols-2 justify-between 3xl:gap-[60px] xl:gap-[15px] w-full gap-[12px]">
                     {qualities?.map((quality, index) => {
                         return (
                             <div key={index} className={`3xl:rounded-[58px] xl:rounded-[42px] rounded-[25px] 3xl:py-[54.5px] xl:py-10 py-6 3xl:px-[46.3px] xl:px-[34px] px-5 bg-[#635BFF] flex flex-col 3xl:gap-[32.7px] xl:gap-6 gap-3 w-full ${index === qualities.length - 1 ? "col-span-2 sm:col-span-1" : ""} `}>
@@ -66,7 +66,7 @@ const QualitySection = () => {
                     })}
                 </div>
             </div>
-            <div className="flex sm:flex-row flex-col items-center justify-between gap-[46px] 3xl:max-w-[1590px] xl:max-w-[1110px] sm:max-w-[750px] max-w-[343px] w-full">
+            <div className="flex sm:flex-row max-w-6xl flex-col items-center justify-between gap-[46px] w-full">
                 <div className="relative">
                     <div className="3xl:w-9 3xl:h-9 xl:w-7 xl:h-7 w-5 h-5 absolute left-[0px] top-[31%] animate-float">
                         <Image src={phoneCallIcon} alt="image" width={28} height={28} className="w-full h-full object-cover"/>
