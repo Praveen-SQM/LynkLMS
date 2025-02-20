@@ -1,5 +1,5 @@
 import React from "react";
-import { Clock, Layout, Star, Building2, CircleDollarSign } from "lucide-react";
+import { Layout, Star, Building2, CircleDollarSign } from "lucide-react";
 import Image from "next/image";
 import logoWhite from "@/app/utilities/images/logo_white.svg";
 const benefitsData = [

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-let interval: any;
+let interval: NodeJS.Timeout
 
 type Card = {
   id: number;

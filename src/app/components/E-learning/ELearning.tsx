@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Clock, Book, Award, Users } from "lucide-react";
 import image1 from "@/utills/images/Training-containt-1.svg";
 import image2 from "@/utills/images/Training-containt-2.svg";
 import image3 from "@/utills/images/Training-containt-3.svg";

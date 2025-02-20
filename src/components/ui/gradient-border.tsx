@@ -1,7 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const GradientBorder = ({ children, className = "" }: any) => {
+const GradientBorder: React.FC<{ children: React.ReactNode; className?: string }> = ({
+  children,
+  className = "",
+}) => {
   // Create gradient animation keyframes
   const gradientAnimation = {
     background: [

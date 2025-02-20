@@ -9,12 +9,12 @@ import Image from "next/image";
 
 const DashboardPreview = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
-  const [autoChange, setAutoChange] = useState(true);
+  const [autoChange] = useState(true);
 
   useEffect(() => {
     if (!autoChange) return;
 
-    const tabs = ["dashboard", "course", "learning-plans", "content-library"];
+    // const tabs = ["dashboard", "course", "learning-plans", "content-library"];
     // const interval = setInterval(() => {
     //   setActiveTab((current) => {
     //     const currentIndex = tabs.indexOf(current);
@@ -63,7 +63,10 @@ const DashboardPreview = () => {
   );
 };
 
-const Sidebar = ({ activeTab, setActiveTab }: any) => {
+const Sidebar = ({ activeTab, setActiveTab }: {
+  activeTab: string;
+  setActiveTab: (tab: string) => void;
+}) => {
   return (
     <div className="col-span-3 bg-gray-50">
       <div className="p-1 md:p-2">
@@ -111,7 +114,7 @@ const Sidebar = ({ activeTab, setActiveTab }: any) => {
   );
 };
 
-const MainContent = ({ activeTab }: any) => {
+const MainContent = ({ activeTab }: {activeTab:string}) => {
   return (
     <div className="col-span-9 bg-gray-100">
       <AnimatePresence mode="wait">
