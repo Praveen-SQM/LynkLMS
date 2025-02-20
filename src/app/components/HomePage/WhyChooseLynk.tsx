@@ -9,6 +9,8 @@ import feature1 from "@/app/utilities/images/feature-1.svg";
 import feature2 from "@/app/utilities/images/feature-2.svg";
 import feature3 from "@/app/utilities/images/feature-3.svg";
 import feature4 from "@/app/utilities/images/feature-4.svg";
+
+import tickIcon from "@/app/utilities/icons/tick_green.svg"
 import Image from "next/image";
 
 const features: FeatureItem[] = [
@@ -24,27 +26,27 @@ const features: FeatureItem[] = [
   {
     title: "Scalable & Advance Insights",
     points: [
-      "Seamlessly grow with new features, users, and tools",
-      "Analytics and reporting to track effectiveness",
-      "Supports growing user bases and tools",
+      "Seamlessly grow with new features, users, and tools.",
+      "Analytics and reporting to track effectiveness.",
+      "Supports growing user bases and tools.",
     ],
     image: feature2,
   },
   {
     title: "Compliance Ready",
     points: [
-      "Supports SCORM and xAPI standards",
-      "Ensures smooth integration with e-learning tools",
-      "Meets global compliance requirements",
+      "Supports SCORM and xAPI standards.",
+      "Ensures smooth integration with e-learning tools.",
+      "Meets global compliance requirements.",
     ],
     image: feature3,
   },
   {
-    title: "Coast Effective & Engagement Focused",
+    title: "Cost Effective & Engagement Focused",
     points: [
-      "Saves 41% compared to subscription-based models",
+      "Saves ₹15L–₹30L compared to subscription-based models.",
       "Reduces long-term operational costs",
-      "Provides better ROI with needed infrastructure",
+      "Provides better ROI with owned infrastructure.",
     ],
     image: feature4,
   },
@@ -99,7 +101,7 @@ const WhyChooseLynk = () => {
                           key={index}
                           className="flex items-center justify-start font-Manrope font-semibold text-[14px] leading-[19.12px] tracking-[-0.28px] text-[#1D1A27CC]"
                         >
-                          <CheckCircle2Icon className="xl:mr-2 mr-1 h-4 w-4 text-green-500" />{" "}
+                         <Image src={tickIcon} alt="tickIcon" className="mr-2"/>
                           {point}
                         </p>
                       ))}

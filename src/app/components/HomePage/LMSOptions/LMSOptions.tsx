@@ -92,7 +92,7 @@ const LMSOptions = () => {
           return (
             <div
               key={index}
-              className="flex flex-col sm:rounded-[20px] rounded-[12px] xl:p-10 p-4 xl:gap-5 gap-2 bg-[#ffffff]"
+              className="flex flex-col sm:rounded-[20px] transition-colors rounded-[12px] xl:p-10 p-4 xl:gap-5 gap-2 bg-[#ffffff] border-2 border-transparent hover:border-red-500 hover:border-2"
             >
               <div className="xl:w-[32px] xl:h-[32px] h-6 w-6">
                 <Image

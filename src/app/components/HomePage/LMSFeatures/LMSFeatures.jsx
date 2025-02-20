@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles, Rocket, Users, Heart } from "lucide-react";
-
+import UsersGroupWhite from "@/app/utilities/icons/users-white.svg";
+import Image from "next/image";
 const FeatureCard = ({ icon: Icon, title, description, delay }) => (
   <motion.div
     className="group flex flex-col items-center text-center shadow-[#6459ff16] transition-all hover:shadow-gray-400 hover:bg-[#6559FF] text-gray-900 shadow-2xl rounded-3xl p-6 py-12 lg:py-20"
@@ -11,7 +12,11 @@ const FeatureCard = ({ icon: Icon, title, description, delay }) => (
     viewport={{ once: true }}
   >
     <div className="w-14 h-14 lg:w-20 lg:h-20 bg-[#6559FF] rounded-full flex items-center justify-center mb-4 group-hover:bg-white transition-all">
-      <Icon className="w-5 h-5 lg:w-6 lg:h-6 text-white group-hover:text-[#6559FF] transition-all" />
+      {Icon === Users ? (
+        <Image src={UsersGroupWhite} alt="icon" />
+      ) : (
+        <Icon className="w-5 h-5 lg:w-6 lg:h-6 text-white group-hover:text-[#6559FF] transition-all" />
+      )}
     </div>
     <h3 className="lg:text-lg font-bold sm:font-semibold mb-2 group-hover:text-white transition-all">
       {title}
@@ -47,8 +52,7 @@ const LMSFeatures = () => {
   ];
 
   return (
-    <div
-    className="max-w-6xl mx-auto px-4 py-16 flex flex-col items-center ">
+    <div className="max-w-6xl mx-auto px-4 py-16 flex flex-col items-center ">
       <motion.p
         className="text-center text-pink-500 font-medium mb-2"
         initial={{ opacity: 0, y: 20 }}

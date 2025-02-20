@@ -2,9 +2,11 @@ import React from "react";
 import { Layout, Star, Building2, CircleDollarSign } from "lucide-react";
 import Image from "next/image";
 import logoWhite from "@/app/utilities/images/logo_white.svg";
+import unifiedSolution from "@/app/utilities/icons/group-blue.svg";
+
 const benefitsData = [
   {
-    icon: <Layout className="w-6 h-6 text-indigo-500 " />,
+    icon: unifiedSolution,
     title: "Unified Solution",
     description:
       "Single provider for technology and content ensures consistency.",
@@ -73,7 +75,16 @@ const LMSBenefits = () => {
             >
               <div className="flex items-center gap-4 font-semibold mb-2">
                 <div className="p-2 bg-[#5a52f53f] w-fit rounded-md">
-                  {benefit.icon}
+                  {benefit.icon === unifiedSolution ? (
+                    <Image
+                      width={25}
+                      src={unifiedSolution}
+                      alt=""
+                      className="h-6"
+                    />
+                  ) : (
+                    benefit.icon
+                  )}
                 </div>
                 <h3 className="text-base lg:text-xl">{benefit.title}</h3>
               </div>{" "}
@@ -100,7 +111,6 @@ const LMSBenefits = () => {
               {/* <div className="absolute w-1 h-1 rounded-full bg-blue-200 shadow shadow-blue-500 -mt-[3px] animate-[moveLeft_6s_linear_infinite]" /> */}
             </div>
           </div>
-          
         </div>
       </div>
     </div>

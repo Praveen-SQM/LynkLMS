@@ -97,7 +97,7 @@ const QualitySection = () => {
                             })}
                         </div>
                     </div>
-                    <Link href={"/contact-us"} className="bg-[#EE3CD1] 3xl:h-[57px] xl:h-12 h-[37.5px] xl:rounded-[8px] rounded-[4.63px] xl:px-6 px-[14px] w-fit flex items-center justify-center font-bold 3xl:text-[18px] 3xl:leading-[25px] xl:text-[16px] xl:leading-4 text-[14px] leading-[19.12px] text-center text-[#FFFFFF]">Contact Us</Link>
+                    <Link href={"/contact-us"} className="bg-[#EE3CD1] float-start max-w-[280px] 3xl:h-[57px] xl:h-12 h-[37.5px] xl:rounded-[8px] rounded-[4.63px] xl:px-6 px-[14px] w-full flex items-center justify-center font-bold 3xl:text-[18px] 3xl:leading-[25px] xl:text-[16px] xl:leading-4 text-[14px] leading-[19.12px] text-center text-[#FFFFFF]">Contact Us</Link>
                 </div>
             </div>
         </div>
