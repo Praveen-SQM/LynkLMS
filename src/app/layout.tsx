@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 import { NavbarTop } from "./components/HomePage/NavbarMenu/Navbar";
 import Footer from "./components/HomePage/footer";
 
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${manrope.variable} antialiased`}>
         <NavbarTop />
+        <Toaster />
         {children}
 
         <Footer />

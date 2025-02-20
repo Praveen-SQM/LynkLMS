@@ -8,7 +8,8 @@ import salesIconMobile from "@/app/utilities/icons/sales-icon-mobile.svg"
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Image from 'next/image';
-import {FloatingBackground} from '@/app/components/ContactUsPage/LMSLanding/FloatingTriangles';
+import { FloatingBackground } from '@/app/components/ContactUsPage/LMSLanding/FloatingTriangles';
+import toast from "react-hot-toast";
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -20,9 +21,11 @@ const ContactForm: React.FC = () => {
     });
 
     const [messageCount, setMessageCount] = useState(0);
+    const [loading, setLoading] = useState(false)
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
+        console.log("name", name,"value", value)
         setFormData({ ...formData, [name]: value });
 
         if (name === 'message') {
@@ -30,10 +33,70 @@ const ContactForm: React.FC = () => {
         }
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         // Handle form submission logic here
         console.log('Form submitted:', formData);
+
+        if (!formData.phoneNumber) {
+            toast.error('Please enter phone number', { duration: 3000 });
+            return;
+        }
+
+        console.log("formData.phoneNumber.length", formData.phoneNumber)
+        if (formData.phoneNumber.length < 10) {
+            toast.error('Phone number should be at least 10 characters', { duration: 3000 });
+            return;
+        }
+
+        setLoading(true);
+        try {
+            const response = await fetch('/api/sendEmail', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    to: [process.env.NEXT_PUBLIC_EMAIL_TO],
+                    cc: [process.env.NEXT_PUBLIC_EMAIL_CC, process.env.NEXT_PUBLIC_EMAIL_CC_2, process.env.NEXT_PUBLIC_EMAIL_CC_3],
+                    bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
+                    message: {
+                        subject: "GENERAL INQUIRY From Lync website",
+                        text: 'YOUR TEXT',
+                        html: `
+          <html>
+            <head></head>
+            <body>
+              <p>Hello Team</p>
+              <p><b>Full Name:</b> ${formData.firstName}  ${formData.lastName}</p>
+              <p><b>Email:</b> ${formData.email}</p>
+              <p><b>Phone number: </b> ${formData.phoneNumber}</p>
+              <p><b>Message:</b> ${formData.message}</p>
+              <br>
+              <p>Thank you & Regards,<br><b>Team</b></p>
+            </body>
+          </html>`,
+                    },
+                }),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                toast.success(result.message, { duration: 3000 });
+                setFormData({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    phoneNumber: '',
+                    message: '',
+                })
+            } else {
+                toast.error(result.message || 'Failed to send email', { duration: 3000 });
+            }
+        } catch (error) {
+            toast.error('An error occurred while sending the email');
+            console.error('Error sending email:', error);
+        } finally {
+            setLoading(false);
+        }
     };
 
     const enquiryList = [
@@ -54,7 +117,7 @@ const ContactForm: React.FC = () => {
     return (
         <div className='w-full sm:bg-[#534BEF] sm:bg-gradient-to-br sm:from-[#433BDB] sm:to-[#635BFF] bg-[#FAFAFA] flex flex-col items-center pt-[91px] xl:pb-[111px] sm:pb-[91px]'>
             <div className='sm:block hidden'>
-            <FloatingBackground/>
+                <FloatingBackground />
             </div>
             <div className="h-full w-full flex xl:flex-row flex-col items-center justify-center 3xl:gap-[221px] xl:gap-[156px] sm:gap-[48px] gap-[42px]">
                 {/* Left Section */}
@@ -162,30 +225,6 @@ const ContactForm: React.FC = () => {
                                     <label htmlFor="phoneNumber" className="block font-normal sm:text-[13.9px] sm:leading-[14.2px] text-[14px] leading-[19px] text-[#131313] mb-2">
                                         Phone Number<span className="text-red-500">*</span>
                                     </label>
-                                    {/* <div className="flex">
-                                        <div className="flex items-center border border-gray-300 rounded-l-md px-3 bg-gray-50">
-                                            <img src="https://flagcdn.com/w20/in.png" alt="India flag" className="w-5 h-auto mr-1" />
-                                            <span>+91</span>
-                                        </div>
-                                        <input
-                                            type="tel"
-                                            id="phoneNumber"
-                                            name="phoneNumber"
-                                            value={formData.phoneNumber}
-                                            onChange={handleInputChange}
-                                            placeholder="Phone number"
-                                            className="flex-1 w-full sm:px-4 px-3 py-3 border border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
-                                            required
-                                        />
-                                    </div> */}
-                                    {/* <PhoneInput
-                                        country={'in'}
-                                        value={formData.phoneNumber}
-                                        onChange={(value: string, data: {}, event: React.ChangeEvent<HTMLInputElement>, formattedValue: string) => handleInputChange(event)}
-                                        containerStyle={{width: '100%', height: '69%'}}
-                                        inputStyle={{width: '100%', height: '69%'}}
-                                        className="flex-1 w-full h-full border border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
-                                    /> */}
                                     <PhoneInput
                                         inputStyle={{
                                             width: "100%",
@@ -193,9 +232,13 @@ const ContactForm: React.FC = () => {
                                         }}
                                         country={"in"}
                                         value={formData.phoneNumber}
-                                        containerClass="flex-1 w-full text-[15px] relative "
+                                        containerClass="flex-1 w-full text-[15px] relative"
                                         inputClass="flex-1 w-full sm:px-4 px-3 py-3 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
                                         onChange={(value: string, data: {}, event: React.ChangeEvent<HTMLInputElement>, formattedValue: string) => handleInputChange(event)}
+                                        inputProps={{
+                                            name: "phoneNumber",
+                                            required: true
+                                        }}
                                     />
                                 </div>
                             </div>
