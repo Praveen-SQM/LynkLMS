@@ -8,8 +8,11 @@ import trainingProvider from "../../../../public/training-provider.png";
 import corporates from "../../../../public/corporates.png";
 import EduInstitute from "../../../../public/Edu-institute.png";
 import { motion, AnimatePresence } from "framer-motion";
+import ContactModal from "../contactModal";
 
 const TabSwitch = () => {
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+
   const highlightWords = [
     "Education",
     "Corporate",
@@ -174,7 +177,9 @@ const TabSwitch = () => {
               <p className="font-normal xl:text-[16px] xl:leading-6 sm:text-[14px] sm:leading-[19.12px] text-[#1D1A27CC]">
                 {tabOptions?.[activeTab]?.description}
               </p>
-              <div className="bg-[#ffffff] flex items-center justify-center cursor-pointer 3xl:h-[76.84px] xl:h-[53px] sm:h-[37px] 3xl:rounded-[17.19px] xl:rounded-[16px] sm:rounded-[7px] 3xl:border-[1.43px] xl:border-[1px] sm:border-[0.58px] 3xl:px-[17.19px] sm:px-3 w-fit font-semibold xl:text-[16px] xl:leading-[21px] sm:text-[12px] sm:leading-[12.16px] text-[#1D1A27]">
+              <div
+              onClick={()=>setContactModalOpen(true)}
+              className="bg-[#ffffff] flex items-center justify-center cursor-pointer 3xl:h-[76.84px] xl:h-[53px] sm:h-[37px] 3xl:rounded-[17.19px] xl:rounded-[16px] sm:rounded-[7px] 3xl:border-[1.43px] xl:border-[1px] sm:border-[0.58px] 3xl:px-[17.19px] sm:px-3 w-fit font-semibold xl:text-[16px] xl:leading-[21px] sm:text-[12px] sm:leading-[12.16px] text-[#1D1A27]">
                 Connect Now
               </div>
             </motion.div>
@@ -207,14 +212,21 @@ const TabSwitch = () => {
                 <p className="font-normal text-[14px] leading-[24px] text-[#1D1A27CC]">
                   {tab?.description}
                 </p>
-                <div className="h-12 rounded-[12px] border p-3 bg-[#ffffff] border-[#D9D8FF] font-semibold text-[14px] leading-[21px] text-[#1C1C1F]">
+                <button
+                  onClick={() => setContactModalOpen(true)}
+                  className="h-12 rounded-[12px] border p-3 bg-[#ffffff] border-[#D9D8FF] font-semibold text-[14px] leading-[21px] text-[#1C1C1F]"
+                >
                   Connect Now
-                </div>
+                </button>
               </div>
             </div>
           );
         })}
       </div>
+      <ContactModal
+        isOpen={contactModalOpen}
+        onClose={() => setContactModalOpen(false)}
+      />
     </div>
   );
 };

@@ -25,7 +25,7 @@ const ContactForm: React.FC = () => {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        console.log("name", name,"value", value)
+        console.log("name", name, "value", value)
         setFormData({ ...formData, [name]: value });
 
         if (name === 'message') {
@@ -221,7 +221,7 @@ const ContactForm: React.FC = () => {
                                     />
                                 </div>
 
-                                <div>
+                                {/* <div>
                                     <label htmlFor="phoneNumber" className="block font-normal sm:text-[13.9px] sm:leading-[14.2px] text-[14px] leading-[19px] text-[#131313] mb-2">
                                         Phone Number<span className="text-red-500">*</span>
                                     </label>
@@ -229,6 +229,38 @@ const ContactForm: React.FC = () => {
                                         inputStyle={{
                                             width: "100%",
                                             height: "50px"
+                                        }}
+                                        country={"in"}
+                                        value={formData.phoneNumber}
+                                        containerClass="flex-1 w-full text-[15px] relative"
+                                        inputClass="flex-1 w-full sm:px-4 px-3 py-3 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
+                                        onChange={(value: string, data: {}, event: React.ChangeEvent<HTMLInputElement>, formattedValue: string) => handleInputChange(event)}
+                                       
+                                    />
+                                </div> */}
+                                <div>
+                                    <label
+                                        htmlFor="phoneNumber"
+                                        className="block font-normal sm:text-[13.9px] sm:leading-[14.2px] text-[14px] leading-[19px] text-[#131313] mb-2"
+                                    >
+                                        Phone Number<span className="text-red-500">*</span>
+                                    </label>
+                                    <PhoneInput
+                                        inputStyle={{
+                                            width: "100%",
+                                            height: "45px",
+                                            border: "1px solid #ECEEF3",
+                                        }}
+                                        buttonStyle={{
+                                            background: "white",
+                                            border: "1px solid #ECEEF3",
+                                        }}
+                                        dropdownStyle={{
+                                            fontSize: "12px",
+                                            boxShadow: "none",
+                                            border: "1px solid #ECEEF3",
+                                            borderRadius: "4px",
+                                            scrollbarWidth: "none",
                                         }}
                                         country={"in"}
                                         value={formData.phoneNumber}

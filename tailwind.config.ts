@@ -63,22 +63,22 @@ export default {
         expand: {
           "0%": {
             transform: "scale(1)",
-            backgroundColor: "rgba(99, 102, 241, 0.1)", // Default color
+            // backgroundColor: "rgba(99, 102, 241)", // Default color
           },
           "50%": {
-            transform: "scale(1.05)",
-            backgroundColor: "rgba(99, 102, 241, 0.2)", // Color on expand
+            transform: "scale(1.03)",
+            // backgroundColor: "rgba(99, 102, 241)", // Color on expand
           },
           "100%": {
             transform: "scale(1)",
-            backgroundColor: "rgba(99, 102, 241, 0.1)",
+            // backgroundColor: "rgba(99, 102, 241)",
           },
         },
       },
       animation: {
         "expand-outer": "expand 1.5s infinite ease-in-out",
-        "expand-middle": "expand 1.5s 0.3s infinite ease-in-out", // Slight delay
-        "expand-inner": "expand 1.5s 0.6s infinite ease-in-out", // More delay
+        "expand-middle": "expand 1.5s 0.5s infinite ease-in-out", // Slight delay
+        "expand-inner": "expand 1.5s 1.0s infinite ease-in-out", // More delay
       },
     },
   },
