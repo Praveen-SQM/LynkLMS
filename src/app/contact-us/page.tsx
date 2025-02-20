@@ -26,7 +26,6 @@ const ContactForm: React.FC = () => {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        console.log("name", name, "value", value)
         setFormData({ ...formData, [name]: value });
 
         if (name === 'message') {

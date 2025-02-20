@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import toast from "react-hot-toast";
+import { Loader2 } from "lucide-react";
 
 const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -14,22 +16,81 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
 
   const [messageCount, setMessageCount] = useState(0);
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const [loading, setLoading] = useState(false)
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
-    if (name === "message") {
+    if (name === 'message') {
       setMessageCount(value.length);
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission logic here
-    console.log("Form submitted:", formData);
-    onClose(); // Close modal after submission
+    console.log('Form submitted:', formData);
+
+    if (!formData.phoneNumber) {
+      toast.error('Please enter phone number', { duration: 3000 });
+      return;
+    }
+
+    console.log("formData.phoneNumber.length", formData.phoneNumber)
+    if (formData.phoneNumber.replace(/\D/g, '').length < 12) {
+      toast.error('Phone number should consist of at least 10 digits', { duration: 3000 });
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          to: [process.env.NEXT_PUBLIC_EMAIL_TO],
+          cc: [process.env.NEXT_PUBLIC_EMAIL_CC, process.env.NEXT_PUBLIC_EMAIL_CC_2, process.env.NEXT_PUBLIC_EMAIL_CC_3],
+          bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
+          message: {
+            subject: "GENERAL INQUIRY From Lync website",
+            text: 'YOUR TEXT',
+            html: `
+          <html>
+            <head></head>
+            <body>
+              <p>Hello Team</p>
+              <p><b>Full Name:</b> ${formData.firstName}  ${formData.lastName}</p>
+              <p><b>Email:</b> ${formData.email}</p>
+              <p><b>Phone number: </b> ${formData.phoneNumber}</p>
+              <p><b>Message:</b> ${formData.message}</p>
+              <br>
+              <p>Thank you & Regards,<br><b>Team</b></p>
+            </body>
+          </html>`,
+          },
+        }),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        toast.success(result.message, { duration: 3000 });
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phoneNumber: '',
+          message: '',
+        })
+      } else {
+        toast.error(result.message || 'Failed to send email', { duration: 3000 });
+      }
+    } catch (error) {
+      toast.error('An error occurred while sending the email');
+      console.error('Error sending email:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -42,11 +103,11 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
       className="fixed inset-0 z-50 flex items-center justify-center"
       style={{ backdropFilter: "blur(8px)" }}
     >
-      <div 
+      <div
         className="absolute inset-0 bg-white/30"
         onClick={onClose}
       />
-      
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -157,8 +218,10 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
                   value={formData.phoneNumber}
                   containerClass="flex-1 w-full text-[15px] relative"
                   inputClass="flex-1 w-full sm:px-4 px-3 py-3 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
-                  onChange={(value) => {
-                    setFormData({ ...formData, phoneNumber: value });
+                  onChange={(value: string, data: {}, event: React.ChangeEvent<HTMLInputElement>, formattedValue: string) => handleInputChange(event)}
+                  inputProps={{
+                    name: "phoneNumber",
+                    required: true
                   }}
                 />
               </div>
@@ -199,11 +262,19 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
 
               <motion.button
                 type="submit"
-                className="px-6 py-4 bg-[#EE3CD1] rounded-[8px] text-white font-medium text-[14px] leading-4 hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50"
+                disabled={loading}
+                className="sm:w-auto w-full inline-block px-6 py-4 bg-[#EE3CD1] rounded-[8px] text-white font-medium text-[14px] leading-4 hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Send Message
+                {loading ? (
+                  <div className="flex items-center">
+                    <Loader2 className="animate-spin" />
+                    <span className="ml-2">Please wait...</span>
+                  </div>
+                ) : (
+                  <span>Send Message</span>
+                )}
               </motion.button>
             </div>
           </form>
