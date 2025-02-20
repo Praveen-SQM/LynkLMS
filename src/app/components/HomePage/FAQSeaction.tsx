@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion"; // Import motion from framer-motion
+import ContactModal from "../contactModal";
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
+  const [contactModal, setContactModal] = useState(false);
 
   const faqs = [
     {
@@ -96,7 +98,10 @@ const FAQSection = () => {
               </p>
             </div>
           </div>
-          <button className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors">
+          <button
+            onClick={() => setContactModal(false)}
+            className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors"
+          >
             Get in touch
           </button>
         </motion.div>
@@ -161,10 +166,17 @@ const FAQSection = () => {
             </p>
           </div>
         </div>
-        <button className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors">
+        <button
+          onClick={() => setContactModal(false)}
+          className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors"
+        >
           Get in touch
         </button>
       </motion.div>
+      <ContactModal
+        isOpen={contactModal}
+        onClose={() => setContactModal(false)}
+      />
     </div>
   );
 };
