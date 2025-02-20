@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import logo from "@/app/utilities/icons/lynk-logo.svg";
+import toast from 'react-hot-toast';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
@@ -53,36 +54,84 @@ const Footer = () => {
         return regex.test(email);
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         // Reset states
         setError('');
-        
+
         // Validate empty email
         if (!email.trim()) {
             setError('Please enter your email address');
             return;
         }
-        
+
         // Validate email format
         if (!validateEmail(email)) {
             setError('Please enter a valid email address');
             return;
         }
-        
+
         // Submit the form
         setIsSubmitting(true);
-        
-        // Simulate API call
-        setTimeout(() => {
+
+        try {
+            const response = await fetch("/api/sendEmail", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    to: [process.env.NEXT_PUBLIC_EMAIL_TO],
+                    cc: [process.env.NEXT_PUBLIC_EMAIL_CC_2],
+                    bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
+                    message: {
+                        subject: "Response Request on Email",
+                        text: `Response Requested for Email: ${email}`,
+                        html: `
+                <html>
+                  <head></head>
+                  <body>
+                    <p>Hello Team,</p>
+                    <p>A user has requested a Response on Email from Lync.</p>
+                    <p><b>Email:</b> ${email}</p>
+                    <br>
+                    <p>Thank you & Regards,<br><b>Team</b></p>
+                  </body>
+                </html>`,
+                    },
+                }),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                toast.success("Request on email Requested successfully");
+                setIsSubmitting(false);
+                setSubmitted(true);
+                setEmail('');
+
+                // Reset success message after 3 seconds
+                setTimeout(() => {
+                    setSubmitted(false);
+                }, 3000);
+            } else {
+                toast.error(result.message || "Failed to send callback request");
+            }
+        } catch (error) {
+            toast.error("An error occurred while sending the callback request");
+            console.error("Error sending callback request:", error);
+        } finally {
             setIsSubmitting(false);
-            setSubmitted(true);
-            setEmail('');
-            
-            // Reset success message after 3 seconds
-            setTimeout(() => {
-                setSubmitted(false);
-            }, 3000);
-        }, 1000);
+
+        }
+
+        // Simulate API call
+        // setTimeout(() => {
+        //     setIsSubmitting(false);
+        //     setSubmitted(true);
+        //     setEmail('');
+
+        //     // Reset success message after 3 seconds
+        //     setTimeout(() => {
+        //         setSubmitted(false);
+        //     }, 3000);
+        // }, 1000);
     }
 
     return (
@@ -92,9 +141,9 @@ const Footer = () => {
                     <span className='text-[#635BFF]'>respond promptly.</span> </p>
                 <div className='flex flex-col w-full xl:max-w-[498px] sm:max-w-[236px] max-w-[278px] gap-2'>
                     <div className='xl:h-[75px] h-[36px] xl:rounded-[16px] rounded-[7px] xl:border-[1.34px] border-[0.58px] border-[#2B2D31] xl:p-[10.7px] p-[4px] flex items-center justify-between w-full'>
-                        <input 
-                            type='text' 
-                            placeholder='Email address' 
+                        <input
+                            type='text'
+                            placeholder='Email address'
                             value={email}
                             onChange={(e) => {
                                 setEmail(e.target.value);
@@ -102,7 +151,7 @@ const Footer = () => {
                             }}
                             className={`font-normal xl:text-[17.27px] xl:leading-[23.6px] text-[12px] leading-[16.4px] placeholder:text-[#7A8089] text-[#FFFFFF] bg-transparent outline-none w-full ${error ? 'border-red-500' : ''}`}
                         />
-                        <button 
+                        <button
                             onClick={handleSubmit}
                             disabled={isSubmitting}
                             className={`xl:h-[53.5px] sm:h-[26px] xl:rounded-[10.7px] rounded-[4px] xl:py-[10.7px] xl:px-[10.7px] sm:py-1 py-[6px] sm:px-2 px-3 ${isSubmitting ? 'bg-[#4F4BAF]' : 'bg-[#635BFF]'} cursor-pointer font-medium xl:text-[18.73px] xl:leading-[25.6px] sm:text-[13px] sm:leading-[17.6px] text-[12px] leading-[16.3px] text-[#ffffff] flex justify-center items-center text-nowrap transition-all`}
