@@ -100,7 +100,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center"
+      className="fixed inset-0 z-[1000] flex items-center justify-center"
       style={{ backdropFilter: "blur(8px)" }}
     >
       <div
@@ -252,13 +252,13 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
             </div>
 
             <div className="flex justify-between items-center pt-2">
-              <button
+              {/* <button
                 type="button"
                 onClick={onClose}
                 className="text-gray-600 font-medium text-[14px] hover:text-gray-800"
               >
                 Cancel
-              </button>
+              </button> */}
 
               <motion.button
                 type="submit"
