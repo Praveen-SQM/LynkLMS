@@ -146,7 +146,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="flex justify-center w-full lg:px-0 px-4 bg-[#090909]">
+    <div className="flex justify-center w-full 2xl:px-0 px-4 bg-[#090909]">
       <div className="xl:pt-[72px] w-full max-w-6xl sm:pt-[42px] pt-7 xl:pb-6 sm:pb-4 pb-7 flex flex-col xl:gap-[111px] sm:gap-[62px] gap-6 items-center">
         <div className="xl:py-[56px] sm:py-6 xl:px-[64px] px-7 flex sm:flex-row flex-col items-center justify-between sm:gap-0 gap-[43px] w-full backdrop-blur-[2.676px] bg-white/5 xl:rounded-[21.4px] rounded-[10px]">
           <p className="font-bold xl:text-[37.5px] xl:leading-[52px] text-[16px] leading-[22px] text-[#ffffff]">
@@ -170,7 +170,7 @@ const Footer = () => {
               <button
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className={`xl:h-[53.5px] sm:h-[26px] xl:rounded-[10.7px] rounded-[4px] xl:py-[10.7px] xl:px-[10.7px] sm:py-1 py-[6px] sm:px-2 px-3 ${
+                className={`xl:h-[50px] sm:h-[26px] xl:rounded-[10.7px] rounded-[4px] xl:py-[10.7px] xl:px-[10.7px] sm:py-1 py-[6px] sm:px-2 px-3 ${
                   isSubmitting ? "bg-[#4F4BAF]" : "bg-[#635BFF]"
                 } cursor-pointer font-medium xl:text-[18.73px] xl:leading-[25.6px] sm:text-[13px] sm:leading-[17.6px] text-[12px] leading-[16.3px] text-[#ffffff] flex justify-center items-center text-nowrap transition-all`}
               >
@@ -189,7 +189,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col xl:gap-[42px] sm:gap-[46px] gap-6 w-full items-center">
           <div className="w-full flex sm:flex-row flex-col items-start justify-between sm:gap-0 gap-[42px]">
-            <div className="flex flex-col xl:gap-5 gap-3 xl:max-w-[207px] sm:max-w-[130px] max-w-[127px] sm:w-1/4">
+            <div className="flex flex-col xl:gap-5 gap-3 xl:max-w-[168px] sm:max-w-[122px] max-w-[122px] sm:w-1/4">
               <div className="flex flex-col xl:gap-3 gap-[7px]">
                 <Image
                   src={logo}
