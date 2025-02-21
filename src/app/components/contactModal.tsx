@@ -19,11 +19,11 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
   const [loading, setLoading] = useState(false)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+ 
+    setFormData({ ...formData, [e.target?.name]: e.target?.value });
 
-    if (name === 'message') {
-      setMessageCount(value.length);
+    if (e.target?.name === 'message') {
+      setMessageCount(e.target?.value.length);
     }
   };
 

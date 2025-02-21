@@ -24,14 +24,14 @@ const ContactForm: React.FC = () => {
     const [messageCount, setMessageCount] = useState(0);
     const [loading, setLoading] = useState(false)
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-
-        if (name === 'message') {
-            setMessageCount(value.length);
-        }
-    };
+   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    
+       setFormData({ ...formData, [e.target?.name]: e.target?.value });
+   
+       if (e.target?.name === 'message') {
+         setMessageCount(e.target?.value.length);
+       }
+     };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
