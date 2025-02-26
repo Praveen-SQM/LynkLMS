@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Star, Building2, CircleDollarSign } from "lucide-react";
+import { Star, Building2, CircleDollarSign } from "lucide-react";
 import Image from "next/image";
 import logoWhite from "@/app/utilities/images/logo_white.svg";
 import unifiedSolution from "@/app/utilities/icons/group-blue.svg";

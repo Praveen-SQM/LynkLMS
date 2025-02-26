@@ -1,4 +1,3 @@
-import { CheckCircle2Icon } from "lucide-react";
 import React from "react";
 interface FeatureItem {
   title: string;
