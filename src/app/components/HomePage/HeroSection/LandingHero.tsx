@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Communities } from "./Community";
 import ContactModal from "../../contactModal";
 import Image from "next/image";
-import logo from "@/utills/Icons/LynkLogo.svg"
+import logo from "@/app/utilities/images/main_large.png";
 
 const LandingHero = () => {
   const [contact, setContact] = React.useState(false);
