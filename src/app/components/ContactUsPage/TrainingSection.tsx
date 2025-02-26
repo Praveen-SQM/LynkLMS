@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import { useState } from "react";
-import trainingImage from "@/app/utilities/images/training-image.svg"
+import trainingImage from "@/app/utilities/images/training-image.webp"
 import plusIcon from "@/app/utilities/icons/plus-icon.svg"
 import minusIcon from "@/app/utilities/icons/minus-icon.svg"
 import Image from "next/image";

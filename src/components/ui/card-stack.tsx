@@ -57,7 +57,7 @@ export const CardStack = ({
             }}
           >
             <div className="w-full h-full">
-                <Image src={card.image} alt={card.name} width={100} height={100} className="w-full h-full object-cover rounded-3xl"/>
+                <Image unoptimized src={card.image} alt={card.name} width={100} height={100} className="w-full h-full object-cover rounded-3xl"/>
             </div>
           </motion.div>
         );

@@ -4,7 +4,7 @@ import Link from "next/link";
 import instantSupportIcon from "@/app/utilities/icons/instant-support.svg"
 import availabilityIcon from "@/app/utilities/icons/availablity.svg"
 import qualityAssuranceIcon from "@/app/utilities/icons/quality-assurance.svg"
-import qualitySectionImage from "@/app/utilities/images/Quality-section-image.svg"
+import qualitySectionImage from "@/app/utilities/images/Quality-section-image.webp"
 import rightIcon from "@/app/utilities/icons/right.svg"
 import phoneCallIcon from "@/app/utilities/icons/phone-call-home.svg"
 import annotationCheckIcon from "@/app/utilities/icons/annotation-check-home.svg"

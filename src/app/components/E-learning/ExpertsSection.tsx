@@ -1,11 +1,11 @@
 'use client'
 import React from "react";
-import gamificationImage from "@/app/utilities/images/gamification.svg"
+import gamificationImage from "@/app/utilities/images/gamification.webp"
 import technicalTeamImage from "@/app/utilities/images/technical-team.svg"
-import subjectMatter from "@/app/utilities/images/subject-matter.svg"
-import visualDesigner from "@/app/utilities/images/visual-designer.svg"
+import subjectMatter from "@/app/utilities/images/subject-matter.webp"
+import visualDesigner from "@/app/utilities/images/visual-designer.webp"
 import contentDeveloperImage from "@/app/utilities/images/content-developer.svg"
-import InstructionalDeveloperImage from "@/app/utilities/images/Instructional-designer.svg"
+import InstructionalDeveloperImage from "@/app/utilities/images/Instructional-designer.webp"
 import Image from "next/image";
 
 const ImageWithTextRowComponent = ({ cardImage: cardImage, imageClass: imageClass, text, description }: { cardImage: string, imageClass: string, text: string, description: string }) => {

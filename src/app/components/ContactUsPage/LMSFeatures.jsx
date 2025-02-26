@@ -4,8 +4,8 @@ import EllipseImage from "@/app/utilities/images/Ellipse.svg"
 import dashboardCurve from "@/app/utilities/images/dashboard-curve.svg"
 import automationImage from "@/app/utilities/images/automation-cropped.svg"
 import automationEllipse from "@/app/utilities/images/automation-Ellipse.svg"
-import courseManagement from "@/app/utilities/images/course-management.svg"
-import employeeManagement from "@/app/utilities/images/employeeManagement.svg"
+import courseManagement from "@/app/utilities/images/course-management.webp"
+import employeeManagement from "@/app/utilities/images/employeeManagement.webp"
 import employeeEllipse from "@/app/utilities/images/employee-ellipse.svg"
 import Image from "next/image";
 

@@ -5,7 +5,7 @@ interface FeatureItem {
   image: string;
 }
 import feature1 from "@/app/utilities/images/feature-1.svg";
-import feature2 from "@/app/utilities/images/feature-2.svg";
+import feature2 from "@/app/utilities/images/feature-2.webp";
 import feature3 from "@/app/utilities/images/feature-3.svg";
 import feature4 from "@/app/utilities/images/feature-4.svg";
 

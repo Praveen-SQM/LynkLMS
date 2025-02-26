@@ -2,8 +2,8 @@
 import React from "react";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import developementFirstImage from "@/app/utilities/images/development-first.svg"
-import developmentSecondImage from "@/app/utilities/images/development-second.svg"
+import developementFirstImage from "@/app/utilities/images/development-first.webp"
+import developmentSecondImage from "@/app/utilities/images/development-second.webp"
 import { CardStack } from "@/components/ui/card-stack";
 
 const DevelopmentProcessSection = () => {
