@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles, Rocket, Users, Heart } from "lucide-react";
-import UsersGroupWhite from "@/app/utilities/icons/users-white.svg";
-import Image from "next/image";
 const FeatureCard = ({ icon: Icon, title, description, delay }) => (
   <motion.div
     className="group flex flex-col items-center text-center shadow-[#6459ff16] transition-all hover:shadow-gray-400 hover:bg-[#6559FF] text-gray-900 shadow-2xl rounded-3xl p-6 py-12 lg:py-20"
