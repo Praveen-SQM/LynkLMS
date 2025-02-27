@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 let interval: NodeJS.Timeout
 
 type Card = {
@@ -9,7 +9,7 @@ type Card = {
   name: string;
   designation: string;
   content: React.ReactNode;
-  image: string;
+  image: StaticImageData;
 };
 
 export const CardStack = ({
