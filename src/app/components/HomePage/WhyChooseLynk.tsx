@@ -43,7 +43,7 @@ const features: FeatureItem[] = [
   {
     title: "Cost Effective & Engagement Focused",
     points: [
-      "Saves ₹15L–₹30L compared to subscription-based models.",
+      "Saves $17,200–$34,400 compared to subscription-based models.",
       "Reduces long-term operational costs",
       "Provides better ROI with owned infrastructure.",
     ],

@@ -75,7 +75,7 @@ const TabSwitch = () => {
         "Provide seamless learning experiences for distributed teams with offline access and multilingual support. Ensure consistent engagement and productivity, even in remote environments. Create a flexible learning path that adapts to varying time zones and schedules. Maximize training impact by connecting teams across diverse locations with tailored content.",
     },
     {
-      name: "Partners & clients",
+      name: "Partners & Clients",
       img: partnerClient,
       title: "Training for Partners & Clients",
       description:

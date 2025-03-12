@@ -15,17 +15,17 @@ interface LMSFeature {
 const features: LMSFeature[] = [
   {
     feature: "Pricing",
-    lynx: "₹9.5L (One-time purchase) + Optional Customizations",
-    typical: "₹2,000 - ₹10,000 per user/month",
-    moodle: "Free (Open Source) + Hosting & Setup (~₹1-5L)",
-    competitor: "Subscription: ₹3,000 - ₹15,000 per user/month",
+    lynx: "$11,000 (One-time purchase) + Optional Customizations",
+    typical: "$23 - $115 per user/month",
+    moodle: "Free (Open Source) + Hosting & Setup (~$1,200-$5,700)",
+    competitor: "Subscription: $35 - $172 per user/month",
   },
   {
     feature: "Cost Over 5 Years",
-    lynx: "₹9.5L one-time cost + ₹6-12L for customizations/support",
-    typical: "₹6L - ₹30L for 50 users (recurring annually)",
-    moodle: "₹8-10L initial setup + maintenance costs",
-    competitor: "₹9L - ₹45L for 50 users (recurring annually)",
+    lynx: "$11,000 one-time cost + $6,900-$13,800 for customizations/support",
+    typical: "$6,900 - $34,400 for 50 users (recurring annually)",
+    moodle: "$9,200-$11,500 initial setup + maintenance costs",
+    competitor: "$10,300 - $51,600 for 50 users (recurring annually)",
   },
   {
     feature: "Ownership",
@@ -147,7 +147,7 @@ const LMSComparisonTable = () => {
                       Lynk
                       <br />
                       <span className="text-[14px] text-[#88898A] text-nowrap">
-                        (₹8L, White-Labeled)
+                        ($9,200, White-Labeled)
                       </span>
                     </p>
                   </div>

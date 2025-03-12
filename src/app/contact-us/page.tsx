@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import phoneIcon from "@/app/utilities/icons/phone-icon-contact.svg"
@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { FloatingBackground } from '@/app/components/ContactUsPage/LMSLanding/FloatingTriangles';
 import toast from "react-hot-toast";
 import { Loader2 } from "lucide-react";
+import { useRouter } from 'next/navigation';
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -23,6 +24,7 @@ const ContactForm: React.FC = () => {
 
     const [messageCount, setMessageCount] = useState(0);
     const [loading, setLoading] = useState(false)
+    const router=useRouter()
 
    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     
@@ -147,6 +149,7 @@ const ContactForm: React.FC = () => {
                     phoneNumber: '',
                     message: '',
                 })
+                router.push('/thanks')
             } else {
                 toast.error(result.message || 'Failed to send email', { duration: 3000 });
             }
@@ -169,7 +172,7 @@ const ContactForm: React.FC = () => {
             icon: salesIcon,
             phoneIcon: salesIconMobile,
             title: "Sales Enquiry",
-            number: "+91 96068 27067"
+            number: "+91 7204701593"
         }
     ]
 
@@ -280,23 +283,6 @@ const ContactForm: React.FC = () => {
                                     />
                                 </div>
 
-                                {/* <div>
-                                    <label htmlFor="phoneNumber" className="block font-normal sm:text-[13.9px] sm:leading-[14.2px] text-[14px] leading-[19px] text-[#131313] mb-2">
-                                        Phone Number<span className="text-red-500">*</span>
-                                    </label>
-                                    <PhoneInput
-                                        inputStyle={{
-                                            width: "100%",
-                                            height: "50px"
-                                        }}
-                                        country={"in"}
-                                        value={formData.phoneNumber}
-                                        containerClass="flex-1 w-full text-[15px] relative"
-                                        inputClass="flex-1 w-full sm:px-4 px-3 py-3 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
-                                        onChange={(value: string, data: {}, event: React.ChangeEvent<HTMLInputElement>, formattedValue: string) => handleInputChange(event)}
-                                       
-                                    />
-                                </div> */}
                                 <div>
                                     <label
                                         htmlFor="phoneNumber"

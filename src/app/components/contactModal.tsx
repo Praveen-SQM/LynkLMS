@@ -4,6 +4,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import toast from "react-hot-toast";
 import { Loader2 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
     message: "",
   });
 
+  const router=useRouter()
 
   const [messageCount, setMessageCount] = useState(0);
 
@@ -142,6 +144,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
           phoneNumber: '',
           message: '',
         })
+        router.push('/thanks')
       } else {
         toast.error(result.message || 'Failed to send email', { duration: 3000 });
       }

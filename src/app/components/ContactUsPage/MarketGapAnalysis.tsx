@@ -10,7 +10,7 @@ const TabContent = {
   "Price Point": {
     title: "Price Point Advantage",
     description:
-      "Most international LMS providers charge ₹12–15L annually, making them costly for mid-sized companies. Your LMS, with a one-time cost of ₹9.5L, offers a cost-effective alternative, enabling potential savings of ₹30L+ over five years.",
+      "Most international LMS providers charge $13,800–$17,200L annually, making them costly for mid-sized companies. Your LMS, with a one-time cost of $11,000, offers a cost-effective alternative, enabling potential savings of $34,400+ over five years.",
     image: img,
   },
   Markets: {
