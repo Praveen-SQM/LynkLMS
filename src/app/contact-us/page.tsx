@@ -325,7 +325,7 @@ const ContactForm: React.FC = () => {
                                         value={formData.phoneNumber}
                                         containerClass="flex-1 w-full text-[15px] relative"
                                         inputClass="flex-1 w-full sm:px-4 px-3 py-3 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
-                                        onChange={(value: string, event: React.ChangeEvent<HTMLInputElement>) => handlePhoneChange(value)}
+                                        onChange={(value: string) => handlePhoneChange(value)}
                                         inputProps={{
                                             name: "phoneNumber",
                                             required: true

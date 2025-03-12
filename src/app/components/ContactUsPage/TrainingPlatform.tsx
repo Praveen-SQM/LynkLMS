@@ -39,6 +39,22 @@ const TrainingPlatform = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const paginate = (newDirection: number) => {
+    setDirection(newDirection);
+    setCurrentIndex((prevIndex) => {
+      const nextIndex = prevIndex + (newDirection as number);
+      const maxIndex = isMobile ? duplicatedSlides.length - 1 : duplicatedSlides.length - 2;
+      
+      if (nextIndex >= maxIndex) {
+        return 0;
+      }
+      if (nextIndex < 0) {
+        return maxIndex - 1;
+      }
+      return nextIndex;
+    });
+  };
+
   // Duplicate slides for continuous loop
   const duplicatedSlides = [...slides, ...slides];
 
@@ -50,7 +66,7 @@ const TrainingPlatform = () => {
       }, 3000);
     }
     return () => clearInterval(interval);
-  }, [isAutoPlaying, currentIndex]);
+  }, [isAutoPlaying, currentIndex, paginate]);
 
   const slideVariants = {
     enter: (direction: number) => ({
@@ -67,23 +83,6 @@ const TrainingPlatform = () => {
       x: direction < 0 ? 1000 : -1000,
       opacity: 0
     })
-  };
-
- 
-  const paginate = (newDirection: number) => {
-    setDirection(newDirection);
-    setCurrentIndex((prevIndex) => {
-      const nextIndex = prevIndex + (newDirection as number);
-      const maxIndex = isMobile ? duplicatedSlides.length - 1 : duplicatedSlides.length - 2;
-      
-      if (nextIndex >= maxIndex) {
-        return 0;
-      }
-      if (nextIndex < 0) {
-        return maxIndex - 1;
-      }
-      return nextIndex;
-    });
   };
 
   const getCurrentSlides = () => {
