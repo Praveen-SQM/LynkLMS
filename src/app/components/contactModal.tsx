@@ -14,6 +14,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
     message: "",
   });
 
+
   const [messageCount, setMessageCount] = useState(0);
 
   const [loading, setLoading] = useState(false)
@@ -26,6 +27,11 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
       setMessageCount(e.target?.value.length);
     }
   };
+
+  const handlePhoneChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, phoneNumber: value }));
+  };
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,18 +62,72 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
             subject: "GENERAL INQUIRY From Lync website",
             text: 'YOUR TEXT',
             html: `
-          <html>
-            <head></head>
-            <body>
-              <p>Hello Team</p>
-              <p><b>Full Name:</b> ${formData.firstName}  ${formData.lastName}</p>
-              <p><b>Email:</b> ${formData.email}</p>
-              <p><b>Phone number: </b> ${formData.phoneNumber}</p>
-              <p><b>Message:</b> ${formData.message}</p>
-              <br>
-              <p>Thank you & Regards,<br><b>Team</b></p>
-            </body>
-          </html>`,
+           <!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      background: #ffffff;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      background: #6559FF;
+      color: #ffffff;
+      padding: 15px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .content {
+      padding: 20px;
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .content p {
+      margin: 10px 0;
+    }
+    .content b {
+      color: #6559FF;
+    }
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">New Enquiry From Lync Website</div>
+    <div class="content">
+      <p>Hello Team,</p>
+      <p><b>Full Name:</b> ${formData.firstName} ${formData.lastName}</p>
+      <p><b>Email:</b> ${formData.email}</p>
+      <p><b>Phone Number:</b> ${formData.phoneNumber}</p>
+      <p><b>Message:</b><br> ${formData.message}</p>
+    </div>
+    <div class="footer">
+      Thank you & Regards,<br>
+      <b>Team</b>
+    </div>
+  </div>
+</body>
+</html>`,
           },
         }),
       });
@@ -218,7 +278,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
                   value={formData.phoneNumber}
                   containerClass="flex-1 w-full text-[15px] relative"
                   inputClass="flex-1 w-full sm:px-4 px-3 py-3 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
-                  onChange={(value: string, event: React.ChangeEvent<HTMLInputElement>) => handleInputChange(event)}
+                  onChange={(value: string, event: React.ChangeEvent<HTMLInputElement>) => handlePhoneChange(value)}
                   inputProps={{
                     name: "phoneNumber",
                     required: true

@@ -95,7 +95,7 @@ const LandingHero = () => {
               setContact(true);
             }}
           >
-            Connect Us Now
+            Connect With Us
           </motion.button>
 
           <motion.div
