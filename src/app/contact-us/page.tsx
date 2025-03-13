@@ -183,7 +183,7 @@ const ContactForm: React.FC = () => {
     ]
 
     return (
-        <div className='w-full sm:bg-[#534BEF] sm:bg-gradient-to-br sm:from-[#433BDB] sm:to-[#635BFF] bg-[#FAFAFA] flex flex-col items-center pt-[91px] xl:pb-[111px] sm:pb-[91px]'>
+        <div className='w-full sm:bg-[#534BEF] sm:bg-gradient-to-br sm:from-[#433BDB] sm:to-[#635BFF] bg-[#FAFAFA] flex flex-col items-center pt-[120px] xl:pb-[111px] sm:pb-[91px]'>
             <div className='sm:block hidden'>
                 <FloatingBackground />
             </div>

@@ -24,7 +24,12 @@ const TrainingContent = () => {
         animate={{ opacity: 1, y: 0 }}
       >
         <h1 className="text-5xl font-[600] mb-4">
-          Training <span className="text-purple-600">content</span>, ready when
+          Training <span style={{
+                    background: "linear-gradient(89.86deg, #EE3CD1 6.14%, #635BFF 84.43%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    fontWeight: "bold",
+                }}>content</span>, ready when
           you need it.
         </h1>
         <p className="text-gray-600">
@@ -56,7 +61,7 @@ const TrainingContent = () => {
             <div className="pl-[30px] order-2 md:order-1 lg:pl-[46px] py-[37px] lg:py-[73px]">
               <h3 className="text-xl font-semibold mb-2">Visual Learning</h3>
               <p className="text-gray-600 lg:text-lg mb-4">
-                Engage learners with animations and games.
+              Engage learners with 2D animations and gamified experiences.
               </p>
               <ul className="space-y-2 mb-4 text-sm lg:text-[16px] font-[500]">
                 <li className="flex items-center text-gray-700">
@@ -92,9 +97,9 @@ const TrainingContent = () => {
               />
             </div>
             <div className="">
-              <h3 className="text-xl font-semibold mb-2">Micro-learning</h3>
+              <h3 className="text-xl font-semibold mb-2">Microlearning</h3>
               <p className="text-gray-600 lg:text-lg mb-4">
-                Provides quick, targeted lessons for efficient learning.
+              Offers brief, targeted lessons for quick, efficient learning on-the-go.
               </p>
             </div>
           </motion.div>
@@ -114,7 +119,7 @@ const TrainingContent = () => {
                 Assessments and Materials
               </h3>
               <p className="text-gray-600 text-sm mb-4">
-                Assess progress and provide resources such as eBooks.
+              Evaluate progress with assessments and offer resources like eBooks.
               </p>
             </div>
           </motion.div>
@@ -137,7 +142,7 @@ const TrainingContent = () => {
             <div className="p-[12px] lg:p-[46px]">
               <h3 className="text-xl font-semibold mb-2">AR/VR Simulations</h3>
               <p className="text-gray-600 text-sm mb-4">
-                Transform training with immersive AR/VR learning.
+              Transform training with immersive AR/VR simulations for hands-on learning.
               </p>
             </div>
           </motion.div>
@@ -162,7 +167,7 @@ const TrainingContent = () => {
                 Scenario-Based Learning
               </h3>
               <p className="text-gray-600 text-sm mb-4">
-                Real-world simulations for practical problem-solving skills.
+              Real-world simulations for practical problem-solving skills.
               </p>
             </div>
           </motion.div>

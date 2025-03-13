@@ -16,9 +16,9 @@ const features: FeatureItem[] = [
   {
     title: "Full Ownership",
     points: [
-      "White-labeled for complete brand customization",
-      "Ensures control over design and features",
-      "No dependency on third-party branding",
+      "White-labeled for complete brand customization.",
+      "Ensures control over design and features.",
+      "No dependency on third-party branding.",
     ],
     image: feature1,
   },
@@ -44,7 +44,7 @@ const features: FeatureItem[] = [
     title: "Cost Effective & Engagement Focused",
     points: [
       "Saves $17,200–$34,400 compared to subscription-based models.",
-      "Reduces long-term operational costs",
+      "Reduces long-term operational costs.",
       "Provides better ROI with owned infrastructure.",
     ],
     image: feature4,

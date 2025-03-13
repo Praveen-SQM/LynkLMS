@@ -15,7 +15,7 @@ const LandingHero = () => {
         <div className="flex flex-col items-center sm:items-start gap-[42px]">
           <div className="flex justify-center items-center sm:items-start sm:justify-start flex-col gap-[12px]">
             <motion.div
-              className="rounded sm:rounded-full bg-gray-200 w-fit px-6 py-2 text-[14px] sm:text-base text-gray-950"
+              className="rounded-full sm:rounded-full bg-gray-200 w-fit px-6 py-2 text-[14px] sm:text-base text-gray-950"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
@@ -24,23 +24,22 @@ const LandingHero = () => {
             </motion.div>
 
             <motion.h1
-              className="text-center sm:text-start text-3xl sm:text-4xl md:text-5xl lg:text-6xl w-full font-bold md:font-normal sm:leading-[71.35px]"
+              className="text-center sm:text-start text-3xl sm:text-4xl md:text-5xl lg:text-6xl w-full font-bold md:font-normal sm:leading-[71.35px] overflow-hidden"
               initial={{
                 opacity: 0,
                 y: 20,
                 filter: "blur(10px)",
-                WebkitMaskImage:
-                  "linear-gradient(90deg, black 0%, black 100%)",
-                maskImage: "linear-gradient(90deg, black 0%, black 100%)",
+                WebkitMaskImage: "linear-gradient(90deg, black 100%)", // Full visibility
+                maskImage: "linear-gradient(90deg, black 100%)",
               }}
               animate={{
                 opacity: 1,
                 y: 0,
                 filter: "blur(0px)",
                 WebkitMaskImage:
-                  "linear-gradient(45deg, black 70%, transparent 100%)",
+                  "linear-gradient(45deg, black 90%, rgba(0,0,0,0.1) 100%)", // Slight fade but no full transparency
                 maskImage:
-                  "linear-gradient(45deg, black 70%, transparent 100%)",
+                  "linear-gradient(45deg, black 90%, rgba(0,0,0,0.1) 100%)",
               }}
               transition={{
                 duration: 1,
@@ -56,22 +55,22 @@ const LandingHero = () => {
           </div>
 
           <motion.p
-            className="text-gray-500 font-[400] max-w-[340px] sm:max-w-[576px] text-[14px] sm:text-lg text-center sm:text-start"
+            className="text-gray-500 font-[400] max-w-[340px] sm:max-w-[576px] text-[14px] sm:text-lg text-center sm:text-start overflow-hidden"
             initial={{
               opacity: 0,
               scale: 1.2,
               filter: "blur(10px)",
-              WebkitMaskImage: "linear-gradient(90deg, black 0%, black 100%)",
-              maskImage: "linear-gradient(90deg, black 0%, black 100%)",
+              WebkitMaskImage: "linear-gradient(90deg, black 100%)", // Full visibility initially
+              maskImage: "linear-gradient(90deg, black 100%)",
             }}
             animate={{
               opacity: 1,
               scale: 1,
               filter: "blur(0px)",
               WebkitMaskImage:
-                "linear-gradient(90deg, black 80%, transparent 100%)",
+                "linear-gradient(90deg, black 95%, rgba(0,0,0,0.2) 100%)", // Reduce fade effect
               maskImage:
-                "linear-gradient(90deg, black 80%, transparent 100%)",
+                "linear-gradient(90deg, black 95%, rgba(0,0,0,0.2) 100%)",
             }}
             transition={{
               duration: 1,

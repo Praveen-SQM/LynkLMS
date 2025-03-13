@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import toast from "react-hot-toast";
@@ -22,6 +22,16 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
 
   const [loading, setLoading] = useState(false)
   const [captcha, setCaptcha] = useState(false)
+
+  useEffect(()=>{
+    setFormData({
+      firstName:"",
+      lastName:"",
+      email:"",
+      phoneNumber:"",
+      message:""
+    })
+  },[isOpen])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 

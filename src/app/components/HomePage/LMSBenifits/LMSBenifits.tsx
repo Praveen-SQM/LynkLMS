@@ -33,8 +33,8 @@ const benefitsData = [
 const LMSBenefits = () => {
   return (
     <div className="max-w-6xl mx-auto xl:px-0 px-4 py-[120px]">
-      <div className="text-center sm:text-start space-y-4 mb-12">
-        <h1 className="text-3xl sm:text-4xl font-bold max-w-[650px]">
+      <div className="text-center space-y-4 mb-12 flex flex-col items-center">
+        <h1 className="text-3xl sm:text-4xl font-bold">
           <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
             Combine
           </span>{" "}

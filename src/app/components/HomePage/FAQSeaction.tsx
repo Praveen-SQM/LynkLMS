@@ -9,7 +9,7 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question: "How long does it take to implement the LMS?",
+      question: "How customizable is Squadra LMS?",
       answer:
         "We can deploy your LMS within 20-30 days, including basic training for your team.",
     },

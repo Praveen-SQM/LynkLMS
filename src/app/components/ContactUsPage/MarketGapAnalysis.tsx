@@ -14,21 +14,21 @@ const TabContent = {
     image: img,
   },
   Markets: {
-    title: "Market Opportunities",
+    title: "Underserved Markets",
     description:
-      "Explore untapped market segments and identify potential growth areas for your business expansion.",
+      "Mid-market companies (500–2000 employees) face high costs for LMS solutions. Your LMS provides an affordable, tailored alternative with regional language support and industry-specific compliance for healthcare and logistics.",
     image: img,
   },
   Migration: {
-    title: "Easy Migration Process",
+    title: "Migration Needs",
     description:
-      "Seamless data migration process ensuring zero downtime and complete data integrity during transition.",
+      "As organizations evolve, they outgrow their LMS, facing scalability challenges. Your LMS offers a seamless migration, enabling smooth transitions without data loss or disruption, ensuring continuity in training and operations.",
     image: img,
   },
   Customization: {
-    title: "Custom Solutions",
+    title: "Customization Needs",
     description:
-      "Tailor the platform to your specific needs with our flexible customization options.",
+      "Every organization has unique learning needs. Your LMS offers customization options, allowing businesses to tailor features and workflows to meet their specific requirements. This adaptability enhances efficiency and user engagement.",
     image: img,
   },
 };

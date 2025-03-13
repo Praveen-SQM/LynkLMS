@@ -22,9 +22,7 @@ const LMSProductPage = () => {
           </h1>
 
           <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-            Our systems analyze the data and behaviors of your employees and
-            generate tasks and assign them to the best person who can complete
-            them efficiently and more.
+          Our systems analyses the data and behavior's of your employees and generate tasks and assign to the best person that can complete it efficiently and more.
           </p>
         </div>
 
