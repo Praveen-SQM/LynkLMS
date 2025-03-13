@@ -1,16 +1,16 @@
 'use client'
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import phoneIcon from "@/app/utilities/icons/phone-icon-contact.svg"
 import salesIcon from "@/app/utilities/icons/sales-icon.svg"
 import phoneIconMobile from "@/app/utilities/icons/phone-icon-mobile.svg"
 import salesIconMobile from "@/app/utilities/icons/sales-icon-mobile.svg"
-import PhoneInput from 'react-phone-input-2'
+// import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Image from 'next/image';
 import { FloatingBackground } from '@/app/components/ContactUsPage/LMSLanding/FloatingTriangles';
-import toast from "react-hot-toast";
-import { Loader2 } from "lucide-react";
+// import toast from "react-hot-toast";
+// import { Loader2 } from "lucide-react";
 import thanksImage from "@/app/utilities/images/thanks-image.png"
 
 const Thanks: React.FC = () => {
