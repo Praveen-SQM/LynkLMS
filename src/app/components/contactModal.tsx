@@ -192,7 +192,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="w-full sm:max-w-[662px] max-w-[343px] z-10"
+        className="w-full sm:max-w-[662px] max-w-[343px] z-10 max-h-full overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="bg-white rounded-[24px] sm:p-8 p-6 shadow-xl relative">
@@ -206,12 +206,12 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
             </svg>
           </button>
 
-          <h2 className="font-medium text-2xl md:text-[22px] leading-[32px] text-[#131313] mb-6 md:mb-[40px]">
+          <h2 className="font-medium text-2xl md:text-[22px] leading-[32px] text-[#131313] mb-3 md:mb-[40px]">
             We&apos;d love to hear from you! Let&lsquo;s Get in touch
           </h2>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-[19px]">
+          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-[10px] sm:gap-[19px]">
               <div>
                 <label
                   htmlFor="firstName"
@@ -250,7 +250,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-[19px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-[10px] sm:gap-[19px]">
               <div>
                 <label
                   htmlFor="email"
@@ -331,7 +331,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
               ></textarea>
             </div>
 
-            <div className='mb-4'>
+            <div className='mb-2 sm:mb-4'>
               <ReCAPTCHA
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
                 onChange={() => { setCaptcha(!captcha) }}

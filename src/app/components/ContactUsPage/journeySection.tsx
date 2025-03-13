@@ -35,7 +35,12 @@ const JourneySection = () => {
             </p>
           </div>
           <p className="font-bold 3xl:text-[56px] 3xl:leading-[76.5px] xl:text-[42px] xl:leading-[57.37px] sm:text-[24px] sm:leading-[32.8px] text-[22px] leading-[30px] text-center text-[#1D1A27] 3xl:max-w-[1130px] xl:max-w-[851px] sm:max-w-[499px] max-w-[343px]">
-            Your entire training journey, streamlined in one place.
+            Your entire  <span style={{
+                        background: "linear-gradient(89.86deg, #EE3CD1 6.14%, #635BFF 84.43%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        fontWeight: "bold",
+                    }}>training</span> journey, streamlined in one place.
           </p>
         </div>
         <div className="grid sm:grid-cols-4 grid-cols-2 place-items-center 3xl:gap-6 xl:gap-5 sm:gap-[11.7px] gap-3">

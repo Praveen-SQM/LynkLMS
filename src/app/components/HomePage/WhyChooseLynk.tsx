@@ -63,7 +63,7 @@ const WhyChooseLynk = () => {
               </span>
               ?
             </h2>
-            <p className="xl:mt-[24px] font-manrope font-normal xl:text-[16px] xl:leading-[28px] text-[14px] leading-[19.12px] text-center">
+            <p className="xl:mt-[24px] mt-3 font-manrope font-normal xl:text-[16px] xl:leading-[28px] text-[14px] leading-[19.12px] text-center">
               Empowering businesses with a future-ready, customizable learning
               platform built for scalability, insights, and results.
             </p>
@@ -91,7 +91,7 @@ const WhyChooseLynk = () => {
                     />
                   </div>
                   <div>
-                    <h1 className="font-family-Manrope font-weight-700 xl:text-[20px] xl:leading-[28px] text-[16px] leading-[21.9px] xl:tracking-[-0.28px] mb-[12px]">
+                    <h1 className="font-family-Manrope font-bold xl:text-[20px] xl:leading-[28px] text-[16px] leading-[21.9px] xl:tracking-[-0.28px] mb-[12px]">
                       {feature.title}
                     </h1>
                     <div className="flex flex-col xl:gap-[12px] gap-[8.64px]">

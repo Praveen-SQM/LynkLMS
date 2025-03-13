@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Communities } from "./Community";
 import ContactModal from "../../contactModal";
@@ -8,6 +8,18 @@ import logo from "@/app/utilities/images/main_large.png";
 
 const LandingHero = () => {
   const [contact, setContact] = React.useState(false);
+
+  useEffect(()=>{
+    if (contact) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  },[contact])
   return (
     <div className="container mx-auto pt-20 flex flex-col lg:flex-row items-center bg-gray-50 justify-between">
       {/* Left Content Section */}

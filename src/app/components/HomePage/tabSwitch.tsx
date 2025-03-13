@@ -79,7 +79,7 @@ const TabSwitch = () => {
       img: partnerClient,
       title: "Training for Partners & Clients",
       description:
-        "For Partners and Clients: Deliver comprehensive product and service training through engaging content, ensuring a deeper understanding. Strengthen relationships by offering tailored learning paths that meet specific needs and enhance collaboration.",
+        "Deliver comprehensive product and service training through engaging content, ensuring a deeper understanding. Strengthen relationships by offering tailored learning paths that meet specific needs and enhance collaboration.",
     },
   ];
 
