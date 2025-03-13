@@ -12,6 +12,7 @@ import { FloatingBackground } from '@/app/components/ContactUsPage/LMSLanding/Fl
 import toast from "react-hot-toast";
 import { Loader2 } from "lucide-react";
 import { useRouter } from 'next/navigation';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -24,20 +25,21 @@ const ContactForm: React.FC = () => {
 
     const [messageCount, setMessageCount] = useState(0);
     const [loading, setLoading] = useState(false)
-    const router=useRouter()
+    const [captcha, setCaptcha] = useState(false)
+    const router = useRouter()
 
-   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    
-       setFormData({ ...formData, [e.target?.name]: e.target?.value });
-   
-       if (e.target?.name === 'message') {
-         setMessageCount(e.target?.value.length);
-       }
-     };
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 
-     const handlePhoneChange = (value: string) => {
+        setFormData({ ...formData, [e.target?.name]: e.target?.value });
+
+        if (e.target?.name === 'message') {
+            setMessageCount(e.target?.value.length);
+        }
+    };
+
+    const handlePhoneChange = (value: string) => {
         setFormData((prev) => ({ ...prev, phoneNumber: value }));
-      };
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -52,6 +54,10 @@ const ContactForm: React.FC = () => {
         console.log("formData.phoneNumber.length", formData.phoneNumber)
         if (formData.phoneNumber.replace(/\D/g, '').length < 12) {
             toast.error('Phone number should consist of at least 10 digits', { duration: 3000 });
+            return;
+        }
+        if (!captcha) {
+            toast.error('Please confirm you are not a robot', { duration: 3000 });
             return;
         }
 
@@ -149,7 +155,7 @@ const ContactForm: React.FC = () => {
                     phoneNumber: '',
                     message: '',
                 })
-                router.push('/thanks')
+                router.push('/thank-you')
             } else {
                 toast.error(result.message || 'Failed to send email', { duration: 3000 });
             }
@@ -337,6 +343,13 @@ const ContactForm: React.FC = () => {
                                     maxLength={1000}
                                     className="w-full px-4 py-6 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600 resize-none"
                                 ></textarea>
+                            </div>
+
+                            <div className='mb-4'>
+                                <ReCAPTCHA
+                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
+                                    onChange={() => { setCaptcha(!captcha) }}
+                                />
                             </div>
 
                             <motion.button

@@ -5,6 +5,7 @@ import "react-phone-input-2/lib/style.css";
 import toast from "react-hot-toast";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -15,14 +16,15 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
     message: "",
   });
 
-  const router=useRouter()
+  const router = useRouter()
 
   const [messageCount, setMessageCount] = useState(0);
 
   const [loading, setLoading] = useState(false)
+  const [captcha, setCaptcha] = useState(false)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
- 
+
     setFormData({ ...formData, [e.target?.name]: e.target?.value });
 
     if (e.target?.name === 'message') {
@@ -48,6 +50,11 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
     console.log("formData.phoneNumber.length", formData.phoneNumber)
     if (formData.phoneNumber.replace(/\D/g, '').length < 12) {
       toast.error('Phone number should consist of at least 10 digits', { duration: 3000 });
+      return;
+    }
+
+    if (!captcha) {
+      toast.error('Please confirm you are not a robot', { duration: 3000 });
       return;
     }
 
@@ -144,7 +151,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
           phoneNumber: '',
           message: '',
         })
-        router.push('/thanks')
+        router.push('/thank-you')
       } else {
         toast.error(result.message || 'Failed to send email', { duration: 3000 });
       }
@@ -312,6 +319,13 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
                 maxLength={1000}
                 className="w-full px-4 py-6 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600 resize-none"
               ></textarea>
+            </div>
+
+            <div className='mb-4'>
+              <ReCAPTCHA
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
+                onChange={() => { setCaptcha(!captcha) }}
+              />
             </div>
 
             <div className="flex justify-between items-center pt-2">
