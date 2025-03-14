@@ -155,7 +155,7 @@ const Footer = () => {
   return (
     <div className="flex justify-center w-full 2xl:px-0 px-4 bg-[#090909]">
       <div className="xl:pt-[72px] w-full max-w-6xl sm:pt-[42px] pt-7 xl:pb-6 sm:pb-4 pb-7 flex flex-col xl:gap-[111px] sm:gap-[62px] gap-6 items-center">
-        <div className="xl:py-[56px] sm:py-6 py-3 xl:px-[64px] px-7 flex sm:flex-row flex-col items-center justify-between sm:gap-0 gap-[43px] w-full backdrop-blur-[2.676px] bg-white/5 xl:rounded-[21.4px] rounded-[10px]">
+        <div className="xl:py-[56px] sm:py-6 py-3 xl:px-[64px] px-7 flex sm:flex-row flex-col items-center justify-between sm:gap-0 gap-[43px] w-full backdrop-blur-[2.676px] bg-white/5 xl:rounded-[21.4px] rounded-[10px] xl:max-w-full sm:max-w-[573px]">
           <p className="font-bold xl:text-[37.5px] xl:leading-[52px] text-[16px] leading-[22px] text-[#ffffff]">
             Receive inquiries and <br />
             <span className="text-[#635BFF]">respond promptly.</span>{" "}

@@ -48,7 +48,7 @@ const JourneySection = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col 3xl:gap-[25px] xl:gap-5 gap-[11.7px]"
+                className={`flex flex-col 3xl:gap-[25px] xl:gap-5 gap-[11.7px] ${(index===2 || index===3)?"sm:mt-0 mt-[30px]":""}`}
               >
                 <div className="relative 3xl:w-[382px] xl:w-[285px] sm:w-[178px] w-[168px] 3xl:h-[250px] xl:h-[200px] h-[117px] 3xl:rounded-[20px] xl:rounded-[16px] rounded-[9.4px] bg-[#F0F4F9]">
                   <Image

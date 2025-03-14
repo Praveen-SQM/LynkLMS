@@ -11,7 +11,7 @@ const LMSProductPage = () => {
       <div className="flex flex-col items-center mx-auto">
         {/* Text Content */}
         <div className="w-full max-w-3xl text-center mb-8 sm:mb-16">
-          <span className="inline-block text-blue-600 text-sm font-medium mb-3 sm:mb-4">
+          <span className="inline-block text-[#4740D4] text-sm font-semibold text-[13px] mb-3 sm:mb-4 bg-[#293FCC0D] rounded-[24px] py-2 px-3">
             Product Suite
           </span>
 
@@ -22,7 +22,7 @@ const LMSProductPage = () => {
           </h1>
 
           <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-          Our systems analyses the data and behavior's of your employees and generate tasks and assign to the best person that can complete it efficiently and more.
+          Our systems analyses the data and behavior&apos;s of your employees and generate tasks and assign to the best person that can complete it efficiently and more.
           </p>
         </div>
 

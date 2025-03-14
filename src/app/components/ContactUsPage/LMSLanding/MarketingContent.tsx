@@ -12,7 +12,7 @@ const MarketingContent = () => {
       transition={{ duration: 0.6 }}
       className="text-white space-y-6 flex flex-col md:block items-center justify-center"
     >
-      <div className="inline-block px-4 py-1.5 bg-white/10 rounded-full text-center md:text-start text-sm">
+      <div className="inline-block py-1.5 rounded-full text-center md:text-start text-sm text-[#A0FF27]">
         #1 LMS FOR TRAINING SUCCESS
       </div>
 

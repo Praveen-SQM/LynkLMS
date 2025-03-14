@@ -10,7 +10,7 @@ import Image, { StaticImageData } from "next/image";
 
 const ImageWithTextRowComponent = ({ cardImage: cardImage, imageClass: imageClass, text, description }: { cardImage: StaticImageData, imageClass: string, text: string, description: string }) => {
     return (
-        <div className="flex sm:flex-row flex-col items-center">
+        <div className="flex sm:flex-row flex-col items-center sm:gap-0 gap-1">
             <div className="3xl:w-[800px] 3xl:h-[586.7px] xl:w-[600px] xl:h-[440px] sm:w-[375px] sm:h-[255px] w-[343px] h-[252px] 3xl:rounded-[40px] xl:rounded-[30px] sm:rounded-[17.4px] rounded-[16px] bg-[#F4F5FF] flex items-center justify-center">
                 <div className={`${imageClass}`}>
                     <Image src={cardImage} width={366} height={261} alt="Instructional developer" className="w-full h-full object-contain" />
@@ -28,7 +28,7 @@ const ImageWithTextRowComponent = ({ cardImage: cardImage, imageClass: imageClas
 
 const ImageWithTextColumnComponent = ({ cardImage: cardImage, imageClass: imageClass, text, description }: { cardImage: StaticImageData, imageClass: string, text: string, description: string }) => {
     return (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center sm:gap-0 gap-1">
             <div className="3xl:w-[786.7px] 3xl:h-[480px] xl:w-[590px] xl:h-[360px] sm:w-[369px] sm:h-[208px] w-[343px] h-[209px] 3xl:rounded-[40px] xl:rounded-[30px] rounded-[17.4px] bg-[#F4F5FF] flex items-center justify-center">
                 <div className={`${imageClass}`}>
                     <Image src={cardImage} width={366} height={261} alt="Instructional developer" className="w-full h-full object-contain" />

@@ -58,7 +58,7 @@ const TrainingSection = () => {
                 }}>Lynk LMS</span>.</p>
             </div>
             <div className="flex sm:flex-row  max-w-6xl xl:px-0 px-4 flex-col 3xl:gap-[96px] xl:gap-[72px] sm:gap-[42px] gap-7 w-full justify-center sm:items-start items-center">
-                <div className="w-full">
+                <div className="w-full sm:block hidden">
                     <Image src={trainingImage} alt="training image" width={530} height={460} className="w-full h-full object-contain" />
                 </div>
                 <div className="flex flex-col w-full 3xl:gap-4 xl:gap-3 sm:gap-2 gap-0 ">
@@ -79,6 +79,9 @@ const TrainingSection = () => {
                             </div>
                         )
                     })}
+                </div>
+                <div className="w-full sm:hidden block">
+                    <Image src={trainingImage} alt="training image" width={530} height={460} className="w-full h-full object-contain" />
                 </div>
             </div>
         </div>
