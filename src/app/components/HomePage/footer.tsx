@@ -98,7 +98,7 @@ const Footer = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           to: [process.env.NEXT_PUBLIC_EMAIL_TO],
-          cc: [process.env.NEXT_PUBLIC_EMAIL_CC_2],
+          cc: [process.env.NEXT_PUBLIC_EMAIL_CC, process.env.NEXT_PUBLIC_EMAIL_CC_2, process.env.NEXT_PUBLIC_EMAIL_CC_3,process.env.NEXT_PUBLIC_LYNK_EMAIL],
           bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
           message: {
             subject: "Response Request on Email",
