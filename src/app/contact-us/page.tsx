@@ -172,7 +172,7 @@ const ContactForm: React.FC = () => {
             icon: phoneIcon,
             phoneIcon: phoneIconMobile,
             title: "General Enquiry",
-            number: "+91 96068 27067"
+            number: "info@lynklms.com"
         },
         {
             icon: salesIcon,
