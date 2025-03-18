@@ -188,10 +188,10 @@ const ContactForm: React.FC = () => {
 
                 <div class="details">
                     <ul>
-                        <li><strong>Name:</strong>${formData?.firstName}</li>
-                        <li><strong>Email:</strong>${formData?.email} </li>
-                        <li><strong>Phone:</strong>${formData?.phoneNumber}</li>
-                        <li><strong>Message:</strong>${formData?.message}</li>
+                        <li><strong>Name:</strong> ${formData?.firstName}</li>
+                        <li><strong>Email:</strong> ${formData?.email} </li>
+                        <li><strong>Phone:</strong> ${formData?.phoneNumber}</li>
+                        <li><strong>Message:</strong> ${formData?.message}</li>
                     </ul>
                 </div>
 
