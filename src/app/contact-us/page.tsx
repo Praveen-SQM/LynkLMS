@@ -74,70 +74,141 @@ const ContactForm: React.FC = () => {
                         subject: "GENERAL INQUIRY From Lync website",
                         text: 'YOUR TEXT',
                         html: `
-          <!DOCTYPE html>
-<html>
+      <!DOCTYPE html>
+<html lang="en">
 <head>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 600px;
-      background: #ffffff;
-      padding: 20px;
-      margin: 20px auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .header {
-      background: #6559FF;
-      color: #ffffff;
-      padding: 15px;
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-    }
-    .content {
-      padding: 20px;
-      font-size: 16px;
-      color: #333;
-      line-height: 1.6;
-    }
-    .content p {
-      margin: 10px 0;
-    }
-    .content b {
-      color: #6559FF;
-    }
-    .footer {
-      margin-top: 20px;
-      text-align: center;
-      padding: 10px;
-      font-size: 14px;
-      color: #666;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Inquiry Received - Lynk LMS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+    
+        .header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .logo img {
+            width: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .title {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 20px 0;
+        }
+
+        .greeting {
+            margin-bottom: 20px;
+        }
+
+        .details {
+            background-color: #F9F9FF;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .signature {
+            margin-top: 30px;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            color: #888;
+            font-size: 12px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">New Enquiry From Lync Website</div>
-    <div class="content">
-      <p>Hello Team,</p>
-      <p><b>Full Name:</b> ${formData.firstName} ${formData.lastName}</p>
-      <p><b>Email:</b> ${formData.email}</p>
-      <p><b>Phone Number:</b> ${formData.phoneNumber}</p>
-      <p><b>Message:</b><br> ${formData.message}</p>
-    </div>
-    <div class="footer">
-      Thank you & Regards,<br>
-      <b>Team</b>
-    </div>
-  </div>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td align="center" class="header">
+                <div class="logo">
+                    <img src="https://squadra-media.s3.ap-south-1.amazonaws.com/LynkLogo-03+2+(1).jpg" alt="Lynk Logo">
+                    Lynk
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" class="title">
+                <h1>New Inquiry Received!</h1>
+            </td>
+        </tr>
+        <tr>
+            <td class="content">
+                <p class="greeting">Hello <strong>Team</strong>, 👋</p>
+
+                <p>A new inquiry has been submitted through the Get in Touch form. Below are the user details:</p>
+
+                <div class="details">
+                    <ul>
+                        <li><strong>Name:</strong>${formData?.firstName}</li>
+                        <li><strong>Email:</strong>${formData?.email} </li>
+                        <li><strong>Phone:</strong>${formData?.phoneNumber}</li>
+                        <li><strong>Message:</strong>${formData?.message}</li>
+                    </ul>
+                </div>
+
+                <p>Please review and respond to the inquiry as soon as possible.</p>
+
+                <div class="signature">
+                    <p>Best Regards,</p>
+                    <p><a href="#">Lynk LMS Team</a></p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="footer">
+                <p>©${new Date().getFullYear()} Lynk LMS. All rights reserved.</p>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
 `,
