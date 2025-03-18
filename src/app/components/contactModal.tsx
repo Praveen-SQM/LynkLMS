@@ -78,7 +78,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
           cc: [process.env.NEXT_PUBLIC_EMAIL_CC, process.env.NEXT_PUBLIC_EMAIL_CC_2, process.env.NEXT_PUBLIC_EMAIL_CC_3,process.env.NEXT_PUBLIC_LYNK_EMAIL],
           bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
           message: {
-            subject: "GENERAL INQUIRY From Lync website",
+            subject: "GENERAL INQUIRY From Lynk website",
             text: 'YOUR TEXT',
             html: `
            <!DOCTYPE html>
