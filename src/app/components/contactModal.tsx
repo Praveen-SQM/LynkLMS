@@ -81,7 +81,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
             subject: "GENERAL INQUIRY From Lynk website",
             text: 'YOUR TEXT',
             html: `
-           <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -89,11 +89,13 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
     <title>New Inquiry Received - Lynk LMS</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
             color: #333;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         table {
@@ -103,31 +105,41 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
             border-collapse: collapse;
         }
 
-
         .header {
             text-align: center;
             padding: 20px 0;
         }
 
-        .logo {
+        .logo-container {
+            display: inline-block;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .logo-text {
             font-size: 24px;
             font-weight: bold;
             color: #333;
-        }
-
-        .logo img {
-            width: 30px;
             vertical-align: middle;
-            margin-right: 10px;
+            margin-left: 2px;
+         }
+
+        .logo-image {
+            display: inline-block;
+            vertical-align: middle;
+            width: 45px;
+            height: 40px;
+            object-fit: contain;
         }
 
         .title {
             font-size: 18px;
             text-align: center;
+            margin-top: 10px;
         }
 
         .content {
-            padding: 20px 0;
+            padding: 20px;
         }
 
         .greeting {
@@ -144,10 +156,12 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
         ul {
             padding-left: 20px;
             margin-bottom: 20px;
+            list-style-type: none;
         }
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            padding-left: 5px;
         }
 
         .signature {
@@ -160,6 +174,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
             border-top: 1px solid #eee;
             color: #888;
             font-size: 12px;
+            padding-bottom: 20px;
         }
 
         a {
@@ -170,15 +185,35 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
         a:hover {
             text-decoration: underline;
         }
+
+        /* Apple-specific fixes */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            }
+
+            .logo-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .logo-image {
+                max-width: 100px;
+                max-height: 40px;
+                width: auto;
+                height: auto;
+            }
+        }
     </style>
 </head>
 <body>
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
             <td align="center" class="header">
-                <div class="logo">
-                    <img src="https://squadra-media.s3.ap-south-1.amazonaws.com/LynkLogo-03+2+(1).jpg" alt="Lynk Logo">
-                    Lynk
+                <div class="logo-container">
+                    <img src="https://squadra-media.s3.ap-south-1.amazonaws.com/LynkLogo-03+2+(1).jpg" alt="Lynk Logo" class="logo-image" />
+                    <span class="logo-text">Lynk</span>
                 </div>
             </td>
         </tr>

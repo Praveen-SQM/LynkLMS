@@ -159,7 +159,7 @@ const Footer = () => {
 
         .details {
             background-color: #F9F9FF;
-            padding: 20px;
+            padding: 10px;
             border-radius: 5px;
             margin-bottom: 20px;
         }
@@ -218,7 +218,7 @@ const Footer = () => {
 
                 <div class="details">
                     <ul>
-                        <li><strong>Email:</strong>${email}</li>
+                        <li><strong>Email:</strong> ${email}</li>
                     </ul>
                 </div>
 
