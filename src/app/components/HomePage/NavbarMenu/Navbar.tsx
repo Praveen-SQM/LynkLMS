@@ -76,7 +76,7 @@ function Navbar({ className }: { className?: string }) {
     <>
       <div
         className={cn(
-          "fixed inset-x-0 max-w-6xl md:mx-4 lg:mx-auto z-50 py-4 px-6 sm:rounded-full ",
+          "fixed inset-x-0 3xl:max-w-[1590px] max-w-6xl lg:mx-4 xl:mx-auto z-50 py-4 px-6 sm:rounded-full ",
           isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-white",
           className
         )}
