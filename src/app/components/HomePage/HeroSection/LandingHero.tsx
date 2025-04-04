@@ -115,15 +115,15 @@ const LandingHero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <motion.div
+            {/* <motion.div
               className="flex items-end"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <Communities />
-            </motion.div>
-            <motion.span
+            </motion.div> */}
+            {/* <motion.span
               className="text-[14px] mb-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -131,7 +131,7 @@ const LandingHero = () => {
             >
               Be a Part of Our Growing Community{" "}
               <span className="text-green-500">10000+</span>
-            </motion.span>
+            </motion.span> */}
           </motion.div>
         </div>
       </div>
