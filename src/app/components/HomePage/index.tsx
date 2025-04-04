@@ -29,7 +29,7 @@ const HomePage = () => {
   return (
     <div>
       <div className="w-full bg-gray-50 px-4">
-        <div className="flex items-center h-screen min-h-[900px] md:min-h-auto max-h-[1053px] w-full pt-16 mx-auto max-w-6xl">
+        <div className="flex items-center h-screen min-h-[800px] md:min-h-auto max-h-[1053px] w-full pt-16 mx-auto max-w-6xl">
           <LandingHero />
         </div>
       </div>
