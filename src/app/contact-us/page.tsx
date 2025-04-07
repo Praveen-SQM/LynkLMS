@@ -13,6 +13,7 @@ import toast from "react-hot-toast";
 import { Loader2 } from "lucide-react";
 import { useRouter } from 'next/navigation';
 import ReCAPTCHA from "react-google-recaptcha";
+import axios from 'axios';
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -254,6 +255,7 @@ const ContactForm: React.FC = () => {
             const result = await response.json();
             if (response.ok) {
                 toast.success(result.message, { duration: 3000 });
+                await axios.post('/api/zoho', formData);
                 setFormData({
                     firstName: '',
                     lastName: '',
