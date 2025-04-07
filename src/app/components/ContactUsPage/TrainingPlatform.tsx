@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -39,24 +39,27 @@ const TrainingPlatform = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const paginate = (newDirection: number) => {
-    setDirection(newDirection);
-    setCurrentIndex((prevIndex) => {
-      const nextIndex = prevIndex + (newDirection as number);
-      const maxIndex = isMobile ? duplicatedSlides.length - 1 : duplicatedSlides.length - 2;
-      
-      if (nextIndex >= maxIndex) {
-        return 0;
-      }
-      if (nextIndex < 0) {
-        return maxIndex - 1;
-      }
-      return nextIndex;
-    });
-  };
-
   // Duplicate slides for continuous loop
   const duplicatedSlides = [...slides, ...slides];
+
+  const paginate = useCallback(
+    (newDirection: number) => {
+      setDirection(newDirection);
+      setCurrentIndex((prevIndex) => {
+        const nextIndex = prevIndex + (newDirection as number);
+        const maxIndex = isMobile ? duplicatedSlides.length - 1 : duplicatedSlides.length - 2;
+        
+        if (nextIndex >= maxIndex) {
+          return 0;
+        }
+        if (nextIndex < 0) {
+          return maxIndex - 1;
+        }
+        return nextIndex;
+      });
+    },
+    [isMobile, duplicatedSlides.length, setDirection, setCurrentIndex]
+  );
 
   useEffect(() => {
     let interval: string | number | NodeJS.Timeout | undefined;

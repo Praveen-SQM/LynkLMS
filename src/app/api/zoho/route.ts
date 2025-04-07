@@ -17,10 +17,10 @@ export async function POST(req: Request) {
             { message: 'Submitted to Zoho successfully', data: zohoResponse.data },
             { status: 200 }
         );
-    } catch (error: any) {
-        console.error('Zoho Webhook Error:', error?.response?.data || error.message);
+    } catch (error: unknown) {
+        console.error('Zoho Webhook Error:', (error as { response?: { data?: string; message?: string } }).response?.data || (error as { message?: string }).message);
         return NextResponse.json(
-            { message: 'Failed to submit to Zoho', error: error?.response?.data || error.message },
+            { message: 'Failed to submit to Zoho', error: (error as { response?: { data?: string; message?: string } }).response?.data || (error as { message?: string }).message || 'Unknown error' },
             { status: 500 }
         );
     }
