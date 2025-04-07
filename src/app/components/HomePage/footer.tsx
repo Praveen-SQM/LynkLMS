@@ -5,6 +5,7 @@ import logo from "@/app/utilities/icons/lynk-logo.svg";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import axios from "axios";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -245,6 +246,13 @@ const Footer = () => {
       const result = await response.json();
       if (response.ok) {
         toast.success("Request on email Requested successfully");
+        await axios.post('/api/zoho', {
+          "firstName":"From Lynk",
+          "lastName":"website",
+          "email": email,
+          "phoneNumber":"Not Provided",
+          "message":"Requested a callback on email provided for more information from lynk lms"
+        });
         setIsSubmitting(false);
         setSubmitted(true);
         setEmail("");
