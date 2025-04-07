@@ -87,7 +87,7 @@ const LMSOptions = () => {
         </span>
       </p>
 
-      <div className="grid sm:grid-cols-3 max-w-6xl grid-cols-2 xl:gap-6 sm:gap-3 gap-2 w-full px-4 xl:px-0 ">
+      <div className="grid sm:grid-cols-3 max-w-6xl 3xl:min-w-[1590px] grid-cols-2 xl:gap-6 sm:gap-3 gap-2 w-full px-4 xl:px-0 ">
         {lmsFeatures?.map((feature, index) => {
           return (
             <div

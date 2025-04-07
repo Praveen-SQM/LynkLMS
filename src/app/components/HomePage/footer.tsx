@@ -286,8 +286,8 @@ const Footer = () => {
   };
 
   return (
-    <div className="flex justify-center w-full 2xl:px-0 px-4 bg-[#090909]">
-      <div className="xl:pt-[72px] w-full max-w-6xl sm:pt-[42px] pt-7 xl:pb-6 sm:pb-4 pb-7 flex flex-col xl:gap-[111px] sm:gap-[62px] gap-6 items-center">
+    <div className="flex justify-center w-full 2xl:px-0 px-4 bg-[#090909] ">
+      <div className="xl:pt-[72px] w-full max-w-6xl 3xl:max-w-[1590px]  sm:pt-[42px] pt-7 xl:pb-6 sm:pb-4 pb-7 flex flex-col xl:gap-[111px] sm:gap-[62px] gap-6 items-center">
         <div className="xl:py-[56px] sm:py-6 py-3 xl:px-[64px] px-7 flex sm:flex-row flex-col items-center justify-between sm:gap-0 gap-[43px] w-full backdrop-blur-[2.676px] bg-white/5 xl:rounded-[21.4px] rounded-[10px] xl:max-w-full sm:max-w-[573px]">
           <p className="font-bold xl:text-[37.5px] xl:leading-[52px] text-[16px] leading-[22px] text-[#ffffff]">
             Receive inquiries and <br />
@@ -311,8 +311,8 @@ const Footer = () => {
                 onClick={handleSubmit}
                 disabled={isSubmitting}
                 className={`xl:h-[50px] sm:h-[26px] xl:rounded-[10.7px] rounded-[4px] xl:py-[10.7px] xl:px-[10.7px] sm:py-1 py-[6px] sm:px-2 px-3 ${
-                  isSubmitting ? "bg-[#4F4BAF]" : "bg-[#635BFF]"
-                } cursor-pointer font-medium xl:text-[18.73px] xl:leading-[25.6px] sm:text-[13px] sm:leading-[17.6px] text-[12px] leading-[16.3px] text-[#ffffff] flex justify-center items-center text-nowrap transition-all`}
+                  isSubmitting ? "bg-[#4F4BAF]" : "bg-[#534BEF]"
+                } cursor-pointer font-[500] xl:text-[18.73px] xl:leading-[25.6px] sm:text-[13px] sm:leading-[17.6px] text-[12px] leading-[16.3px] text-[#ffffff] flex justify-center items-center text-nowrap transition-all xl:text-[18px]`}
               >
                 {isSubmitting ? "Connecting..." : "Connect Now"}
               </button>

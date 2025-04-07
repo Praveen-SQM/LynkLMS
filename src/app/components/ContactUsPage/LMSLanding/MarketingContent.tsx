@@ -10,7 +10,7 @@ const MarketingContent = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="text-white space-y-6 flex flex-col md:block items-center justify-center"
+      className="text-white space-y-6 flex flex-col md:block 3xl:flex 3xl:items-start 3xl:h-[100%] items-center"
     >
       <div className="inline-block py-1.5 rounded-full text-center md:text-start text-sm text-[#A0FF27]">
         #1 LMS FOR TRAINING SUCCESS
@@ -22,7 +22,7 @@ const MarketingContent = () => {
         with Lynk LMS
       </h1>
 
-      <p className="text-[14px] lg:text-[18px] text-white/80 text-center md:text-start  leading-relaxed">
+      <p className="text-[14px] lg:text-[18px] text-white/80 text-center md:text-start  3xl:max-w-[693px] leading-relaxed">
         Equip your teams with Lynk LMS to create impactful learning, boost
         performance, retention, and growth.
       </p>

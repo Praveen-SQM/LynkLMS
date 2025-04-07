@@ -47,8 +47,8 @@ const TrainingSection = () => {
     }
 
     return (
-        <div className="w-full 3xl:py-[120px] xl:py-[72px] py-[42px] flex flex-col items-center justify-center xl:px-0 px-4 3xl:gap-[85px] xl:gap-[64px] sm:gap-[37.5px] gap-[42px] xl:px-0 sm:px-4">
-            <div className="flex flex-col w-full max-w-6xl 3xl:gap-[10.7px] xl:gap-2 sm:gap-[4.7px] gap-2 sm:items-start items-center">
+        <div className="w-full 3xl:max-w-[1590px] max-w-6xl mx-auto  3xl:py-[120px] xl:py-[72px] py-[42px] flex flex-col items-center justify-center xl:px-0 px-4 3xl:gap-[85px] xl:gap-[64px] sm:gap-[37.5px] gap-[42px] xl:px-0 sm:px-4">
+            <div className="flex flex-col w-full max-w-6xl 3xl:max-w-[1590px]  3xl:gap-[10.7px] 3xl:w-[1590px]  xl:gap-2 sm:gap-[4.7px] gap-2 sm:items-start items-center xl:items-start ">
                 <div className="3xl:rounded-[32px] xl:rounded-[24px] sm:rounded-[14px] rounded-[24px] xl:py-1 3xl:py-[5.3px] sm:py-[2.3px] py-1 xl:px-3 3xl:px-4 sm:px-[7px] px-3 bg-[#ECEDFE] w-fit h-fit font-medium 3xl:text-[18px] 3xl:leading-[26.7px] xl:text-[14px] xl:leading-5 text-[12px] sm:leading-[16.4px] leading-5  text-[#4740D4]">Learner Experience</div>
                 <p className="font-bold 3xl:text-[56px] 3xl:leading-[76.5px] xl:text-[42px] xl:leading-[57.4px] sm:text-[24px] sm:leading-[32.8px] text-[22px] leading-[30px] text-[#1D1A27] 3xl:max-w-[1050px] xl:max-w-[790px] sm:max-w-[452px] max-w-[343px] sm:text-start text-center">Course Creation and Live Training with <span style={{
                     background: "linear-gradient(89.86deg, #EE3CD1 6.14%, #635BFF 84.43%)",
@@ -57,7 +57,7 @@ const TrainingSection = () => {
                     fontWeight: "bold",
                 }}>Lynk LMS</span>.</p>
             </div>
-            <div className="flex sm:flex-row  max-w-6xl xl:px-0 px-4 flex-col 3xl:gap-[96px] xl:gap-[72px] sm:gap-[42px] gap-7 w-full justify-center sm:items-start items-center">
+            <div className="flex sm:flex-row 3xl:w-[1580px]   xl:px-0 px-4 flex-col 3xl:gap-[96px] xl:gap-[72px] sm:gap-[42px] gap-7 w-full justify-center sm:items-start items-center">
                 <div className="w-full sm:block hidden">
                     <Image src={trainingImage} alt="training image" width={530} height={460} className="w-full h-full object-contain" />
                 </div>

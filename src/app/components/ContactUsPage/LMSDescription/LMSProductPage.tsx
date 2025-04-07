@@ -15,13 +15,13 @@ const LMSProductPage = () => {
             Product Suite
           </span>
 
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 leading-tight">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 3xl:leading-[110%] ">
             Access a Personalised Learning
             <br />
             Management System.
           </h1>
 
-          <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+          <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto 3xl:leading-[25px]">
           Our systems analyses the data and behavior&apos;s of your employees and generate tasks and assign to the best person that can complete it efficiently and more.
           </p>
         </div>
@@ -34,7 +34,7 @@ const LMSProductPage = () => {
               alt="LMS Dashboard"
               width={1000}
               height={600}
-              className="h-auto object-contain w-screen"
+              className="h-auto object-contain w-screen 3xl:w-[60vw]"
               priority
             />
           </div>

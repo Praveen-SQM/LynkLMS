@@ -50,7 +50,7 @@ const HomePage = () => {
       <QualitySection />
       <LMSBenefits />
       <LMSComparisonTable />
-      <div className="w-full  bg-gray-50">
+      <div className="w-full bg-gray-50">
         <FAQSection />
       </div>
     </div>

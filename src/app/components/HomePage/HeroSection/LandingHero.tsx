@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+
 import ContactModal from "../../contactModal";
 import Image from "next/image";
 import logo from "@/app/utilities/images/main_large.png";
