@@ -77,7 +77,7 @@ const FAQSection = () => {
           </p>
         </div>
         <motion.div 
-          className="hidden sm:block mt-8 bg-white rounded-2xl shadow-xl shadow-gray-200 p-3 lg:p-6 text-center lg:max-w-[473.5px]"
+          className="hidden sm:block  bg-white rounded-2xl shadow-xl shadow-gray-200 p-3 lg:p-6 text-center lg:max-w-[473.5px]"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

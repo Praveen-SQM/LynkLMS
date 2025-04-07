@@ -8,10 +8,10 @@ import dashboardCard from "@/app/utilities/images/Dashboard_card.svg";
 
 const LMSLanding = () => {
   return (
-    <div className="relative xl:min-h-screen bg-[#433BDB] bg-gradient-to-br from-[#433BDB] to-[#635BFF] overflow-hidden w-full">
+    <div className="relative  bg-[#433BDB] 3xl:min-h-[1065px] bg-gradient-to-br from-[#433BDB] to-[#635BFF] overflow-hidden w-full">
       <FloatingBackground />
-      <div className="md:pl-[5vw] h-full xl:pl-[12vw] md:pt-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 pt-28">
+      <div className="md:pl-[5vw] h-full xl:pl-[12vw] 3xl:pl-[10vw] md:pt-24 3xl:absolute 3xl:top-[12%] 3xl:w-[100%] ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 pt-28 ">
           {/* Left Column - Marketing Content */}
           <MarketingContent />
 

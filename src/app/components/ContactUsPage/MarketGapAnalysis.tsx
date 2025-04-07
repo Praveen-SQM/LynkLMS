@@ -67,10 +67,10 @@ const MarketGapAnalysis = () => {
     <div className="flex flex-col items-center max-w-6xl mx-auto py-10 md:py-20 px-4">
       {/* Header */}
       <div className="text-center mb-16 md:mb-20">
-        <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold mb-4">
-          Market Gap <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">Analysis</span>
+        <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold mb-4  3xl:text-[56px]">
+          Market Gap <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 font-bold text-transparent bg-clip-text">Analysis</span>
         </h1>
-        <p className="text-gray-600 text-sm lg:text-base max-w-[343px] md:max-w-[770px]">
+        <p className="text-gray-600 text-sm lg:text-base max-w-[343px] md:max-w-[770px] 3xl:text-[18px]">
           Market Gap Analysis identifies unmet needs and opportunities by
           analyzing competitors, customer pain points, and industry trends.
         </p>
@@ -92,7 +92,7 @@ const MarketGapAnalysis = () => {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`flex-1 py-2 px-4 font-[500] rounded-full text-sm transition-all duration-200 ${
+              className={`flex-1 py-2 px-4 font-[500] rounded-full text-sm transition-all duration-200 3xl:text-[22px] 3xl:leading-[100%] ${
                 activeTab === tab
                   ? "bg-black text-white"
                   : "text-gray-600 hover:bg-gray-100"

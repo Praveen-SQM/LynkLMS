@@ -57,7 +57,7 @@ const LMSFeatures = () => {
                         WebkitTextFillColor: "transparent",
                         fontWeight: "bold",
                     }}> LMS Features</span></p>
-                <p className="font-medium 3xl:text-[18px] 3xl:leading-[32px] xl:text-[16px] xl:leading-[28px] text-[14px] leading-[19px] text-[#4A4852] text-center xl:max-w-[815px] sm:max-w-[686px] max-w-[343px]">Access a diverse collection of expertly crafted courses and training materials, ready to deploy and designed to meet various learning needs.</p>
+                <p className="font-medium 3xl:text-[18px] 3xl:leading-[32px] xl:text-[16px] xl:leading-[28px] text-[14px] leading-[19px] text-[#4A4852] text-center xl:max-w-[815px] sm:max-w-[686px] max-w-[343px] 3xl:text-[18px]">Access a diverse collection of expertly crafted courses and training materials, ready to deploy and designed to meet various learning needs.</p>
             </div>
 
             <div className="flex flex-col 3xl:gap-[32px] xl:gap-6 sm:gap-[14px] gap-6 items-center">
@@ -98,7 +98,7 @@ const LMSFeatures = () => {
                         </div>
 
                         <div className="absolute 3xl:bottom-[438px] xl:bottom-[310px] sm:bottom-[157px] xl:left-[-147px] sm:left-[-50px] 3xl:p-4 xl:p-3 sm:p-[7px] 3xl:rounded-[10.7px] xl:rounded-[8px] sm:rounded-[4.7px] h-fit w-fit bg-[#534BEF] sm:block hidden">
-                            <p className="font-medium 3xl:text-[16px] 3xl:leading-[19.2px] xl:text-[12px] xl:leading-[14.4px] sm:text-[8px] sm:leading-[9.6px] text-center text-[#FFFFFF] max-w-[167px]">Monitor ongoing and completed tasks.</p>
+                            <p className="font-medium 3xl:text-[16px] 3xl:leading-[19.2px] xl:text-[12px] xl:leading-[14.4px] sm:text-[8px] sm:leading-[9.6px] text-center text-[#FFFFFF] 3xl:leading-[120%] max-w-[167px]">Monitor ongoing and completed tasks.</p>
                         </div>
                     </div>
                     <div className="3xl:w-[215px] 3xl:h-[215px] xl:w-[150px] xl:h-[150px] w-[110px] h-[110px] absolute left-[-14px] bottom-0 z-0">

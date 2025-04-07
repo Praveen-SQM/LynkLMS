@@ -57,50 +57,50 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-8 py-24 gap-6 lg:gap-28 sm:flex">
+    <div className="max-w-6xl  3xl:max-w-[1590px]  mx-auto p-8 py-24 gap-6 lg:gap-28 sm:flex">
       <motion.div
         className="flex flex-col gap-[24px] lg:gap-[28px] mb-6 sm:mb-0"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }} // Add motion for left section
       >
-        <div className="text-center sm:text-start">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4 lg:leading-[57.3px]">
+        <div className="text-center sm:text-start ">
+          <h1 className="text-4xl lg:text-5xl font-bold mb-4 3xl:mb-[22px] xl:leading-[120%]  ">
             Your questions{" "}
             <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
               answered
             </span>
             <span className="text-black">.</span>
           </h1>
-          <p className="text-gray-600 text-sm">
-            Let&apos;s do our best to answer your most frequently asked questions.
+          <p className="text-gray-600 text-sm leading-[29.98px]">
+            Let&#39;s do our best to answer your most frequently asked questions.
           </p>
         </div>
-        <motion.div
-          className="hidden sm:block mt-8 bg-white rounded-2xl shadow-xl shadow-gray-200 p-3 lg:p-6 text-center"
+        <motion.div 
+          className="hidden sm:block  bg-white rounded-2xl shadow-xl shadow-gray-200 p-3 lg:p-6 text-center lg:max-w-[473.5px]"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex items-center justify-between mb-4 lg:mb-6 gap-2">
-            <div className="rounded-2xl w-[42px] h-[42px] lg:w-[64px] lg:h-[64px] border flex items-center justify-center">
-              <div className="bg-[#635bffc5] w-4 h-4 lg:w-6 lg:h-6 rounded-full flex items-center justify-center">
+          <div className="flex items-center justify-between mb-4 lg:mb-6 gap-2  ">
+            <div className="rounded-2xl w-[42px] h-[42px] 3xl:w-[88px] 3xl:h-[88px] lg:w-[64px] lg:h-[64px] border flex items-center justify-center">
+              <div className="bg-[#635bffc5] w-4 h-4 lg:w-6 lg:h-6  rounded-full flex items-center justify-center">
                 <span className="text-white">?</span>
               </div>
             </div>
-            <div className="w-full max-w-[180px] lg:max-w-[213px]">
-              <h3 className="lg:text-lg text-start font-semibold mb-2">
+            <div className="w-full max-w-[180px] lg:max-w-[213px] 3xl:max-w-[300px]">
+              <h3 className="lg:text-lg text-start  mb-2 3xl:text-[24px] font-[700] text-[#1D1A27]">
                 Still have questions?
               </h3>
-              <p className="text-gray-600 text-start text-sm mb-4">
-                Can&apos;t find the answer you&apos;re looking for? Please chat to our
+              <p className="text-[#1D1A27CC] text-start text-sm mb-4 3xl:leading-[25px]">
+                Can&#39;t find the answer you&apos;re looking for? Please chat to our
                 friendly team!
               </p>
             </div>
           </div>
           <button
             onClick={() => setContactModal(true)}
-            className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors"
+            className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors font-[500] 3xl:text-[20px]"
           >
             Get in touch
           </button>
@@ -109,7 +109,7 @@ const FAQSection = () => {
 
       {/* FAQ Section with staggered animation */}
       <motion.div
-        className="space-y-4 w-full max-w-[672p] lg:max-w-[627px]"
+        className="space-y-4 w-full max-w-[672px] lg:max-w-[627px] 3xl:max-w-full"
         variants={faqVariants}
         initial="hidden"
         animate="visible"
@@ -117,7 +117,7 @@ const FAQSection = () => {
         {faqs.map((faq, index) => (
           <motion.div
             key={index}
-            className="bg-white rounded-xl text-sm lg:text-base border border-gray-100 overflow-hidden"
+            className="bg-white rounded-xl text-sm lg:text-base border 3xl:text-[18px] border-gray-100 overflow-hidden"
             variants={questionVariants}
           >
             <button
@@ -133,7 +133,7 @@ const FAQSection = () => {
             </button>
 
             <div
-              className={`transition-all duration-500 ease-in-out overflow-hidden ${
+              className={`transition-all duration-500 3xl:text-[16px] xl:text-[14px] ease-in-out overflow-hidden ${
                 openIndex === index
                   ? "max-h-[500px] opacity-100"
                   : "max-h-0 opacity-0"
@@ -145,7 +145,7 @@ const FAQSection = () => {
         ))}
       </motion.div>
       <motion.div
-        className="block sm:hidden mt-8 bg-white rounded-2xl shadow-xl shadow-gray-200 p-3 lg:p-6 text-center"
+        className="block sm:hidden  bg-white rounded-2xl shadow-xl shadow-gray-200 p-3 lg:p-6 text-center"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -161,7 +161,7 @@ const FAQSection = () => {
               Still have questions?
             </h3>
             <p className="text-gray-600 text-start text-sm mb-4">
-              Can&apos;t find the answer you&apos;re looking for? Please chat to our
+              Can&lsquo;t find the answer you&lsquo;re looking for? Please chat to our
               friendly team!
             </p>
           </div>
@@ -173,7 +173,6 @@ const FAQSection = () => {
           Get in touch
         </button>
       </motion.div>
-
       <ContactModal
         isOpen={contactModal}
         onClose={() => setContactModal(false)}
