@@ -149,7 +149,7 @@ const TabSwitch = () => {
         <AnimatePresence mode="wait">
           <div
             key={activeTab}
-            className="bg-[#F7F7FF] xl:rounded-[34.38px] sm:rounded-[14px] flex items-center 3xl:gap-[146.11px] xl:gap-[102px] sm:gap-[40px] 3xl:max-w-[1590px] xl:max-w-[1140px] sm:max-w-[750px] xl:px-[40px] sm:px-[20px] xl:pb-5 sm:pb-2"
+            className="bg-[#F7F7FF] xl:rounded-[34.38px] sm:rounded-[14px] flex items-center 3xl:gap-[146.11px] xl:gap-[102px] sm:gap-[40px] 3xl:min-w-[1590px] xl:max-w-[1140px] sm:max-w-[750px] xl:px-[40px] sm:px-[20px] xl:pb-5 sm:pb-2"
           >
             <motion.div
               initial={{ opacity: 0, y: 50 }}

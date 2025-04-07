@@ -32,7 +32,7 @@ const benefitsData = [
 
 const LMSBenefits = () => {
   return (
-    <div className="max-w-6xl mx-auto xl:px-0 px-4 py-[120px]">
+    <div className="max-w-6xl mx-auto xl:px-0 px-4 py-[120px] 3xl:min-w-[1590px]">
       <div className="text-center space-y-4 mb-12 flex flex-col items-center">
         <h1 className="text-3xl sm:text-4xl font-bold">
           <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
@@ -48,15 +48,15 @@ const LMSBenefits = () => {
 
       <div className="relative grid sm:grid-cols-2 gap-20 sm:gap-24 mt-16">
         {/* Center Icon with Concentric Circles */}
-        <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52">
+        <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 3xl:w-[300px] 3xl:h-[300px] ">
           {/* Outer circle */}
           <div className="absolute inset-0 rounded-full bg-indigo-50 animate-expand-outer"></div>
 
           {/* Middle circle */}
-          <div className="absolute inset-6 rounded-full bg-indigo-100 animate-expand-middle"></div>
+          <div className="absolute inset-12 rounded-full bg-indigo-100 animate-expand-middle"></div>
 
           {/* Inner circle with icon */}
-          <div className="absolute inset-12 rounded-full bg-indigo-500 flex items-center justify-center animate-expand-inner">
+          <div className="absolute inset-12 3xl:inset-24 rounded-full bg-indigo-500 flex items-center justify-center animate-expand-inner">
             <Image src={logoWhite} alt="Icon" width={60} height={60} />
           </div>
         </div>

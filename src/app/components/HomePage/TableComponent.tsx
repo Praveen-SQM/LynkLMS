@@ -124,7 +124,7 @@ const LMSComparisonTable = () => {
           Compare LMS platforms to find the best fit for your needs.
         </p>
       </div>
-      <div className="overflow-hidden w-full border-[2px] max-w-6xl border-[#E8E8E8] bg-[#FFFFFF] rounded-lg">
+      <div className="overflow-hidden w-full border-[2px] max-w-6xl 3xl:min-w-[1590px] border-[#E8E8E8] bg-[#FFFFFF] rounded-lg">
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
