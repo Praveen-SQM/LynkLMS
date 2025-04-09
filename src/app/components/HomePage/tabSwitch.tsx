@@ -6,7 +6,6 @@ import partnerClient from "../../../../public/partner-clients.png";
 import RemoteTeams from "../../../../public/remote-teams.png";
 import trainingProvider from "../../../../public/training-provider.png";
 import corporates from "../../../../public/corporates.png";
-import EduInstitute from "../../../../public/Edu-institute.png";
 import { motion, AnimatePresence } from "framer-motion";
 import ContactModal from "../contactModal";
 
@@ -48,7 +47,7 @@ const TabSwitch = () => {
   const tabOptions = [
     {
       name: "Edu Institutes",
-      img: EduInstitute,
+      img: corporates,
       title: "Transforming Education",
       description:
         "Revolutionize classrooms with interactive, digital learning experiences. Simplify student assessments and provide real-time feedback to enhance learning outcomes. Automate certification issuance and reduce administrative burden. Empower educators with powerful tools for content creation, grading, and student engagement.",
@@ -100,7 +99,7 @@ const TabSwitch = () => {
           crafted for flexible learning.
         </p>
       </div>
-      <div className=" flex-col 3xl:gap-[34.38px] xl:gap-6 sm:gap-[14px] items-center hidden sm:flex">
+      <div className=" flex-col 3xl:gap-[34.38px] xl:gap-6 sm:gap-[14px] items-center hidden sm:flex lg:w-[1000px] xl:w-[1440px] 3xl:w-[1590px]">
         <div className="flex 3xl:gap-[111.73px] xl:gap-[78px] sm:gap-[40px] justify-center items-start 3xl:py-[17.19px] xl:py-[12px] sm:py-[7px]">
           {tabOptions?.map((tab, index) => {
             return (
@@ -149,7 +148,7 @@ const TabSwitch = () => {
         <AnimatePresence mode="wait">
           <div
             key={activeTab}
-            className="bg-[#F7F7FF] xl:rounded-[34.38px] sm:rounded-[14px] flex items-center 3xl:gap-[146.11px] xl:gap-[102px] sm:gap-[40px] 3xl:min-w-[1590px] xl:max-w-[1140px] sm:max-w-[750px] xl:px-[40px] sm:px-[20px] xl:pb-5 sm:pb-2"
+            className="bg-[#F7F7FF] xl:rounded-[34.38px] sm:rounded-[14px] flex items-center 3xl:gap-[146.11px] xl:gap-[102px] sm:gap-[40px] 3xl:min-w-[1590px] xl:max-w-[1140px] lg:max-w-[800px] sm:max-w-[750px] xl:px-[40px] sm:px-[20px] xl:pb-5 sm:pb-2"
           >
             <motion.div
               initial={{ opacity: 0, y: 50 }}

@@ -76,7 +76,7 @@ function Navbar({ className }: { className?: string }) {
     <>
       <div
         className={cn(
-          "fixed inset-x-0 3xl:max-w-[1590px] max-w-6xl md:mx-4  xl:mx-auto z-50 py-4 px-6 sm:rounded-full ",
+          "fixed inset-x-0 3xl:max-w-[1590px] max-w-6xl md:mx-4  xl:mx-auto z-50 py-4 px-6 sm:rounded-full 3xl:py-[20.5px] ",
           isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-white",
           className
         )}
@@ -89,11 +89,11 @@ function Navbar({ className }: { className?: string }) {
             }}
             className="flex items-center gap-2"
           >
-            <Image height={25} width={25} src={logo} alt="logo" />
-            <p className="font-bold">Lynk</p>
+            <Image height={25} width={25} src={logo} alt="logo" className="3xl:w-[35px] 3xl:h-[43px]" />
+            <p className="font-bold 3xl:text-[22px]">Lynk</p>
           </Link>
 
-          <div className="hidden sm:flex text-[14px] font-[600] items-center gap-6">
+          <div className="hidden sm:flex text-[14px] font-[600] 3xl:text-[18px] 3xl:font-[700] items-center gap-6 text-[#1A1A1A]">
             <motion.div
               initial="hidden"
               animate="visible"
@@ -173,7 +173,7 @@ function Navbar({ className }: { className?: string }) {
               <Link href="/contact-us" onClick={() => setIsMobileMenuOpen(false)}>
                 <motion.a
                   variants={mobileLinkVariants}
-                  className="border-2 mb-4 bg-[#6559FF] border-white text-white text-center w-full font-[600] p-3 px-6 rounded-lg hover:bg-white hover:text-[#6559FF] transition-colors block"
+                  className="border-2 mb-4 bg-[#6559FF] border-white text-white text-center w-full font-[600] p-3 px-6 rounded-lg hover:bg-white hover:text-[#6559FF] transition-colors block 3xl:text-[18px] 3xl:leading-[100%] 3xl:py-[10px]"
                 >
                   Contact Us
                 </motion.a>

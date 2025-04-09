@@ -41,7 +41,7 @@ export const CardStack = ({
   };
 
   return (
-    <div className="relative  h-60 w-60 xl:h-60 xl:w-96 sm:h-30 sm:w-60">
+    <div className="relative  h-60 w-60 xl:h-60 xl:w-96 sm:h-30 sm:w-60 ">
       {cards.map((card, index) => {
         return (
           <motion.div
@@ -57,7 +57,7 @@ export const CardStack = ({
             }}
           >
             <div className="w-full h-full">
-                <Image unoptimized src={card.image} alt={card.name} width={100} height={100} className="w-full h-full object-cover rounded-3xl"/>
+                <Image unoptimized src={card.image} alt={card.name} width={100} height={100} className="w-full h-full object-cover rounded-3xl 3xl:min-w-[600px] 3xl:min-h-[400px]"/>
             </div>
           </motion.div>
         );

@@ -307,15 +307,15 @@ const ContactForm: React.FC = () => {
                     className="flex flex-col xl:gap-[148px] w-full 3xl:max-w-[397px] xl:max-w-[382px] sm:max-w-[666px] max-w-[343px]"
                 >
                     <div className='flex flex-col gap-3 xl:flex hidden'>
-                        <h2 className="text-bold text-[20px] leading-[27.3px] text-[#FFFFFF]">Contact Us.</h2>
+                        <h2 className="text-bold text-[20px] leading-[27.3px] 3xl:font-[700] text-[#FFFFFF]">Contact Us.</h2>
                         <div className='w-[30px] h-1 bg-[#EE3CD1]'></div>
                     </div>
                     <div className='flex flex-col gap-[42px]'>
                         <div className='flex flex-col sm:gap-4 gap-1 xl:items-start sm:items-center items-start'>
-                            <h1 className="font-bold xl:text-[42px] xl:leading-[57.4px] sm:text-[32px] sm:leading-[43.7px] text-[24px] leading-[32.8px] sm:text-[#ffffff] text-[#141414] sm:max-w-full max-w-[213px]">
+                            <h1 className="font-bold xl:text-[42px] xl:leading-[57.4px] sm:text-[32px] sm:leading-[43.7px] text-[24px] leading-[32.8px] sm:text-[#ffffff] text-[#141414] sm:max-w-full max-w-[213px] 3xl:max-w-[370px]">
                                 Empower learners -let’s talk.
                             </h1>
-                            <p className="font-normal sm:text-[16px] text-[14px] leading-[24px] sm:text-[#ffffff] text-[#141414] xl:max-w-full sm:max-w-[375px] xl:text-start sm:text-center text-start">
+                            <p className="font-normal sm:text-[16px] 3xl:font-[400] text-[14px] leading-[24px] sm:text-[#ffffff] text-[#141414] xl:max-w-full sm:max-w-[375px] xl:text-start sm:text-center text-start">
                                 Please feel free to share your thoughts and we can
                                 discuss it over a cup of tea.
                             </p>
@@ -329,7 +329,7 @@ const ContactForm: React.FC = () => {
                                             <Image src={CardItem?.icon} alt={CardItem?.title} width={52} height={52} className='w-full h-full object-contain' />
                                         </div>
                                         <div className='flex flex-col gap-2'>
-                                            <p className='font-semibold text-[16px] leading-[26px] text-[#FFFFFF]'>{CardItem?.title}</p>
+                                            <p className='font-semibold text-[16px] 3xl:text-[18px] 3xl:font-[600] leading-[26px] text-[#FFFFFF]'>{CardItem?.title}</p>
                                             <p className='font-normal text-[16px] leading-[22px] text-[#FFFFFF]'>{CardItem?.number}</p>
                                         </div>
                                     </div>

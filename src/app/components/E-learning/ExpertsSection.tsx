@@ -55,7 +55,7 @@ const ExpertsSection = () => {
                     WebkitTextFillColor: "transparent",
                     fontWeight: "bold",
                 }}>Our Success</span></p>
-                <p className="font-normal 3xl:text-[21px] 3xl:leading-8 xl:text-[16px] xl:leading-6 sm:text-[14px] sm:leading-[19px] text-[14px] leading-[24px] text-[#4A4852] 3xl:max-w-[686px] xl:max-w-[514px] sm:max-w-[508px] max-w-full text-center">With a mix of technical and creative experts, we ensure the best outcomes for every project.</p>
+                <p className="font-normal 3xl:text-[21px] 3xl:leading-8 xl:text-[16px] xl:leading-6 sm:text-[14px] sm:leading-[19px] text-[14px] leading-[24px] text-[#4A4852] 3xl:max-w-[686px] xl:max-w-[514px] sm:max-w-[508px] max-w-full text-center text-[#4A4852]">With a mix of technical and creative experts, we ensure the best outcomes for every project.</p>
             </div>
             <div className="flex flex-col 3xl:gap-[26.7px] xl:gap-5 sm:gap-[11.6px] gap-5">
                 <ImageWithTextRowComponent cardImage={InstructionalDeveloperImage} imageClass="3xl:w-[487.7px] 3xl:h-[348px] xl:w-[366px] xl:h-[261px] sm:w-[226px] sm:h-[151px] w-[209px] h-[149px]" text="Instructional Designers" description="Specialists in structuring learning objectives, creating impactful content, and ensuring it is pedagogically sound and aligned with learning theories." />
