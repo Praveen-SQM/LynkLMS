@@ -1,6 +1,5 @@
 import React from "react";
 import rightIcon from "@/app/utilities/icons/right-icon.svg"
-import whatYouGetImage from "@/app/utilities/images/exciting-image.svg"
 import PhoneIcon from "@/app/utilities/icons/Phone-Icon.svg"
 import chatIcon from "@/app/utilities/icons/Chat-Icon.svg"
 import checkIcon from "@/app/utilities/icons/Check-Icon.svg"

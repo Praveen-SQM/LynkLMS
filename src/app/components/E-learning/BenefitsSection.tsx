@@ -1,6 +1,5 @@
 import React from "react";
 import rightIcon from "@/app/utilities/icons/Checkmark.svg"
-import BenefitsImage from "@/app/utilities/images/Benefits-image.webp"
 import Image from "next/image";
 import Link from "next/link";
 
