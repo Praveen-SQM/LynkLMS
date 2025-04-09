@@ -31,11 +31,10 @@ const HomePage = () => {
       <div className="w-full bg-gray-50 px-4">
         <div
           className="flex items-center w-full mx-auto max-w-6xl min-h-[798px] sm:min-h-[798px] 3xl:min-w-[1590px]
+          xl:min-w-[1100px] lg:max-w-[900px] md:max-w-[700px]
   sm:pt-[2.625rem] sm:pb-[1.5rem] 
   md:pt-[12rem] md:pb-[9rem] 
   lg:pt-[8rem] lg:pb-[7.5rem] 
-  xl:pt-[8rem] xl:pb-[7.5rem] 
-  2xl:pt-[8rem] 2xl:pb-[7.5rem] 
   3xl:pt-[16rem] 3xl:pb-[14.1875rem]"
         >
           <LandingHero />

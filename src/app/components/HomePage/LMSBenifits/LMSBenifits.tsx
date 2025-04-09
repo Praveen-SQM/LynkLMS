@@ -34,13 +34,13 @@ const LMSBenefits = () => {
   return (
     <div className="max-w-6xl mx-auto xl:px-0 px-4 py-[120px] 3xl:min-w-[1590px]">
       <div className="text-center space-y-4 mb-12 flex flex-col items-center">
-        <h1 className="text-3xl sm:text-4xl font-bold">
+        <h1 className="text-3xl sm:text-4xl font-bold 3xl:text-[56px] 3xl:max-w-[1280px] 3xl:leading-[100%]">
           <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
             Combine
           </span>{" "}
           LMS and Content for Maximum Impact
         </h1>
-        <p className="text-gray-600 w-full text-sm sm:text-base lg:max-w-2xl">
+        <p className=" w-full text-sm sm:text-base lg:max-w-2xl text-[#4A4852] 3xl:text-[21px] 3xl:leading-[32px]">
           Our LMS and e-learning content development services work hand-in-hand
           to create a seamless and efficient training ecosystem.
         </p>
@@ -71,7 +71,7 @@ const LMSBenefits = () => {
           >
             <div
               key={index}
-              className="absolute z-10 bg-white rounded-2xl p-4 h-full max-h-36 sm:p-6 shadow-2xl shadow-gray-200 max-w-[230px] lg:max-w-[350px]"
+              className="absolute z-10 bg-white rounded-2xl p-4 h-full max-h-36 sm:p-6 shadow-2xl shadow-gray-200 max-w-[230px] lg:max-w-[350px] 3xl:min-w-[489.9114990234375px]"
             >
               <div className="flex items-center gap-4 font-semibold mb-2">
                 <div className="p-2 bg-[#5a52f53f] w-fit rounded-md">
@@ -86,9 +86,9 @@ const LMSBenefits = () => {
                     benefit.icon
                   )}
                 </div>
-                <h3 className="text-base lg:text-xl">{benefit.title}</h3>
+                <h3 className="text-base lg:text-xl 3xl:text-[24px]">{benefit.title}</h3>
               </div>{" "}
-              <p className="text-gray-500 sm:text-gray-600 font-semibold sm:font-normal text-sm lg:text-base">
+              <p className="text-gray-500 sm:text-gray-600 font-semibold sm:font-normal text-sm lg:text-base 3xl:text-[18px]">
                 {benefit.description}
               </p>
             </div>

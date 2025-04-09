@@ -26,10 +26,10 @@ const MarketingContent = () => {
         Equip your teams with Lynk LMS to create impactful learning, boost
         performance, retention, and growth.
       </p>
-      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="md:mb-[100px] mb-[0px] lg:mb-[0px]">
         <Link href="/contact-us">
-          <GradientBorder className="mt-8">
-            <button className="bg-gray-900 text-white px-8 py-3 rounded-full font-medium">
+          <GradientBorder className="mt-8 md:mb-[100px] mb-[0px] lg:mb-[0px">
+            <button className="bg-gray-900 text-white px-8 py-3 rounded-full font-medium ">
               Contact Now
             </button>
           </GradientBorder>

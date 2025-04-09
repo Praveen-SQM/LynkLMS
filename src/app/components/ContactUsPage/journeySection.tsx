@@ -43,7 +43,7 @@ const JourneySection = () => {
                     }}>training</span> journey, streamlined in one place.
           </p>
         </div>
-        <div className="grid sm:grid-cols-4 grid-cols-2 place-items-center 3xl:gap-6 3xl:min-w-[1590px] xl:gap-5 sm:gap-[11.7px] gap-3">
+        <div className="grid sm:grid-cols-4 grid-cols-2 place-items-center 3xl:gap-6 3xl:min-w-[1590px] xl:min-w-[1110px] lg:min-w-[900px] xl:gap-5 sm:gap-[11.7px] gap-3">
           {journeyItems?.map((item, index) => {
             return (
               <div

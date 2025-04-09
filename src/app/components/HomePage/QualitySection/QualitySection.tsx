@@ -4,7 +4,7 @@ import Link from "next/link";
 import instantSupportIcon from "@/app/utilities/icons/instant-support.svg"
 import availabilityIcon from "@/app/utilities/icons/availablity.svg"
 import qualityAssuranceIcon from "@/app/utilities/icons/quality-assurance.svg"
-import qualitySectionImage from "@/app/utilities/images/Quality-section-image.webp"
+import qualitySectionImage from "@/app/utilities/images/Quality-section.svg"
 import rightIcon from "@/app/utilities/icons/right.svg"
 import phoneCallIcon from "@/app/utilities/icons/phone-call-home.svg"
 import annotationCheckIcon from "@/app/utilities/icons/annotation-check-home.svg"
@@ -66,7 +66,7 @@ const QualitySection = () => {
                     })}
                 </div>
             </div>
-            <div className="flex sm:flex-row max-w-6xl 3xl:min-w-[1590px] flex-col items-center justify-between gap-[46px] w-full">
+            <div className="flex sm:flex-row max-w-6xl 3xl:min-w-[1590px] lg:max-w-[900px] xl:max-w-[1200px] md:max-w-[750px] flex-col items-center justify-between gap-[46px] w-full">
                 <div className="relative">
                     <div className="3xl:w-9 3xl:h-9 xl:w-7 xl:h-7 w-5 h-5 absolute left-[0px] top-[31%] animate-float">
                         <Image src={phoneCallIcon} alt="image" width={28} height={28} className="w-full h-full object-cover"/>
@@ -77,7 +77,7 @@ const QualitySection = () => {
                     <div className="3xl:w-9 3xl:h-9 xl:w-7 xl:h-7 w-5 h-5 absolute right-[0px] bottom-[40%] animate-float">
                         <Image src={chatIcon} alt="image" width={28} height={28} className="w-full h-full object-cover"/>
                     </div>
-                    <div className="3xl:w-[470px] 3xl:h-[546px] xl:w-[365px] xl:h-[424px] w-[268px] h-[311px]">
+                    <div className="3xl:w-[470px] 3xl:h-[410px] xl:w-[365px] xl:h-[320px] lg:h-[235px] md:h-[235px] w-[268px] sm:h-[200px]">
                         <Image src={qualitySectionImage} alt="image" width={365} height={424} className="w-full h-full object-cover" />
                     </div>
                 </div>
@@ -91,7 +91,7 @@ const QualitySection = () => {
                                         <div className="w-[19px] h-[24px]">
                                             <Image src={rightIcon} alt="right icon" width={19} height={24} className="w-full h-full object-cover" />
                                         </div>
-                                        <p className="font-normal 3xl:text-[20px] 3xl:leading-8 xl:text-[16px] xl:leading-6 text-[14px] leading-[19.12px] text-[#1D1A27CC]">{quality?.text}</p>
+                                        <p className="font-normal 3xl:text-[20px] 3xl:leading-8 xl:text-[16px] xl:leading-6 text-[14px] leading-[20px] text-[#1D1A27CC]">{quality?.text}</p>
                                     </div>
                                 )
                             })}

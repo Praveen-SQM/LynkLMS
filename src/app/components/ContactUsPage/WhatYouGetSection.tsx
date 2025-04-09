@@ -61,7 +61,7 @@ const WhatYouGetSection = () => {
                         <Image src={checkIcon} alt="phone-icon" width={28} height={28} className="w-full h-full object-cover" />
                     </div>
                     <div className="3xl:w-[437px] 3xl:h-[710px] xl:w-[328px] xl:h-[533px] sm:w-[208px] sm:h-[312px] w-[265px] h-[397px]">
-                        <Image src={whatYouGetImage} alt="whatYouGetImage" width={356} height={533} className="w-full h-full object-cover" />
+                        {/* <Image src={whatYouGetImage} alt="whatYouGetImage" width={356} height={533} className="w-full h-full object-cover" /> */}
                     </div>
                 </div>
             </div>

@@ -59,7 +59,7 @@ const FAQSection = () => {
   return (
     <div className="max-w-6xl  3xl:max-w-[1590px]  mx-auto p-8 py-24 gap-6 lg:gap-28 sm:flex">
       <motion.div
-        className="flex flex-col gap-[24px] lg:gap-[28px] mb-6 sm:mb-0"
+        className="flex flex-col gap-[24px] lg:gap-[28px] mb-6 sm:mb-0 3xl:min-w-[569.3333129882812px]"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }} // Add motion for left section
@@ -72,12 +72,12 @@ const FAQSection = () => {
             </span>
             <span className="text-black">.</span>
           </h1>
-          <p className="text-gray-600 text-sm leading-[29.98px]">
+          <p className="text-gray-600 text-sm leading-[29.98px] 3xl:text-[18px]">
             Let&#39;s do our best to answer your most frequently asked questions.
           </p>
         </div>
         <motion.div 
-          className="hidden sm:block  bg-white rounded-2xl shadow-xl shadow-gray-200 p-3 lg:p-6 text-center lg:max-w-[473.5px]"
+          className="hidden sm:block  bg-white rounded-2xl shadow-xl shadow-gray-200 p-3 lg:p-6 text-center lg:max-w-[473.5px] 3xl:max-w-[454.6666564941406px]"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -89,10 +89,10 @@ const FAQSection = () => {
               </div>
             </div>
             <div className="w-full max-w-[180px] lg:max-w-[213px] 3xl:max-w-[300px]">
-              <h3 className="lg:text-lg text-start  mb-2 3xl:text-[24px] font-[700] text-[#1D1A27]">
+              <h3 className="lg:text-lg text-start  mb-2 3xl:text-[24px] font-[700] text-[#1D1A27] 3xl:text-[23.55px]">
                 Still have questions?
               </h3>
-              <p className="text-[#1D1A27CC] text-start text-sm mb-4 3xl:leading-[25px]">
+              <p className="text-[#1D1A27CC] text-start text-sm mb-4 3xl:leading-[25px] 3xl:text-[18px]">
                 Can&#39;t find the answer you&apos;re looking for? Please chat to our
                 friendly team!
               </p>
@@ -100,7 +100,7 @@ const FAQSection = () => {
           </div>
           <button
             onClick={() => setContactModal(true)}
-            className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors font-[500] 3xl:text-[20px]"
+            className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors font-[500] 3xl:text-[20px] 3xl:py-[18px]"
           >
             Get in touch
           </button>
@@ -124,7 +124,7 @@ const FAQSection = () => {
               className="w-full px-6 py-4 lg:py-5 text-left flex justify-between items-center "
               onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
             >
-              <span className="font-[600] sm:font-medium">{faq.question}</span>
+              <span className="font-[600] sm:font-medium 3xl:text-[18px]">{faq.question}</span>
               {openIndex === index ? (
                 <ChevronUp className="h-5 w-5 text-gray-500" />
               ) : (
@@ -133,7 +133,7 @@ const FAQSection = () => {
             </button>
 
             <div
-              className={`transition-all duration-500 3xl:text-[16px] xl:text-[14px] ease-in-out overflow-hidden ${
+              className={`transition-all duration-500 3xl:text-[18px] xl:text-[14px] ease-in-out overflow-hidden ${
                 openIndex === index
                   ? "max-h-[500px] opacity-100"
                   : "max-h-0 opacity-0"

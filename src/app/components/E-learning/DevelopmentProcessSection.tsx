@@ -119,20 +119,20 @@ const DevelopmentProcessSection = () => {
     return (
         <div className="w-full 3xl:py-[96px] xl:py-[72px] py-[42px] flex flex-col 3xl:gap-[120px] xl:gap-[92px] sm:gap-[52px] gap-[42px] items-center">
             <div className="flex flex-col 3xl:gap-4 xl:gap-3 sm:gap-[7px] gap-[6px] sm:max-w-full max-w-[343px] items-center">
-                <p className="font-bold 3xl:text-[56px] 3xl:leading-[76.5px] xl:text-[42px] xl:leading-[57.4px] sm:text-[28px] sm:leading-[38px] text-[24px] leading-[32.8px] text-[#1D1A27] text-center">Content <span style={{
+                <p className="font-bold 3xl:text-[56px] 3xl:leading-[76.5px] xl:text-[42px] xl:leading-[57.4px] sm:text-[28px] sm:leading-[38px] text-[24px] leading-[32.8px] text-[#1D1A27] text-center 3xl:text-[56px] 3xl:font-[700]">Content <span style={{
                     background: "linear-gradient(89.86deg, #EE3CD1 6.14%, #635BFF 84.43%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     fontWeight: "bold",
                 }}>Development</span> Process</p>
-                <p className="font-normal 3xl:text-[22px] 3xl:leading-[32px] xl:text-[16px] xl:leading-6 text-[14px] leading-[19px] text-[#4A4852] text-center">Involves creating and refining materials to meet learning goals.</p>
+                <p className="font-normal 3xl:text-[22px] 3xl:leading-[32px] xl:text-[16px] xl:leading-6 text-[14px] leading-[19px] text-[#4A4852] text-center text-[#999DA6] 3xl:text-[22px]">Involves creating and refining materials to meet learning goals.</p>
             </div>
 
             <div className="flex flex-col 3xl:gap-[187px] xl:gap-[140px] sm:gap-[81px] gap-[62px]">
                 {ProcessPoints?.map((point, sectionIndex) => {
                     return (
-                        <div key={sectionIndex} className={`w-full max-w-6xl xl:px-0 px-4 flex items-center 3xl:gap-[145px] xl:gap-[108px] sm:gap-[100px] sm:px-4 gap-6 ${sectionIndex === 0 ? "sm:flex-row flex-col" : "sm:flex-row-reverse flex-col"}`}>
-                            <div className="flex flex-col 3xl:gap-[56px] xl:gap-[42px] gap-6">
+                        <div key={sectionIndex} className={`w-full max-w-6xl 3xl:max-w-[1590px] xl:max-w-[1200px] lg:max-w-[900px] xl:px-0 px-4 flex items-center 3xl:gap-[145px] xl:gap-[108px] sm:gap-[100px] sm:px-4 gap-6 ${sectionIndex === 0 ? "sm:flex-row flex-col" : "sm:flex-row-reverse flex-col"}`}>
+                            <div className="flex flex-col 3xl:gap-[26px] xl:gap-[42px] gap-6 ">
                                 <div className="flex flex-col 3xl:gap-4 gap-3">
                                     <p className="font-medium 3xl:text-[42px] 3xl:leading-[57.4px] xl:text-[32px] xl:leading-[43.7px] text-[18px] leading-[24px] text-[#1D1A27]">{point?.text}</p>
                                     <p className="font-normal 3xl:text-[22px] 3xl:leading-[32px] xl:text-[16px] xl:leading-6 text-[14px] sm:leading-[19px] leading-[22px] text-[#4A4852]">{point?.description}</p>
@@ -164,7 +164,7 @@ const DevelopmentProcessSection = () => {
                                     })}
                                 </div>
                             </div>
-                            <div className="xl:h-[26rem] sm:h-[20rem] h-[15rem] flex items-center justify-center w-full sm:mt-0 mt-6">
+                            <div className={`xl:h-[26rem] sm:h-[20rem]  h-[15rem] flex items-center 3xl:items-start  w-full sm:mt-0 mt-6 ${sectionIndex === 0 ? "3xl:justify-center xl:justify-end md:justify-center" : "justify-start"}`}>
                                 <CardStack items={CARDS} />
                             </div>
                         </div>
