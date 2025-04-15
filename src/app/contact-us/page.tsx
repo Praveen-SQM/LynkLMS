@@ -369,7 +369,7 @@ const ContactForm: React.FC = () => {
 
                                 <div>
                                     <label htmlFor="lastName" className="block font-normal sm:text-[13.9px] sm:leading-[14.2px] text-[14px] leading-[19px] text-[#131313] mb-2">
-                                        Last Name
+                                        Last Name<span className="text-red-500">*</span>
                                     </label>
                                     <input
                                         type="text"
@@ -379,6 +379,7 @@ const ContactForm: React.FC = () => {
                                         onChange={handleInputChange}
                                         placeholder="Enter last name"
                                         className="w-full sm:px-4 px-3 py-3 border font-normal text-[14px] leading-[19px] text-[#131313] placeholder:text-[#888888] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600"
+                                        required
                                     />
                                 </div>
                             </div>
