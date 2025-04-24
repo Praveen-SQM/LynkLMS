@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import logo from "@/app/utilities/icons/lynk-logo.svg";
 import toast from "react-hot-toast";
-import Link from "next/link";
+// import Link from "next/link";
 import { usePathname } from "next/navigation";
 import axios from "axios";
 const Footer = () => {
@@ -16,55 +16,55 @@ const Footer = () => {
     setEmail("")
     setError("")
   },[pathname])
-  const footerItems = [
-    {
-      heading: "Product",
-      items: [
-        {
-          text: "Features",
-          href: "/#features",
-        },
-        {
-          text: "Intuitive LMS",
-          href: "/#intuitive-lms",
-        },
-        {
-          text: "LMS Comparison",
-          href: "/#lms-comparison",
-        },
-      ],
-    },
-    {
-      heading: "Company",
-      items: [
-        {
-          text: "E-Learning",
-          href: "/e-learning",
-        },
-        {
-          text: "LMS",
-          href: "/lms",
-        },
-        {
-          text: "Contact",
-          href: "/contact-us",
-        },
-      ],
-    },
-    {
-      heading: "Policy",
-      items: [
-        {
-          text: "Terms & Conditions",
-          href: "/",
-        },
-        {
-          text: "Privacy Policy",
-          href: "/",
-        },
-      ],
-    },
-  ];
+  // const footerItems = [
+  //   {
+  //     heading: "Product",
+  //     items: [
+  //       {
+  //         text: "Features",
+  //         href: "/#features",
+  //       },
+  //       {
+  //         text: "Intuitive LMS",
+  //         href: "/#intuitive-lms",
+  //       },
+  //       {
+  //         text: "LMS Comparison",
+  //         href: "/#lms-comparison",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     heading: "Company",
+  //     items: [
+  //       {
+  //         text: "E-Learning",
+  //         href: "/e-learning",
+  //       },
+  //       {
+  //         text: "LMS",
+  //         href: "/lms",
+  //       },
+  //       {
+  //         text: "Contact",
+  //         href: "/contact-us",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     heading: "Policy",
+  //     items: [
+  //       {
+  //         text: "Terms & Conditions",
+  //         href: "/",
+  //       },
+  //       {
+  //         text: "Privacy Policy",
+  //         href: "/",
+  //       },
+  //     ],
+  //   },
+  // ];
   const validateEmail = (email: string) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
