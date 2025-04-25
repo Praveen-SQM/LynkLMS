@@ -12,10 +12,10 @@ const Footer = () => {
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  useEffect(()=>{
-    setEmail("")
-    setError("")
-  },[pathname])
+  useEffect(() => {
+    setEmail("");
+    setError("");
+  }, [pathname]);
   // const footerItems = [
   //   {
   //     heading: "Product",
@@ -90,7 +90,12 @@ const Footer = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           to: [process.env.NEXT_PUBLIC_EMAIL_TO],
-          cc: [process.env.NEXT_PUBLIC_EMAIL_CC, process.env.NEXT_PUBLIC_EMAIL_CC_2, process.env.NEXT_PUBLIC_EMAIL_CC_3,process.env.NEXT_PUBLIC_LYNK_EMAIL],
+          cc: [
+            process.env.NEXT_PUBLIC_EMAIL_CC,
+            process.env.NEXT_PUBLIC_EMAIL_CC_2,
+            process.env.NEXT_PUBLIC_EMAIL_CC_3,
+            process.env.NEXT_PUBLIC_LYNK_EMAIL,
+          ],
           bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
           message: {
             subject: "Response Request on Email",
@@ -217,13 +222,14 @@ const Footer = () => {
       const result = await response.json();
       if (response.ok) {
         toast.success("Request on email Requested successfully");
-        await axios.post('/api/zoho', {
-          "firstName":"From Lynk",
-          "lastName":"website",
-          "email": email,
-          "phoneNumber":"Not Provided",
-          "message":"Requested a callback on email provided for more information from lynk lms",
-          "leadSource":"Lynk LMS Website"
+        await axios.post("/api/zoho", {
+          firstName: "From Lynk",
+          lastName: "website",
+          email: email,
+          phoneNumber: "Not Provided",
+          message:
+            "Requested a callback on email provided for more information from lynk lms",
+          leadSource: "Lynk LMS Website",
         });
         setIsSubmitting(false);
         setSubmitted(true);
@@ -348,98 +354,99 @@ const Footer = () => {
     //   </div>
     // </div>
     <footer className="bg-black text-white py-12 px-4 md:px-8 lg:px-12 3xl:px-[10rem] 3xl:py-[5rem]">
-    <div className="container mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {/* Left side - Logo and info */}
-        <div className="">
-          <div className="flex items-center mb-[1.5rem]">
-             <Image
-src={logo}
-alt="logo"
-width={207}
-height={78}
-// className="w-full h-full"
-/>
-          </div>
-          <div className="text-gray-400 text-sm w-full">
-            {/* <p>
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Left side - Logo and info */}
+          <div className="">
+            <div className="flex items-center mb-[1.5rem]">
+              <Image
+                src={logo}
+                alt="logo"
+                width={207}
+                height={78}
+                // className="w-full h-full"
+              />
+            </div>
+            <div className="text-gray-400 text-sm w-full">
+              {/* <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
               ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
               fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
               deserunt mollit anim id est laborum.
             </p> */}
-          </div>
-          <div className="text-gray-500 text-xs">
-            <p>©2025 Lynk. All rights reserved.</p>
-          </div>
-        </div>
-        {/* Right side - Subscription form */}
-        <div className="flex items-center justify-start md:justify-end">
-          <div className="bg-zinc-900 px-16 py-14 rounded-[22px] w-full">
-            <div className="mb-6">
-          
-            <h3 className="font-Manrope font-[600] text-[22px] sm:text-[26px] md:text-[30px] lg:text-[32px] leading-tight text-[#FFF] mb-4">
-Receive inquiries and{" "}
-<br />
-<span
-  className="bg-clip-text text-transparent"
-  style={{
-    background: 'linear-gradient(90deg, #3B82F6 0%, #A855F7 50%, #EC4899 100%)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    fontFamily: 'Manrope',
-    fontSize: '32px',
-    fontStyle: 'normal',
-    fontWeight: 600,
-    lineHeight: '38.4px',
-  }}
->
-  respond promptly
-</span>
-.
-</h3>
             </div>
-            {/* <form className="space-y-4"> */}
-            <div className="flex flex-col w-full  gap-2">
-           <div className="xl:h-[75px] h-[36px] xl:rounded-[16px] rounded-[7px] xl:border-[1.34px] border-[0.58px] border-[#2B2D31] xl:p-[10.7px] p-[4px] flex items-center justify-between w-full">
-            <input
-              type="text"
-              placeholder="Email address"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                if (error) setError("");
-              }}
-              className={`font-normal xl:text-[17.27px] xl:leading-[23.6px] text-[12px] leading-[16.4px] placeholder:text-[#7A8089] text-[#FFFFFF] bg-transparent outline-none w-full ${
-                error ? "border-red-500" : ""
-              }`}
-            />
-            <button
-              onClick={handleSubmit}
-              disabled={isSubmitting}
-              className={`xl:h-[50px] sm:h-[26px] xl:rounded-[10.7px] rounded-[4px] xl:py-[10.7px] xl:px-[10.7px] sm:py-1 py-[6px] sm:px-2 px-3 ${
-                isSubmitting ? "bg-[#195EFF]" : "bg-[#195EFF]"
-              } cursor-pointer font-[500] xl:text-[18.73px] xl:leading-[25.6px] sm:text-[13px] sm:leading-[17.6px] text-[12px] leading-[16.3px] text-[#ffffff] flex justify-center items-center text-nowrap transition-all xl:text-[18px] 3xl:leading-[100%] 3xl:py-[14.26px]`}
-            >
-              {isSubmitting ? "Connecting..." : "Connect Now"}
-            </button>
+            <div className="text-gray-500 text-xs">
+              <p>©2025 Lynk. All rights reserved.</p>
+            </div>
           </div>
-          {error && (
-            <p className="text-red-500 text-xs xl:text-sm mt-1">{error}</p>
-          )}
-          {submitted && (
-            <p className="text-green-500 text-xs xl:text-sm mt-1">
-              Thank you! We&apos;ll be in touch soon.
-            </p>
-          )}
-        </div>
-            {/* </form> */}
+          {/* Right side - Subscription form */}
+          <div className="flex items-center justify-start md:justify-end">
+            <div className="bg-zinc-900 px-16 py-14 rounded-[22px] w-full">
+              <div className="mb-6">
+                <h3 className="font-Manrope font-[600] text-[22px] sm:text-[26px] md:text-[30px] lg:text-[32px] leading-tight text-[#FFF] mb-4">
+                  Receive inquiries and <br />
+                  <span
+                    className="bg-clip-text text-transparent"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #3B82F6 0%, #A855F7 50%, #EC4899 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      fontFamily: "Manrope",
+                      fontSize: "32px",
+                      fontStyle: "normal",
+                      fontWeight: 600,
+                      lineHeight: "38.4px",
+                    }}
+                  >
+                    respond promptly
+                  </span>
+                  .
+                </h3>
+              </div>
+              {/* <form className="space-y-4"> */}
+              <div className="flex flex-col w-full  gap-2">
+                <div className="xl:h-[75px] h-[36px] xl:rounded-[16px] xl:pl-8 xl:pr-4 xl:py-4 rounded-[7px] xl:border-[1.34px] border-[0.58px] border-[#2B2D31] xl:p-[10.7px] p-[4px] flex items-center justify-between w-full">
+                  <input
+                    type="text"
+                    placeholder="Email address"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (error) setError("");
+                    }}
+                    className={`font-normal xl:text-[17.27px] xl:leading-[23.6px] text-[12px] leading-[16.4px] placeholder:text-[#7A8089] text-[#FFFFFF] bg-transparent outline-none w-full ${
+                      error ? "border-red-500" : ""
+                    }`}
+                  />
+                  <button
+                    onClick={handleSubmit}
+                    disabled={isSubmitting}
+                    className={`xl:h-[50px] sm:h-[26px] xl:rounded-[10.7px] rounded-[4px] xl:py-[10.7px] xl:px-[10.7px] sm:py-1 py-[6px] sm:px-2 px-3 ${
+                      isSubmitting ? "bg-[#195EFF]" : "bg-[#195EFF]"
+                    } cursor-pointer font-[500] xl:text-[18.73px] xl:leading-[25.6px] sm:text-[13px] sm:leading-[17.6px] text-[12px] leading-[16.3px] text-[#ffffff] flex justify-center items-center text-nowrap transition-all xl:text-[18px] 3xl:leading-[100%] 3xl:py-[14.26px]`}
+                  >
+                    {isSubmitting ? "Connecting..." : "Connect Now"}
+                  </button>
+                </div>
+                {error && (
+                  <p className="text-red-500 text-xs xl:text-sm mt-1">
+                    {error}
+                  </p>
+                )}
+                {submitted && (
+                  <p className="text-green-500 text-xs xl:text-sm mt-1">
+                    Thank you! We&apos;ll be in touch soon.
+                  </p>
+                )}
+              </div>
+              {/* </form> */}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
   );
 };
 export default Footer;
