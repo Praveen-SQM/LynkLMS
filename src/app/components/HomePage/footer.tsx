@@ -382,7 +382,19 @@ height={78}
             <h3 className="font-Manrope font-[600] text-[22px] sm:text-[26px] md:text-[30px] lg:text-[32px] leading-tight text-[#FFF] mb-4">
 Receive inquiries and{" "}
 <br />
-<span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+<span
+  className="bg-clip-text text-transparent"
+  style={{
+    background: 'linear-gradient(90deg, #3B82F6 0%, #A855F7 50%, #EC4899 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    fontFamily: 'Manrope',
+    fontSize: '32px',
+    fontStyle: 'normal',
+    fontWeight: 600,
+    lineHeight: '38.4px',
+  }}
+>
   respond promptly
 </span>
 .
