@@ -370,7 +370,7 @@ height={78}
               deserunt mollit anim id est laborum.
             </p> */}
           </div>
-          <div className="text-gray-500 text-xs mt-[6rem]">
+          <div className="text-gray-500 text-xs">
             <p>©2023 Lynk. All rights reserved.</p>
           </div>
         </div>

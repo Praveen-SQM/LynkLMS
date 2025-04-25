@@ -572,7 +572,7 @@ const LandingHero = () => {
                       onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                         handleInputChange(e as unknown as React.ChangeEvent<HTMLInputElement>)
                       }
-                      className="appearance-none w-full px-4 py-3 sm:py-4 border border-[#F1F1F1] rounded-[8px] bg-[#FFFFFFD9]"
+                      className=" w-full px-4 py-3 sm:py-4 border border-[#F1F1F1] rounded-[8px] bg-[#FFFFFFD9]"
                       whileFocus={{ boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.4)" }}
                       required
                     >
@@ -591,7 +591,7 @@ const LandingHero = () => {
                       
 
                     </motion.select>
-                    <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-400" />
+                    {/* <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-400" /> */}
                   </motion.div>
 
                   <motion.button
