@@ -59,14 +59,14 @@ const LandingHero = () => {
     }),
   }
 
-  const backgroundVariants = {
-    hidden: { scale: 0.9, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 0.3,
-      transition: { duration: 1.5, ease: "easeOut" },
-    },
-  }
+  // const backgroundVariants = {
+  //   hidden: { scale: 0.9, opacity: 0 },
+  //   visible: {
+  //     scale: 1,
+  //     opacity: 0.3,
+  //     transition: { duration: 1.5, ease: "easeOut" },
+  //   },
+  // }
 
   return (
     <div className="w-full bg-[#F9FAFB] px-4 overflow-hidden">
@@ -76,14 +76,14 @@ const LandingHero = () => {
           className="absolute inset-0 flex justify-center items-center pointer-events-none"
           initial="hidden"
           animate="visible"
-          variants={backgroundVariants}
+          // variants={backgroundVariants}
         >
           <Image
-            src={backgroundLogo || "/placeholder.svg"}
+            src={backgroundLogo}
             width={810}
             height={837}
             alt="Background Shape"
-            className="opacity-30 object-contain"
+            className="w-full h-full object-contain"
             quality={100}
             priority
           />
