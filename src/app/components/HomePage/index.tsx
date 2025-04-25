@@ -7,6 +7,7 @@ import LMSBenefits from "./LMSBenifits/LMSBenifits";
 import FAQSection from "./FAQSeaction";
 import LMSOptions from "./LMSOptions/LMSOptions";
 import QualitySection from "./QualitySection/QualitySection";
+import BenefitsOverviewSection from "./BenefitsSection";
 // import LMSComparisonTable from "./TableComponent";
 
 const HomePage = () => {
@@ -46,6 +47,7 @@ const HomePage = () => {
       <TabSwitch />
       <WhyChooseLynk />
       <LMSOptions />
+      <BenefitsOverviewSection/>
       <QualitySection />
       <LMSBenefits />
       {/* <LMSComparisonTable /> */}
