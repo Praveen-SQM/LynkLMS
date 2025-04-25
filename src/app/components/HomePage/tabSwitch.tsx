@@ -5,7 +5,7 @@ import Image from "next/image";
 import partnerClient from "../../../../public/partner-clients.png";
 import RemoteTeams from "../../../../public/remote-teams.png";
 import trainingProvider from "../../../../public/training-provider.png";
-import corporates from "../../../../public/corporates.png";
+import corporates from "../../../../public/corporates.svg";
 import { motion, AnimatePresence } from "framer-motion";
 import ContactModal from "../contactModal";
 
@@ -33,7 +33,7 @@ const TabSwitch = () => {
               "linear-gradient(89.86deg, #EE3CD1 6.14%, #635BFF 84.43%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
-            fontWeight: "bold",
+            fontWeight: "700",
           }}
         >
           {word}{" "}
@@ -87,16 +87,19 @@ const TabSwitch = () => {
   return (
     <div
       id="intuitive-lms"
-      className="xl:pt-[72px] xl:pb-[165px] sm:pt-[48px] pt-[42px] sm:pb-[70px] flex flex-col justify-center items-center xl:gap-[58px] sm:gap-[33.6px] gap-[32px] xl:px-0 sm:px-2"
+      className="xl:pt-[72px] xl:pb-[165px] 3xl:pt-[120px] 3xl:pb-[120px] sm:pt-[48px] pt-[42px] sm:pb-[70px] flex flex-col justify-center items-center  xl:gap-[58px] sm:gap-[33.6px] gap-[32px] xl:px-0 sm:px-2"
     >
-      <div className="flex flex-col items-center gap-1">
-        <p className="font-semibold 3xl:text-[18px] sm:text-[16px] text-[12px] sm:leading-[24px] leading-[16.39px] text-[#F47FD9]">
+      <div className="flex flex-col items-center justify-between gap-1">
+        <p className="font-semibold 3xl:text-[18px] sm:text-[16px] text-[12px]  sm:leading-[24px] leading-[16.39px] text-[#F47FD9]">
           INTUITIVE LMS
         </p>
-        <p className="font-bold 3xl:text-[52px] 3xl:leading-[71px] xl:text-[42px] xl:leading-[57.37px] sm:text-[32px] sm:leading-[43.71px] text-[24px] leading-[32.78px] text-[#1D1A27] text-center">
-          Built for everyone,
+        <p className="font-bold 3xl:text-[52px] 3xl:leading-[62px] 3xl:font-[600] xl:text-[42px] xl:leading-[57.37px] sm:text-[32px] sm:leading-[43.71px] text-[24px] leading-[32.78px] text-[#1D1A27] text-center">
+          Built for Everyone,
           <br />
-          crafted for flexible learning.
+          Crafted for <span className="bg-text-gradient text-transparent bg-clip-text">Flexible Learning</span>.
+        </p>
+        <p className="text-[13px] sm:text-[13px] md:text-[14px] lg:text-[16px] xl:text-[20px] 2xl:text-[20px] 3xl:text-[20px] font-[400] leading-[30px] text-[#6B7280] mt-4">
+          Our LMS gives you complete control — branding, features, and future.
         </p>
       </div>
       <div className=" flex-col 3xl:gap-[34.38px] xl:gap-6 sm:gap-[14px] items-center hidden sm:flex lg:w-[1000px] xl:w-[1440px] 3xl:w-[1590px]">
@@ -108,19 +111,17 @@ const TabSwitch = () => {
                 onClick={() => {
                   setActiveTab(index);
                 }}
-                className="flex flex-col 3xl:gap-[23px] xl:gap-4 sm:gap-[9px] cursor-pointer"
+                className="flex flex-col 3xl:gap-[16px] xl:gap-4 sm:gap-[9px] cursor-pointer"
               >
                 <p
-                  className={`font-[600] 3xl:text-[28px] 3xl:leading-[38.25px] xl:text-[20px] xl:leading-5 sm:text-[16px] sm:leading-[21.86px] ${
-                    activeTab === index ? "text-[#1D1A27]" : "text-[#1D1A2799]"
-                  }`}
+                  className={`font-[600] 3xl:text-[28px] 3xl:leading-[38px] xl:text-[20px] xl:leading-5 sm:text-[16px] sm:leading-[21.86px] ${activeTab === index ? "text-[#1D1A27]" : "text-[#1D1A2799]"
+                    }`}
                 >
                   {tab?.name}
                 </p>
                 <div
-                  className={`w-full 3xl:h-[5.73px] xl:h-[4px] sm:h-[2.32px] xl:rounded-b-[4.3px] sm:rounded-b-[1.74px] bg-[#1D1A27] ${
-                    activeTab === index ? "" : "hidden"
-                  }`}
+                  className={`w-full  sm:h-[2.32px] xl:rounded-b-[4.3px] sm:rounded-b-[1.74px] bg-[#1D1A27] ${activeTab === index ? "" : "hidden"
+                    }`}
                 ></div>
               </div>
             );
@@ -148,20 +149,20 @@ const TabSwitch = () => {
         <AnimatePresence mode="wait">
           <div
             key={activeTab}
-            className="bg-[#F7F7FF] xl:rounded-[34.38px] sm:rounded-[14px] flex items-center 3xl:gap-[146.11px] xl:gap-[102px] sm:gap-[40px] 3xl:min-w-[1590px] xl:max-w-[1140px] lg:max-w-[800px] sm:max-w-[750px] xl:px-[40px] sm:px-[20px] xl:pb-5 sm:pb-2"
+            className="bg-[#F7F7FF] xl:rounded-[34.38px] sm:rounded-[14px] flex items-center 3xl:gap-[222px] xl:gap-[102px] sm:gap-[40px] 3xl:min-w-[1590px] xl:max-w-[1140px] lg:max-w-[800px] sm:max-w-[750px] xl:px-[40px] sm:px-[20px] xl:pb-5 sm:pb-2"
           >
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 50 }}
               transition={{ duration: 0.6 }}
-              className="3xl:w-[842px] 3xl:h-[868px] xl:w-[588px] xl:h-[606px] sm:w-[367px] sm:h-[358px] object-cover"
+              className="3xl:w-[744px] 3xl:h-[735px] xl:w-[588px] xl:h-[606px] sm:w-[367px] sm:h-[358px] object-cover"
             >
               <Image
                 src={tabOptions?.[activeTab]?.img}
                 alt="image"
-                width={842}
-                height={868}
+                width={744}
+                height={735}
                 className="h-full w-full object-cover"
               />
             </motion.div>
@@ -173,18 +174,29 @@ const TabSwitch = () => {
               transition={{ duration: 0.8 }} // Slightly slower fade-in for text
               className="flex flex-col 3xl:gap-[34.38px] xl:gap-6 sm:gap-4 xl:max-w-[330px] sm:max-w-[302px]"
             >
-              <p className="font-bold xl:text-[36px] xl:leading-[41.4px] sm:text-[20px] sm:leading-[24px] text-[#1D1A27]">
+              <p className="font-bold xl:text-[36px] 3xl:font-[600] xl:leading-[41.4px] sm:text-[20px] sm:leading-[24px] text-[#1D1A27]">
                 {highlightText(tabOptions?.[activeTab]?.title)}
               </p>
-              <p className="font-normal xl:text-[16px] xl:leading-6 sm:text-[14px] sm:leading-[19.12px] text-[#1D1A27CC]">
+              <p className="font-normal xl:text-[16px] xl:leading-6 sm:text-[14px] sm:leading-[19.12px] text-[#1D1A27CC] 3xl:text-[16px] 3xl:font-[400]">
                 {tabOptions?.[activeTab]?.description}
               </p>
-              <div
+              <motion.button
+              style={{
+                background: `
+                  linear-gradient(90deg, #3B82F6 0%, #A855F7 50%, #EC4899 100%)`,
+              }}
                 onClick={() => setContactModalOpen(true)}
-                className="bg-[#ffffff] flex items-center justify-center cursor-pointer 3xl:h-[76.84px] xl:h-[53px] sm:h-[37px] 3xl:rounded-[17.19px] xl:rounded-[16px] sm:rounded-[7px] 3xl:border-[1.43px] xl:border-[1px] sm:border-[0.58px] 3xl:px-[17.19px] sm:px-3 w-fit font-semibold xl:text-[16px] xl:leading-[21px] sm:text-[12px] sm:leading-[12.16px] text-[#1D1A27]"
+                className="bg-gradient-overlay bg-clip-padding border border-white/50 
+             flex items-center justify-center cursor-pointer w-fit font-semibold 
+             3xl:h-[54px] 3xl:w-[178px] 3xl:rounded-[8px] xl:h-[53px] sm:h-[37px]
+             3xl:rounded-[17.19px] xl:rounded-[16px] sm:rounded-[7px]
+             3xl:border-[1.43px] xl:border-[1px] sm:border-[0.58px]
+             3xl:px-[17.19px] sm:px-3
+             xl:text-[16px] xl:leading-[21px] sm:text-[12px] sm:leading-[12.16px]
+             3xl:text-[18px] 3xl:font-[700] text-[#1D1A27] text-[#FFFFFF]"
               >
                 Connect Now
-              </div>
+              </motion.button>
             </motion.div>
           </div>
         </AnimatePresence>

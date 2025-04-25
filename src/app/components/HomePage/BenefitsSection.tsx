@@ -1,0 +1,151 @@
+"use client";
+import React from "react";
+import { useState } from "react";
+import Image from "next/image";
+import partnerClient from "../../../../public/partner-clients.png";
+import RemoteTeams from "../../../../public/remote-teams.png";
+import trainingProvider from "../../../../public/training-provider.png";
+import corporates from "../../../../public/corporates.svg";
+import { motion, AnimatePresence } from "framer-motion";
+import ContactModal from "../contactModal";
+import { Check, X } from "lucide-react";
+import correct from "../../../../public/green-tick.svg";
+import image from "../../../../public/Frame 63.svg"
+import wrong from "../../../../public/wrong.svg"
+import clsx from "clsx";
+import BenefitsSection from "../E-learning/BenefitsSection";
+
+const BenefitsOverviewSection = () => {
+    const [contactModalOpen, setContactModalOpen] = useState(false);
+
+    const features = [
+        { title: "Ownership", lynk: ` Full`, saas: "❌ No Ownership" },
+        { title: "Branding", lynk: ` 100% Custom`, saas: "❌ Limited or None" },
+        { title: "Customization", lynk: ` Tailored to you`, saas: "❌ Predefined, limited" },
+        { title: "Cost Over 5 Years", lynk: ` One-time`, saas: "❌ Recurring, adds up" },
+        { title: "Control & Data", lynk: `  You Own Everything`, saas: "❌ Shared or restricted" },
+    ];
+
+
+    return (
+        <div
+            id="intuitive-lms"
+            className="w-full bg-[#FAFAFA] xl:py-[72px] sm:py-[42px] 3xl:py-[120px] py-6 flex flex-col align-center justify-center"
+        >
+            <div className="flex flex-col items-center justify-between gap-1">
+                <p className="font-semibold 3xl:text-[18px] sm:text-[16px] text-[12px]  sm:leading-[24px] leading-[16.39px] text-[#F47FD9]">
+                    BENEFITS OVER ALTERNATIVES
+                </p>
+                <p className="font-bold 3xl:text-[52px] 3xl:leading-[62px] 3xl:font-[600] xl:text-[42px] xl:leading-[57.37px] sm:text-[32px] sm:leading-[43.71px] text-[24px] leading-[32.78px] text-[#1D1A27] text-center">
+                    How <span className="bg-text-gradient text-transparent bg-clip-text">Lynk</span> Compares to other
+                    <br />
+                    LMS Platforms
+                </p>
+            </div>
+            <div className="flex flex-col justify-center items-center w-full px-[32px] pt-[64px] bg-[#F9FAFB]">
+                <div className="grid grid-cols-3 gap-0 rounded-[16px] overflow-hidden shadow-lg 3xl:w-[1590px] xl:w-[1152px] w-full border border-[#eee] bg-white">
+
+                    {/* Features Column */}
+                    <div className="bg-white flex flex-col">
+                        <div className="font-semibold text-[#1D1A27] xl:text-[20px] font-[600] h-[100px] w-full px-[48px] flex items-center border-b border-[#E5E7EB]">
+                            Features
+                        </div>
+                        {features.map((feature, idx) => (
+                            <div key={idx} className="h-[78px] flex items-center px-[48px] text-[16px] font-[600] text-[#1D1A27] border-b border-[#E5E7EB]">
+                                {feature.title}
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Lynk Column */}
+                    <div className="bg-white relative border-l border-r border-gray-200 flex flex-col justify-between">
+                        {/* Gradient border */}
+                        <div className="absolute inset-0 rounded-[16px] border-2 border-transparent bg-clip-padding z-0" style={{
+                            background: `linear-gradient(#fff, #fff), linear-gradient(90deg, #3B82F6, #A855F7, #EC4899)`,
+                            backgroundOrigin: "padding-box, border-box"
+                        }}></div>
+
+                        <div className="relative z-10 flex flex-col flex-grow">
+                            <div className="font-semibold text-[#1D1A27] xl:text-[20px] font-[600] h-[100px] w-full px-[48px] flex items-center justify-between border-b border-[#E5E7EB]">
+                            <Image src={image} alt="Check" />
+                                <div className="inline-block p-[1px] rounded-[33px] bg-[linear-gradient(89.86deg,#EE3CD1_6.14%,#635BFF_84.43%)] flex align-center justify-center">
+                                    <span className="text-[10px] px-2 py-[8px] bg-[#EEF0F3] rounded-full text-[#7C3AED] font-bold block text-[linear-gradient(89.86deg,#EE3CD1_6.14%,#635BFF_84.43%)]">
+                                        YOU OWN IT
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <div className="flex-grow">
+                                {features.map((feature, idx) => (
+                                    <div key={idx} className="h-[78px] flex items-center px-[48px] text-[16px] font-[600] text-[#1D1A27] border-b border-[#E5E7EB]">
+                                        <div className="flex items-center gap-[12px]">
+                                            <Image src={correct} alt="Check" className="w-4 h-4" />
+                                            {feature.lynk.replace("✅ ", "")}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* <div className="p-6">
+                                <motion.button
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.97 }}
+                                    className="w-full  font-[700] text-white py-[16px] rounded-[8px] text-[18px]"
+                                    style={{
+                                        background: "linear-gradient(90deg, #3B82F6, #A855F7, #EC4899)"
+                                    }}
+                                >
+                                    Get Started
+                                </motion.button>
+                            </div> */}
+                        </div>
+                    </div>
+
+                    {/* SaaS LMS Column */}
+                    <div className="bg-white flex flex-col">
+                        <div className="h-[100px] flex items-center justify-between px-[48px] text-[#1D1A27] border-b font-[600] xl:text-[20px] border-[#E5E7EB]">
+                            <span className="text-[20px] font-[600] text-[#1D1A27]">Typical SaaS LMS</span>
+                            <div className="inline-block p-[1px] rounded-[33px] bg-[#6F697AB2] flex align-center justify-center">
+                                    <span className="text-[10px] px-2 py-[8px] bg-[white] rounded-full text-[#6F697AB2] font-bold block text-[#E2DFE7]">
+                                        YOU RENT IT
+                                    </span>
+                                </div>
+                        </div>
+                        {features.map((feature, idx) => (
+                            <div key={idx} className="h-[78px] flex items-center px-[48px] text-[16px] font-[600] text-[#1D1A27] border-b border-[#E5E7EB]">
+                                <div className="flex items-center gap-[12px]">
+                                <Image src={wrong} alt="Check" className="w-[20px] h-[20px]" />
+                                    {feature.saas.replace("❌ ", "")}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className="relative w-full flex justify-center mt-[24px]">
+  <div className="w-full max-w-[530px] px-4">
+    <motion.button
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.97 }}
+      className="w-full font-bold text-white py-[16px] rounded-[8px] text-[18px] shadow-lg"
+      style={{
+        background: "linear-gradient(90deg, #3B82F6, #A855F7, #EC4899)",
+      }}
+    >
+      Get Started
+    </motion.button>
+  </div>
+</div>
+            </div>
+
+
+            <ContactModal
+                isOpen={contactModalOpen}
+                onClose={() => setContactModalOpen(false)}
+            />
+        </div>
+    );
+};
+
+export default BenefitsOverviewSection
+    ;
