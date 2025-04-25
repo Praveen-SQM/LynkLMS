@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
-import { ChevronDown } from "lucide-react"
+// import { ChevronDown } from "lucide-react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import icon from "@/app/utilities/icons/tick_green.e1d6cae9 1.svg"
