@@ -24,6 +24,8 @@ const BenefitsOverviewSection = () => {
     ];
 
 
+
+
     return (
         <div
             id="intuitive-lms"
@@ -40,13 +42,13 @@ const BenefitsOverviewSection = () => {
                 </p>
             </div>
             <div className="flex flex-col justify-center items-center w-full px-[32px] lg:px-[32px] sm:px-[32px] pt-[64px] bg-[#F9FAFB] overflow-x-auto">
-                <div className="md:w-full overflow-x-auto flex justify-center items-center">
-                    <div className="grid grid-cols-3 gap-0 rounded-[16px] shadow-lg bg-white min-w-[640px] sm:w-[1152px] 3xl:w-[1590px]"
+                <div className="md:w-full   md:flex md:justify-center md:items-center w-full">
+                    <div className="grid grid-cols-3 gap-0 rounded-[16px] shadow-lg bg-white min-w-[640px] sm:w-[1152px] 3xl:w-[1590px] "
                         style={{ gridTemplateColumns: '41% 31% 28%' }}>
 
                         {/* Features Column */}
-                        <div className="bg-white flex flex-col ">
-                            <div className="font-semibold text-[#1D1A27] xl:text-[18px] 3xl:text-[20px] lg:text-[16px] sm-text-[14px] font-[600] h-[100px] w-full px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] flex items-center border-b border-[#6B728080]"
+                        <div className="bg-white flex flex-col  ">
+                            <div className="font-semibold text-[#1D1A27] xl:text-[18px] 3xl:text-[20px] lg:text-[16px] sm-text-[14px] font-[600] h-[100px] w-full px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] flex items-center border-b border-[#6B728080]  "
                             >
                                 Features
                             </div>
@@ -132,8 +134,8 @@ const BenefitsOverviewSection = () => {
 
                     style={{
                         background: "linear-gradient(90deg, #3B82F6, #A855F7, #EC4899)"
-                    }} className="relative p-[1px] pt-0 flex justify-center 3xl:ml-[206px] xl:ml-[149px] lg:ml-[124.5px] sm:ml-[91px] rounded-b-[12px] ">
-                    <div className=" bg-[#f7f7ff] xl:w-[355px] 3xl:w-[491px] lg:w-[295.5px] p-4 sm:w-[216px] rounded-b-[12px] ">
+                    }} className="relative p-[1px] pt-0 flex justify-center 3xl:ml-[206px] xl:ml-[149px]  lg:ml-[124.5px] ml-[361px] md:ml-[90px] rounded-b-[12px] ">
+                    <div className=" bg-[#f7f7ff] xl:w-[355px] md:w-[216px] 3xl:w-[491px] lg:w-[295.5px] p-4 w-[196px] rounded-b-[12px] ">
                         <motion.button
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.97 }}
