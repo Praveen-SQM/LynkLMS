@@ -7,16 +7,19 @@ import ContactModal from "../contactModal";
 import correct from "../../../../public/green-tick.svg";
 import image from "../../../../public/Frame 63.svg"
 import wrong from "../../../../public/wrong.svg"
+import Link from "next/link";
 
 
 const BenefitsOverviewSection = () => {
     const [contactModalOpen, setContactModalOpen] = useState(false);
 
+
+
     const features = [
         { title: "Ownership", lynk: ` Full`, saas: "❌ No Ownership" },
         { title: "Branding", lynk: ` 100% Custom`, saas: "❌ Limited or None" },
         { title: "Customization", lynk: ` Tailored to you`, saas: "❌ Predefined, limited" },
-        { title: "Cost Over 5 Years", lynk: ` One-time`, saas: "❌ Recurring, adds up" },
+        { title: "Cost Over 3 Years", lynk: ` One-time`, saas: "❌ Recurring, adds up" },
         { title: "Control & Data", lynk: `  You Own Everything`, saas: "❌ Shared or restricted" },
     ];
 
@@ -36,10 +39,10 @@ const BenefitsOverviewSection = () => {
                     LMS Platforms
                 </p>
             </div>
-            <div className="flex flex-col justify-center items-center w-full px-[32px] pt-[64px] bg-[#F9FAFB] overflow-x-auto">
-                <div className="w-full overflow-x-auto flex justify-center items-center">
-                    <div  className="grid grid-cols-3 gap-0 rounded-[16px] shadow-lg bg-white min-w-[640px] sm:w-[1152px] 3xl:w-[1590px]"
-                        style={{ gridTemplateColumns: '41% 30% 29%' }}>
+            <div className="flex flex-col justify-center items-center w-full px-[32px] lg:px-[32px] sm:px-[32px] pt-[64px] bg-[#F9FAFB] overflow-x-auto">
+                <div className="md:w-full overflow-x-auto flex justify-center items-center">
+                    <div className="grid grid-cols-3 gap-0 rounded-[16px] shadow-lg bg-white min-w-[640px] sm:w-[1152px] 3xl:w-[1590px]"
+                        style={{ gridTemplateColumns: '41% 31% 28%' }}>
 
                         {/* Features Column */}
                         <div className="bg-white flex flex-col ">
@@ -62,13 +65,13 @@ const BenefitsOverviewSection = () => {
                         {/* Lynk Column */}
                         {/* Outer gradient wrapper */}
                         <div
-                            className="relative rounded-[16px] p-[2px]"
+                            className="relative rounded-[16px] p-[1px] pb-0 rounded-b-none"
                             style={{
                                 background: "linear-gradient(90deg, #3B82F6, #A855F7, #EC4899)",
                             }}
                         >
                             {/* Inner content */}
-                            <div className="bg-[#f7f7ff] rounded-[14px] flex flex-col justify-between">
+                            <div className="bg-[#f7f7ff] rounded-[14px] rounded-b-none flex flex-col justify-between">
                                 {/* Header */}
                                 <div className="font-semibold text-[#1D1A27] xl:text-[18px] lg:text-[16px] sm-text-[14px]  3xl:text-[20px]font-[600] h-[100px] w-full px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px]] flex items-center justify-between border-b border-[#6B728080]">
                                     <Image src={image} alt="Check" />
@@ -125,8 +128,12 @@ const BenefitsOverviewSection = () => {
                         </div>
                     </div>
                 </div>
-                <div className="relative  flex justify-center 3xl:ml-[190px] xl:ml-[135px] lg:ml-[110px] sm:ml-[90px] mt-[24px]">
-                    <div className=" xl:w-[350px] 3xl:w-[470px] lg:w-[300px] px-4 sm:w-[220px] ">
+                <div
+
+                    style={{
+                        background: "linear-gradient(90deg, #3B82F6, #A855F7, #EC4899)"
+                    }} className="relative p-[1px] pt-0 flex justify-center 3xl:ml-[206px] xl:ml-[149px] lg:ml-[124.5px] sm:ml-[91px] rounded-b-[12px] ">
+                    <div className=" bg-[#f7f7ff] xl:w-[355px] 3xl:w-[491px] lg:w-[295.5px] p-4 sm:w-[216px] rounded-b-[12px] ">
                         <motion.button
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.97 }}
@@ -134,8 +141,11 @@ const BenefitsOverviewSection = () => {
                             style={{
                                 background: "linear-gradient(90deg, #3B82F6, #A855F7, #EC4899)",
                             }}
+
                         >
-                            Get Started
+                            <Link href="/contact-us" >
+                                Get Started
+                            </Link>
                         </motion.button>
                     </div>
                 </div>
