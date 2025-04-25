@@ -71,18 +71,19 @@ const LMSOptions = () => {
       id="features"
       className="xl:py-[120px] sm:py-[92px] py-[42px] flex flex-col justify-between xl:gap-[48px] sm:gap-[55px] gap-[34px] bg-[#FAFAFA] items-center"
     >
-      <p className="font-bold 3xl:text-[52px] 3xl:leading-[71px] 3xl:font-[600] xl:text-[42px] xl:leading-[57.37px] sm:text-[32px] sm:leading-[43.71px] text-[24px] leading-[32.78px] text-center text-[#1D1A27]">
+      <p className="font-bold 3xl:text-[52px] 3xl:leading-[71px] xl:text-[42px] xl:leading-[57.37px] sm:text-[32px] sm:leading-[43.71px] text-[24px] leading-[32.78px] text-center text-[#1D1A27]">
         Boost Learning with Custom <br />
+        LMS{" "}
         <span
           style={{
             background:
               "linear-gradient(89.86deg, #EE3CD1 6.14%, #635BFF 84.43%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
-            fontWeight: "600",
+            fontWeight: "bold",
           }}
         >
-          LMS Features
+          Features
         </span>
       </p>
 

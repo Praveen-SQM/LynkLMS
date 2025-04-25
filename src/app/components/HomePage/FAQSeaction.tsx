@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion"; // Import motion from framer-motion
 import ContactModal from "../contactModal";
+
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
   const [contactModal, setContactModal] = useState(false);
+
   const faqs = [
     {
       question: "How customizable is Squadra LMS?",
@@ -32,6 +34,7 @@ const FAQSection = () => {
         "Yes, our content follows industry standards and can be exported to other LMS platforms.",
     },
   ];
+
   // Variants for staggering questions
   const faqVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -46,60 +49,50 @@ const FAQSection = () => {
       },
     },
   };
+
   // Variants for individual questions
   const questionVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
+
   return (
-    <div className="max-w-6xl  3xl:max-w-[1590px]  mx-auto p-8 py-24 gap-6 lg:gap-28 3xl:gap-30 sm:flex">
+    <div className="max-w-6xl  3xl:max-w-[1590px]  mx-auto p-8 py-24 gap-6 lg:gap-28 sm:flex">
       <motion.div
-        className="flex flex-col gap-[24px] lg:gap-[40px] mb-6 sm:mb-0 3xl:min-w-[625px]"
+        className="flex flex-col gap-[24px] lg:gap-[28px] mb-6 sm:mb-0 3xl:min-w-[569.3333129882812px]"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }} // Add motion for left section
       >
         <div className="text-center sm:text-start ">
-          <h1 className="text-4xl lg:text-5xl font-[600] mb-4 3xl:mb-[20px] xl:leading-[120%]  ">
+          <h1 className="text-4xl lg:text-5xl font-bold mb-4 3xl:mb-[22px] xl:leading-[120%]  ">
             Your questions{" "}
-            <br />
-            <span
-            style={{
-              background: 'linear-gradient(90deg, #3B82F6 0%, #A855F7 50%, #EC4899 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              fontFamily: 'Manrope',
-              fontSize: '48px',
-              fontStyle: 'normal',
-              fontWeight: 600,
-              lineHeight: '58px',
-            }}
-             >
+            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
               answered
             </span>
             <span className="text-black">.</span>
           </h1>
-          <p className="text-gray-600 text-sm leading-[29.98px] 3xl:text-[18px] 3xl:max-w-[461px]">
+          <p className="text-gray-600 text-sm leading-[29.98px] 3xl:text-[18px]">
             Let&#39;s do our best to answer your most frequently asked questions.
           </p>
         </div>
-        <motion.div
-          className="hidden sm:block  bg-white rounded-2xl shadow-xl shadow-gray-200 p-3 lg:p-5 text-center lg:max-w-[473.5px] 3xl:max-w-[454.6666564941406px]"
+        <motion.div 
+          className="hidden sm:block  bg-white rounded-2xl shadow-xl shadow-gray-200 p-3 lg:p-6 text-center lg:max-w-[473.5px] 3xl:max-w-[454.6666564941406px]"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <div className="flex items-center justify-between mb-4 lg:mb-6 gap-2  ">
-            {/* <div className="rounded-2xl w-[42px] h-[42px] 3xl:w-[88px] 3xl:h-[88px] lg:w-[64px] lg:h-[64px] border flex items-center justify-center">
+            <div className="rounded-2xl w-[42px] h-[42px] 3xl:w-[88px] 3xl:h-[88px] lg:w-[64px] lg:h-[64px] border flex items-center justify-center">
               <div className="bg-[#635bffc5] w-4 h-4 lg:w-6 lg:h-6  rounded-full flex items-center justify-center">
                 <span className="text-white">?</span>
               </div>
-            </div> */}
-            <div className="w-full max-w-[180px] lg:max-w-[213px] 3xl:max-w-[412px]">
-              <h3 className="lg:text-lg text-start  mb-2 3xl:text-[18px] font-[700] text-[#1D1A27] ">
+            </div>
+            <div className="w-full max-w-[180px] lg:max-w-[213px] 3xl:max-w-[300px]">
+              <h3 className="lg:text-lg text-start  mb-2 3xl:text-[24px] font-[700] text-[#1D1A27] 3xl:text-[23.55px]">
                 Still have questions?
               </h3>
-              <p className="text-[#1D1A27CC] text-start text-sm 3xl:leading-[25px] 3xl:text-[16px]">
+              <p className="text-[#1D1A27CC] text-start text-sm mb-4 3xl:leading-[25px] 3xl:text-[18px]">
                 Can&#39;t find the answer you&apos;re looking for? Please chat to our
                 friendly team!
               </p>
@@ -107,15 +100,16 @@ const FAQSection = () => {
           </div>
           <button
             onClick={() => setContactModal(true)}
-            className="bg-[#195EFF] w-full text-white px-3 py-3 rounded-lg hover:bg-purple-600 transition-colors font-[500] 3xl:text-[18px]"
+            className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors font-[500] 3xl:text-[20px] 3xl:py-[18px]"
           >
             Get in touch
           </button>
         </motion.div>
       </motion.div>
+
       {/* FAQ Section with staggered animation */}
       <motion.div
-        className="space-y-4 w-full max-w-[672px] lg:max-w-[627px] 3xl:max-w-[668px]"
+        className="space-y-4 w-full max-w-[672px] lg:max-w-[627px] 3xl:max-w-full"
         variants={faqVariants}
         initial="hidden"
         animate="visible"
@@ -137,6 +131,7 @@ const FAQSection = () => {
                 <ChevronDown className="h-5 w-5 text-gray-500" />
               )}
             </button>
+
             <div
               className={`transition-all duration-500 3xl:text-[18px] xl:text-[14px] ease-in-out overflow-hidden ${
                 openIndex === index
@@ -173,7 +168,7 @@ const FAQSection = () => {
         </div>
         <button
           onClick={() => setContactModal(true)}
-          className="bg-[#635BFF] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors"
+          className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors"
         >
           Get in touch
         </button>
@@ -185,4 +180,5 @@ const FAQSection = () => {
     </div>
   );
 };
+
 export default FAQSection;
