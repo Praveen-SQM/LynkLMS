@@ -1,8 +1,10 @@
 import React from "react";
-import { Star, Building2, CircleDollarSign } from "lucide-react";
 import Image from "next/image";
 import logoWhite from "@/app/utilities/images/logo_white.svg";
-import unifiedSolution from "@/app/utilities/icons/group-blue.svg";
+import unifiedSolution from "@/app/utilities/icons/Group 2.svg";
+import Star from "@/app/utilities/icons/svg-image-10.svg";
+import Building2 from "@/app/utilities/icons/svg-image-11.svg";
+import CircleDollarSign from "@/app/utilities/icons/svg-image-12.svg";
 const benefitsData = [
   {
     icon: unifiedSolution,
@@ -11,18 +13,18 @@ const benefitsData = [
       "Single provider for technology and content ensures consistency.",
   },
   {
-    icon: <Star className="w-6 h-6 text-indigo-500" />,
+    icon: Star,
     title: "Enhanced Engagement",
     description:
       "Content complements LMS capabilities, keeping learners engaged.",
   },
   {
-    icon: <Building2 className="w-6 h-6 text-indigo-500" />,
+    icon: Building2,
     title: "Scalability",
     description: "Both LMS and content can grow with your organization.",
   },
   {
-    icon: <CircleDollarSign className="w-6 h-6 text-indigo-500" />,
+    icon: CircleDollarSign,
     title: "Cost Efficiency",
     description:
       "Bundling reduces overall costs compared to sourcing separately.",
@@ -68,20 +70,17 @@ const LMSBenefits = () => {
               className="absolute z-10 bg-white rounded-2xl p-4 h-full max-h-36 sm:p-6 shadow-2xl shadow-gray-200 max-w-[230px] lg:max-w-[350px] 3xl:max-w-[387px]"
             >
               <div className="flex items-center gap-4 font-semibold mb-2">
-                <div className="p-2 bg-[#5a52f53f] w-fit rounded-md">
-                  {benefit.icon === unifiedSolution ? (
-                    <Image
-                      // width={25}
-                      src={unifiedSolution}
-                      alt=""
-                      className="h-6 w-6"
-                    />
-                  ) : (
-                    benefit.icon
-                  )}
-                </div>
-                <h3 className="text-base lg:text-xl 3xl:text-[24px]">{benefit.title}</h3>
-              </div>{" "}
+  <div className="p-2 bg-[#534BEF] bg-opacity-[24.71%] w-fit rounded-md">
+    <Image
+      src={benefit.icon}
+      alt={benefit.title}
+      className="h-6 w-6"
+      width={24}
+      height={24}
+    />
+  </div>
+  <h3 className="text-base lg:text-xl 3xl:text-[24px]">{benefit.title}</h3>
+</div>{" "}
               <p className="text-gray-500 sm:text-gray-600 font-semibold sm:font-normal text-sm lg:text-base 3xl:text-[18px]">
                 {benefit.description}
               </p>
