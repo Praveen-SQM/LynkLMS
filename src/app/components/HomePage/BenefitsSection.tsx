@@ -36,100 +36,109 @@ const BenefitsOverviewSection = () => {
                     LMS Platforms
                 </p>
             </div>
-            <div className="flex flex-col justify-center items-center w-full px-[32px] pt-[64px] bg-[#F9FAFB]">
-                <div className="grid grid-cols-3 gap-0 rounded-[16px] overflow-hidden shadow-lg 3xl:w-[1590px] xl:w-[1152px] w-full border border-[#eee] bg-white">
+            <div className="flex flex-col justify-center items-center w-full px-[32px] pt-[64px] bg-[#F9FAFB] overflow-x-auto">
+                <div className="w-full overflow-x-auto flex justify-center items-center">
+                    <div  className="grid grid-cols-3 gap-0 rounded-[16px] shadow-lg border border-[#eee] bg-white min-w-[640px] sm:w-[1152px] 3xl:w-[1590px]"
+                        style={{ gridTemplateColumns: '41% 30% 29%' }}>
 
-                    {/* Features Column */}
-                    <div className="bg-white flex flex-col">
-                        <div className="font-semibold text-[#1D1A27] xl:text-[20px] font-[600] h-[100px] w-full px-[48px] flex items-center border-b border-[#E5E7EB]">
-                            Features
-                        </div>
-                        {features.map((feature, idx) => (
-                            <div key={idx} className="h-[78px] flex items-center px-[48px] text-[16px] font-[600] text-[#1D1A27] border-b border-[#E5E7EB]">
-                                {feature.title}
+                        {/* Features Column */}
+                        <div className="bg-white flex flex-col ">
+                            <div className="font-semibold text-[#1D1A27] xl:text-[18px] 3xl:text-[20px] lg:text-[16px] sm-text-[14px] font-[600] h-[100px] w-full px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] flex items-center border-b border-[#E5E7EB]"
+                            >
+                                Features
                             </div>
-                        ))}
-                    </div>
+                            {features.map((feature, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`h-[78px] flex items-center px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] 3xl:text-[16px] xl:text-[14px] font-[600] text-[#1D1A27] ${idx !== features.length - 1 ? 'border-b border-[#E5E7EB]' : ''
+                                        }`}
+                                >
+                                    {feature.title}
+                                </div>
+                            ))}
 
-                    {/* Lynk Column */}
-                    <div className="bg-white relative border-l border-r border-gray-200 flex flex-col justify-between">
-                        {/* Gradient border */}
-                        <div className="absolute inset-0 rounded-[16px] border-2 border-transparent bg-clip-padding z-0" style={{
-                            background: `linear-gradient(#fff, #fff), linear-gradient(90deg, #3B82F6, #A855F7, #EC4899)`,
-                            backgroundOrigin: "padding-box, border-box"
-                        }}></div>
+                        </div>
 
-                        <div className="relative z-10 flex flex-col flex-grow">
-                            <div className="font-semibold text-[#1D1A27] xl:text-[20px] font-[600] h-[100px] w-full px-[48px] flex items-center justify-between border-b border-[#E5E7EB]">
-                            <Image src={image} alt="Check" />
-                                <div className="inline-block p-[1px] rounded-[33px] bg-[linear-gradient(89.86deg,#EE3CD1_6.14%,#635BFF_84.43%)] flex align-center justify-center">
-                                    <span className="text-[10px] px-2 py-[8px] bg-[#EEF0F3] rounded-full text-[#7C3AED] font-bold block text-[linear-gradient(89.86deg,#EE3CD1_6.14%,#635BFF_84.43%)]">
-                                        YOU OWN IT
-                                    </span>
+                        {/* Lynk Column */}
+                        {/* Outer gradient wrapper */}
+                        <div
+                            className="relative rounded-[16px] p-[2px]"
+                            style={{
+                                background: "linear-gradient(90deg, #3B82F6, #A855F7, #EC4899)",
+                            }}
+                        >
+                            {/* Inner content */}
+                            <div className="bg-[#f7f7ff] rounded-[14px] flex flex-col justify-between">
+                                {/* Header */}
+                                <div className="font-semibold text-[#1D1A27] xl:text-[18px] lg:text-[16px] sm-text-[14px]  3xl:text-[20px]font-[600] h-[100px] w-full px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px]] flex items-center justify-between border-b border-[#E5E7EB]">
+                                    <Image src={image} alt="Check" />
+                                    <div className="hidden lg:inline-block p-[1px] rounded-[33px] bg-[linear-gradient(89.86deg,#EE3CD1_6.14%,#635BFF_84.43%)] flex align-center justify-center">
+                                        <span className="text-[6px] 3xl:text-[10px] xl:text-[8px] px-2 py-[8px] bg-[#EEF0F3] rounded-full text-[#6F697AB2] font-bold block">
+                                            YOU OWN IT
+                                        </span>
+                                    </div>
                                 </div>
 
-                            </div>
-
-                            <div className="flex-grow">
-                                {features.map((feature, idx) => (
-                                    <div key={idx} className="h-[78px] flex items-center px-[48px] text-[16px] font-[600] text-[#1D1A27] border-b border-[#E5E7EB]">
-                                        <div className="flex items-center gap-[12px]">
-                                            <Image src={correct} alt="Check" className="w-4 h-4" />
-                                            {feature.lynk.replace("✅ ", "")}
+                                {/* Feature rows */}
+                                <div className="flex-grow">
+                                    {features.map((feature, idx) => (
+                                        <div
+                                            key={idx}
+                                            className={`h-[78px] flex items-center px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] 3xl:text-[16px] xl:text-[14px]  font-[600] text-[#1D1A27] ${idx !== features.length - 1 ? 'border-b border-[#E5E7EB]' : ''
+                                                }`}
+                                        >
+                                            <div className="flex items-center gap-[12px]">
+                                                <Image src={correct} alt="Check" className="w-4 h-4" />
+                                                {feature.lynk.replace("✅ ", "")}
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
+
+                                </div>
                             </div>
-
-                            {/* <div className="p-6">
-                                <motion.button
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.97 }}
-                                    className="w-full  font-[700] text-white py-[16px] rounded-[8px] text-[18px]"
-                                    style={{
-                                        background: "linear-gradient(90deg, #3B82F6, #A855F7, #EC4899)"
-                                    }}
-                                >
-                                    Get Started
-                                </motion.button>
-                            </div> */}
                         </div>
-                    </div>
 
-                    {/* SaaS LMS Column */}
-                    <div className="bg-white flex flex-col">
-                        <div className="h-[100px] flex items-center justify-between px-[48px] text-[#1D1A27] border-b font-[600] xl:text-[20px] border-[#E5E7EB]">
-                            <span className="text-[20px] font-[600] text-[#1D1A27]">Typical SaaS LMS</span>
-                            <div className="inline-block p-[1px] rounded-[33px] bg-[#6F697AB2] flex align-center justify-center">
-                                    <span className="text-[10px] px-2 py-[8px] bg-[white] rounded-full text-[#6F697AB2] font-bold block text-[#E2DFE7]">
+
+                        {/* SaaS LMS Column */}
+                        <div className="bg-white flex flex-col">
+                            <div className="h-[100px] flex items-center justify-between px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] text-[#1D1A27] border-b font-[600] xl:text-[20px] border-[#E5E7EB]">
+                                <span className="xl:text-[18px] 3xl:text-[20px] font-[600] lg:text-[14px] sm-text-[14px] text-nowrap  text-[#1D1A27]">Typical SaaS LMS</span>
+                                <div className="hidden lg:inline-block p-[1px] rounded-[33px] bg-[#6F697AB2] flex align-center justify-center">
+                                    <span className="text-[6px] 3xl:text-[10px] xl:text-[8px]  px-2 py-[8px] bg-[white] rounded-full text-[#6F697AB2] font-bold block text-[#E2DFE7]">
                                         YOU RENT IT
                                     </span>
                                 </div>
-                        </div>
-                        {features.map((feature, idx) => (
-                            <div key={idx} className="h-[78px] flex items-center px-[48px] text-[16px] font-[600] text-[#1D1A27] border-b border-[#E5E7EB]">
-                                <div className="flex items-center gap-[12px]">
-                                <Image src={wrong} alt="Check" className="w-[20px] h-[20px]" />
-                                    {feature.saas.replace("❌ ", "")}
-                                </div>
                             </div>
-                        ))}
+                            {features.map((feature, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`h-[78px] flex items-center px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] text-[16px] font-[600] text-[#1D1A27] ${idx !== features.length - 1 ? 'border-b border-[#E5E7EB]' : ''
+                                        }`}
+                                >
+                                    <div className="flex items-center gap-[12px]">
+                                        <Image src={wrong} alt="Check" className="w-[20px] h-[20px]" />
+                                        {feature.saas.replace("❌ ", "")}
+                                    </div>
+                                </div>
+                            ))}
+
+                        </div>
                     </div>
                 </div>
-                <div className="relative w-full flex justify-center mt-[24px]">
-  <div className="w-full max-w-[530px] 3xl:w-full xl:w-[400px] px-4">
-    <motion.button
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.97 }}
-      className="w-full font-bold text-white py-[16px] rounded-[8px] text-[18px] shadow-lg"
-      style={{
-        background: "linear-gradient(90deg, #3B82F6, #A855F7, #EC4899)",
-      }}
-    >
-      Get Started
-    </motion.button>
-  </div>
-</div>
+                <div className="relative  flex justify-center 3xl:ml-[190px] xl:ml-[135px] lg:ml-[110px] sm:ml-[90px] mt-[24px]">
+                    <div className=" xl:w-[350px] 3xl:w-[470px] lg:w-[300px] px-4 sm:w-[220px] ">
+                        <motion.button
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.97 }}
+                            className="w-full font-bold text-white py-[16px] rounded-[8px] text-[18px] shadow-lg"
+                            style={{
+                                background: "linear-gradient(90deg, #3B82F6, #A855F7, #EC4899)",
+                            }}
+                        >
+                            Get Started
+                        </motion.button>
+                    </div>
+                </div>
             </div>
 
 
