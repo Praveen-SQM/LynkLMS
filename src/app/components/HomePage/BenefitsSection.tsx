@@ -38,19 +38,19 @@ const BenefitsOverviewSection = () => {
             </div>
             <div className="flex flex-col justify-center items-center w-full px-[32px] pt-[64px] bg-[#F9FAFB] overflow-x-auto">
                 <div className="w-full overflow-x-auto flex justify-center items-center">
-                    <div  className="grid grid-cols-3 gap-0 rounded-[16px] shadow-lg border border-[#eee] bg-white min-w-[640px] sm:w-[1152px] 3xl:w-[1590px]"
+                    <div  className="grid grid-cols-3 gap-0 rounded-[16px] shadow-lg bg-white min-w-[640px] sm:w-[1152px] 3xl:w-[1590px]"
                         style={{ gridTemplateColumns: '41% 30% 29%' }}>
 
                         {/* Features Column */}
                         <div className="bg-white flex flex-col ">
-                            <div className="font-semibold text-[#1D1A27] xl:text-[18px] 3xl:text-[20px] lg:text-[16px] sm-text-[14px] font-[600] h-[100px] w-full px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] flex items-center border-b border-[#E5E7EB]"
+                            <div className="font-semibold text-[#1D1A27] xl:text-[18px] 3xl:text-[20px] lg:text-[16px] sm-text-[14px] font-[600] h-[100px] w-full px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] flex items-center border-b border-[#6B728080]"
                             >
                                 Features
                             </div>
                             {features.map((feature, idx) => (
                                 <div
                                     key={idx}
-                                    className={`h-[78px] flex items-center px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] 3xl:text-[16px] xl:text-[14px] font-[600] text-[#1D1A27] ${idx !== features.length - 1 ? 'border-b border-[#E5E7EB]' : ''
+                                    className={`h-[78px] flex items-center px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] 3xl:text-[16px] xl:text-[14px] font-[600] text-[#1D1A27] ${idx !== features.length - 1 ? 'border-b border-[#6B728080]' : ''
                                         }`}
                                 >
                                     {feature.title}
@@ -70,7 +70,7 @@ const BenefitsOverviewSection = () => {
                             {/* Inner content */}
                             <div className="bg-[#f7f7ff] rounded-[14px] flex flex-col justify-between">
                                 {/* Header */}
-                                <div className="font-semibold text-[#1D1A27] xl:text-[18px] lg:text-[16px] sm-text-[14px]  3xl:text-[20px]font-[600] h-[100px] w-full px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px]] flex items-center justify-between border-b border-[#E5E7EB]">
+                                <div className="font-semibold text-[#1D1A27] xl:text-[18px] lg:text-[16px] sm-text-[14px]  3xl:text-[20px]font-[600] h-[100px] w-full px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px]] flex items-center justify-between border-b border-[#6B728080]">
                                     <Image src={image} alt="Check" />
                                     <div className="hidden lg:inline-block p-[1px] rounded-[33px] bg-[linear-gradient(89.86deg,#EE3CD1_6.14%,#635BFF_84.43%)] flex align-center justify-center">
                                         <span className="text-[6px] 3xl:text-[10px] xl:text-[8px] px-2 py-[8px] bg-[#EEF0F3] rounded-full text-[#6F697AB2] font-bold block">
@@ -84,7 +84,7 @@ const BenefitsOverviewSection = () => {
                                     {features.map((feature, idx) => (
                                         <div
                                             key={idx}
-                                            className={`h-[78px] flex items-center px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] 3xl:text-[16px] xl:text-[14px]  font-[600] text-[#1D1A27] ${idx !== features.length - 1 ? 'border-b border-[#E5E7EB]' : ''
+                                            className={`h-[78px] flex items-center px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] 3xl:text-[16px] xl:text-[14px]  font-[600] text-[#1D1A27] ${idx !== features.length - 1 ? 'border-b border-[#6B728080]' : ''
                                                 }`}
                                         >
                                             <div className="flex items-center gap-[12px]">
@@ -101,7 +101,7 @@ const BenefitsOverviewSection = () => {
 
                         {/* SaaS LMS Column */}
                         <div className="bg-white flex flex-col">
-                            <div className="h-[100px] flex items-center justify-between px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] text-[#1D1A27] border-b font-[600] xl:text-[20px] border-[#E5E7EB]">
+                            <div className="h-[100px] flex items-center justify-between px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] text-[#1D1A27] border-b font-[600] xl:text-[20px] border-[#6B728080]">
                                 <span className="xl:text-[18px] 3xl:text-[20px] font-[600] lg:text-[14px] sm-text-[14px] text-nowrap  text-[#1D1A27]">Typical SaaS LMS</span>
                                 <div className="hidden lg:inline-block p-[1px] rounded-[33px] bg-[#6F697AB2] flex align-center justify-center">
                                     <span className="text-[6px] 3xl:text-[10px] xl:text-[8px]  px-2 py-[8px] bg-[white] rounded-full text-[#6F697AB2] font-bold block text-[#E2DFE7]">
@@ -112,7 +112,7 @@ const BenefitsOverviewSection = () => {
                             {features.map((feature, idx) => (
                                 <div
                                     key={idx}
-                                    className={`h-[78px] flex items-center px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] text-[16px] font-[600] text-[#1D1A27] ${idx !== features.length - 1 ? 'border-b border-[#E5E7EB]' : ''
+                                    className={`h-[78px] flex items-center px-[10px] xl:px-[48px] lg:[30px] sm:px-[10px] text-[16px] font-[600] text-[#1D1A27] ${idx !== features.length - 1 ? 'border-b border-[#6B728080]' : ''
                                         }`}
                                 >
                                     <div className="flex items-center gap-[12px]">
