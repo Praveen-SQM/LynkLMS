@@ -1,149 +1,280 @@
-"use client";
-import React, { useEffect } from "react";
-import { motion } from "framer-motion";
-
-import ContactModal from "../../contactModal";
-import Image from "next/image";
-import logo from "@/app/utilities/images/main_large.png";
+"use client"
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import Image from "next/image"
+import icon from "@/app/utilities/icons/tick_green.e1d6cae9 1.svg"
+import ContactModal from "../../contactModal"
+import backgroundLogo from "@/app/utilities/images/image 1.png"
 
 const LandingHero = () => {
-  const [contact, setContact] = React.useState(false);
+  const [contact, setContact] = useState(false)
 
-  useEffect(()=>{
+  useEffect(() => {
     if (contact) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden"
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow = ""
     }
-
     return () => {
-      document.body.style.overflow = "";
-    };
-  },[contact])
+      document.body.style.overflow = ""
+    }
+  }, [contact])
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 100 },
+    },
+  }
+
+  const formVariants = {
+    hidden: { x: 50, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 80, delay: 0.5 },
+    },
+  }
+
+  const featureVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: 0.8 + i * 0.2 },
+    }),
+  }
+
+  const backgroundVariants = {
+    hidden: { scale: 0.9, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 0.3,
+      transition: { duration: 1.5, ease: "easeOut" },
+    },
+  }
+
   return (
-    <div className="container mx-auto flex flex-col md:flex-row items-center bg-gray-50 justify-between pt-20  3xl:pt-0 2xl:pt-0 xl:pt-0 lg:pt-0 md:pt-0 sm:pt-20">
-      {/* Left Content Section */}
-      <div className="flex w-full flex-col 3xl:gap-[112px] 2xl:gap-[86px] xl:gap-[86px] lg:gap-[86px] md:gap-[32px] sm:gap-[32px]">
-        <div className="flex flex-col items-center sm:items-start gap-[20px] 3xl:gap-[42px] 2xl:gap-[42px] xl:gap-[42px] lg:gap-[42px] md:gap-[24px] sm:gap-[20px]">
-          <div className="flex justify-center items-center sm:items-start sm:justify-start flex-col gap-[12px]">
-            <motion.div
-              className="rounded-full sm:rounded-full bg-gray-200 w-fit px-6 py-2 font-[500] text-gray-950 2xl:text-[14px] 3xl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[13px] sm:text-[12px]"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              Driven by Data. Focused on Results
-            </motion.div>
+    <div className="w-full bg-[#F9FAFB] px-4 overflow-hidden">
+      <div className="relative mx-auto max-w-6xl min-h-[600px] sm:min-h-[700px] md:min-h-[750px] lg:min-h-[798px] py-12 sm:py-16 md:py-20 lg:py-24 sm:mt-0 mt-8">
+        {/* Background Logo Image */}
+        <motion.div
+          className="absolute inset-0 flex justify-center items-center pointer-events-none"
+          initial="hidden"
+          animate="visible"
+          variants={backgroundVariants}
+        >
+          <Image
+            src={backgroundLogo || "/placeholder.svg"}
+            width={810}
+            height={837}
+            alt="Background Shape"
+            className="opacity-30 object-contain"
+            quality={100}
+            priority
+          />
+        </motion.div>
 
-            <motion.h1
-              className="text-center sm:text-start text-[26px] sm:text-[26px] md:text-[42px] lg:text-[52px] xl:text-[52px] 2xl:text-[52px] 3xl:text-[72px] w-full font-[500] md:font-[600] sm:font-[600] 2xl:leading-[110%] 3xl:leading-[110%] xl:leading-[100%] lg:leading-[100%] md:leading-[52px] sm:leading-[34px] overflow-hidden"
-              initial={{
-                opacity: 0,
-                y: 20,
-                filter: "blur(10px)",
-                WebkitMaskImage: "linear-gradient(90deg, black 100%)", // Full visibility
-                maskImage: "linear-gradient(90deg, black 100%)",
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                filter: "blur(0px)",
-                WebkitMaskImage:
-                  "linear-gradient(45deg, black 90%, rgba(0,0,0,0.1) 100%)", // Slight fade but no full transparency
-                maskImage:
-                  "linear-gradient(45deg, black 90%, rgba(0,0,0,0.1) 100%)",
-              }}
-              transition={{
-                duration: 1,
-                ease: "easeOut",
-              }}
-            >
-              Empower Learning with{" "}
-              <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text font-[700] md:font-[600] sm:font-[600]">
-                Lynk
-              </span>{" "}
-              LMS & Content Creation.
-            </motion.h1>
-          </div>
+        <div className="container mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+          {/* Left Content */}
+          <motion.div className="w-full lg:w-1/2" initial="hidden" animate="visible" variants={containerVariants}>
+            <div className="max-w-xl mx-auto lg:mx-0">
+              {/* Tag line */}
+              <motion.div
+                className="inline-block bg-[#E6E7EB] rounded-full px-4 sm:px-6 py-1.5 sm:py-2 mb-3 text-xs sm:text-sm"
+                variants={itemVariants}
+              >
+                Driven by Data. Focused on Results
+              </motion.div>
 
-          <motion.p
-            className="text-gray-500 font-[400] max-w-[340px] sm:max-w-[576px] text-[13px] sm:text-[13px] md:text-[14px] lg:text-[16px] xl:text-[20px] 2xl:text-[20px] 3xl:text-[20px] text-center sm:text-start overflow-hidden mb-[32px] 3xl:mb-[0px] 2xl:mb-[0px] xl:mb-[0px] lg:mb-[0px] md:mb-[0px] sm:mb-[32px]"
-            initial={{
-              opacity: 0,
-              scale: 1.2,
-              filter: "blur(10px)",
-              WebkitMaskImage: "linear-gradient(90deg, black 100%)", // Full visibility initially
-              maskImage: "linear-gradient(90deg, black 100%)",
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              filter: "blur(0px)",
-              WebkitMaskImage:
-                "linear-gradient(90deg, black 95%, rgba(0,0,0,0.2) 100%)", // Reduce fade effect
-              maskImage:
-                "linear-gradient(90deg, black 95%, rgba(0,0,0,0.2) 100%)",
-            }}
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-            }}
-          >
-            Transform your learning processes with a customizable LMS and
-            tailored e-learning content for your goals.
-          </motion.p>
-        </div>
+              {/* Main Heading */}
+              <motion.h1
+                className="text-3xl sm:text-4xl md:text-5xl 3xl:text-[72px] font-bold mb-6 sm:mb-8 md:mb-11 3xl:w-[945px]"
+                variants={itemVariants}
+              >
+                White Label LMS Software That&apos;s Fully Yours —
+                <motion.span
+                  style={{
+                    background: "linear-gradient(90deg, #3B82F6 0%, #A855F7 50%, #EC4899 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    display: "inline-block",
+                  }}
+                  animate={{
+                    backgroundPosition: ["0% center", "100% center", "0% center"],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: "linear",
+                  }}
+                >
+                  Forever
+                </motion.span>
+              </motion.h1>
 
-        <div className="flex flex-col lg:flex-row items-center md:items-start sm:items-center gap-4 sm:gap-[24px] pb-4 sm:pb-0">
-          <motion.button
-            className="bg-black text-white px-[12px] py-[10px] min-w-[160px] w-[0rem] sm:w-[7.9375rem] rounded-xl font-[600]"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => {
-              setContact(true);
-            }}
-          >
-            Connect With Us
-          </motion.button>
+              {/* Subheading */}
+              <motion.p
+                className="text-gray-600 text-base sm:text-lg 3xl:text-[20px] leading-relaxed mb-6 3xl:w-[560px]"
+                variants={itemVariants}
+              >
+                No monthly fees! No compromises. 100% white-labeled LMS that grows with your business.
+              </motion.p>
 
-          <motion.div
-            className="flex flex-col sm:flex-row items-center sm:items-end gap-4 sm:gap-8 text-gray-500"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            {/* <motion.div
-              className="flex items-end"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <Communities />
-            </motion.div> */}
-            {/* <motion.span
-              className="text-[14px] mb-2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              Be a Part of Our Growing Community{" "}
-              <span className="text-green-500">10000+</span>
-            </motion.span> */}
+              {/* Feature list */}
+              <div className="space-y-3 mb-8">
+                {[
+                  "One-time investment. Unlimited scale.",
+                  "Custom-branded to match your business identity",
+                  "Live in just 2-4 weeks with full support",
+                ].map((feature, i) => (
+                  <motion.div
+                    key={i}
+                    className="flex items-center"
+                    custom={i}
+                    variants={featureVariants}
+                    initial="hidden"
+                    animate="visible"
+                  >
+                    <motion.div whileHover={{ scale: 1.2, rotate: 10 }} whileTap={{ scale: 0.9 }}>
+                      <Image src={icon || "/placeholder.svg"} alt="icon" className="w-4 h-4 mr-3" />
+                    </motion.div>
+                    <p className="text-sm sm:text-base">{feature}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </motion.div>
+
+          {/* Right Form */}
+          <motion.div
+            className="w-full sm:w-[90%] md:w-[80%] lg:w-2/5 3xl:w-[583px]"
+            variants={formVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div
+              style={{
+                borderRadius: "24px",
+                background: "rgba(255, 255, 255, 0.40)",
+                boxShadow: "0px 0px 2px 0px rgba(0, 0, 0, 0.05), 0px 25px 50px 0px rgba(100, 89, 255, 0.09)",
+                backdropFilter: "blur(6px)",
+              }}
+              className="p-6 sm:p-8 md:p-10"
+              whileHover={{
+                boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.1), 0px 30px 60px 0px rgba(100, 89, 255, 0.15)",
+                y: -5,
+              }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <h2 className="text-xl sm:text-2xl 3xl:text-[28px] font-semibold mb-6 sm:mb-8 md:mb-11">
+                Book Your Free LMS Demo
+                <br />
+                <span>& Walkthrough</span>
+              </h2>
+
+              <form>
+                <div className="space-y-4">
+                  {[
+                    { label: "Full Name", type: "text", placeholder: "e.g. Fred Latham" },
+                    { label: "Work Email", type: "email", placeholder: "e.g. fred@example.com" },
+                    { label: "Company Name", type: "text", placeholder: "e.g. LinkedCorp" },
+                  ].map((field, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.7 + i * 0.1 }}
+                    >
+                      <label className="block text-sm font-[400] text-[#131313] mb-2">
+                        {field.label}
+                        <span className="text-[#EF4444]">*</span>
+                      </label>
+                      <motion.input
+                        type={field.type}
+                        placeholder={field.placeholder}
+                        className="w-full px-4 py-3 sm:py-4 border border-[#F1F1F1] rounded-[8px] bg-[#FFFFFFD9]"
+                        whileFocus={{ boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.4)" }}
+                      />
+                    </motion.div>
+                  ))}
+
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1 }}>
+                    <label className="block text-sm font-[400] text-[#131313] mb-2">
+                      Primary users<span className="text-[#EF4444]">*</span>
+                    </label>
+                    <motion.select
+                      defaultValue=""
+                      className="w-full px-4 py-3 sm:py-4 border border-[#F1F1F1] rounded-[8px] bg-[#FFFFFFD9]"
+                      whileFocus={{ boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.4)" }}
+                    >
+                      <option value="" disabled>
+                        I&apos;m looking at LMS for...
+                      </option>
+                      <option value="corporate">Corporate Training</option>
+                      <option value="education">Educational Institution</option>
+                      <option value="online">Online Course Creation</option>
+                    </motion.select>
+                  </motion.div>
+
+                  <motion.button
+                    style={{
+                      borderRadius: "8px",
+                      background:
+                        "linear-gradient(90deg, #3B82F6 0%, #A855F7 50%, #EC4899 100%), rgba(255, 255, 255, 0.85)",
+                    }}
+                    className="w-full text-white font-medium py-3 hover:opacity-90 transition-opacity mt-6"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.2 }}
+                  >
+                    <motion.span
+                      initial={{ x: -5 }}
+                      animate={{ x: 0 }}
+                      transition={{
+                        repeat: Number.POSITIVE_INFINITY,
+                        repeatType: "mirror",
+                        duration: 0.8,
+                      }}
+                    >
+                      → Request Demo
+                    </motion.span>
+                  </motion.button>
+
+                  <motion.p
+                    className="text-[14px] font-[500] text-center text-[#6B7280] mt-4"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.3 }}
+                  >
+                    We don&apos;t spam. Your info stays private.
+                  </motion.p>
+                </div>
+              </form>
+            </motion.div>
+          </motion.div>
+
+          <ContactModal isOpen={contact} onClose={() => setContact(false)} />
         </div>
       </div>
-
-      {/* Right Logo Animation */}
-      {/* <div className="rounded-full w-full"> */}
-        <Image src={logo} alt=" " className=" 3xl:w-[541px] 3xl:h-[559px] xl:w-[394px] xl:h-[539px] lg:w-[394px] lg:h-[539px] md:w-[377px] md:h-[296px] sm:w-[261px] sm:h-[332px] h-[332px] w-[261px]" />
-      {/* </div> */}
-
-      <ContactModal isOpen={contact} onClose={() => setContact(false)} />
     </div>
-  );
-};
+  )
+}
 
-export default LandingHero;
+export default LandingHero
