@@ -79,15 +79,19 @@ const LandingHero = () => {
     setLoading(true)
     
     try {
-      // Process form data for Zoho
+      const nameParts = formData.fullName.trim().split(" ");
+      const firstName = nameParts.length > 1 ? nameParts[0] : "";
+      const lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : nameParts[0];
+
       const zohoData = {
-        firstName: formData.fullName.split(' ')[0] || formData.fullName,
-        lastName: formData.fullName.split(' ').slice(1).join(' ') || "",
+        firstName,
+        lastName,
         email: formData.email,
         companyName: formData.companyName,
         primaryUser: formData.primaryUser,
-        leadSource: "Lynk LMS Website - Demo Request"
-      }
+        message: "Demo Request",
+        leadSource: "Lynk LMS Website",
+      };
       
       // First, send email notification
       const emailResponse = await fetch('/api/sendEmail', {
@@ -400,7 +404,7 @@ const LandingHero = () => {
             <div className="max-w-xl mx-auto lg:mx-0">
               {/* Tag line */}
               <motion.div
-                className="inline-block bg-[#E6E7EB] rounded-full px-4 sm:px-6 py-1.5 sm:py-2 mb-3 text-xs sm:text-sm"
+                className="inline-block text-[#030712] bg-[#E6E7EB] rounded-full px-4 sm:px-6 py-1.5 sm:py-2 mb-3 text-xs sm:text-sm"
                 variants={itemVariants}
               >
                 Driven by Data. Focused on Results
@@ -437,7 +441,7 @@ const LandingHero = () => {
                 className="text-gray-600 text-base sm:text-lg 3xl:text-[20px] leading-relaxed mb-6 3xl:w-[560px]"
                 variants={itemVariants}
               >
-                No monthly fees! No compromises. 100% white-labeled LMS that grows with your business.
+              No monthly SaaS fees. No compromises. 100% white-labeled LMS that grows with your business.
               </motion.p>
 
               {/* Feature list */}
@@ -508,7 +512,7 @@ const LandingHero = () => {
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleInputChange}
-                      placeholder="e.g. Fred Latham"
+                      placeholder="e.g., Ava Linford"
                       className="w-full px-4 py-3 sm:py-4 border border-[#F1F1F1] rounded-[8px] bg-[#FFFFFFD9]"
                       whileFocus={{ boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.4)" }}
                       required
@@ -529,7 +533,7 @@ const LandingHero = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="e.g. fred@example.com"
+                      placeholder="e.g., ava@example.com"
                       className="w-full px-4 py-3 sm:py-4 border border-[#F1F1F1] rounded-[8px] bg-[#FFFFFFD9]"
                       whileFocus={{ boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.4)" }}
                       required
@@ -550,7 +554,7 @@ const LandingHero = () => {
                       name="companyName"
                       value={formData.companyName}
                       onChange={handleInputChange}
-                      placeholder="e.g. LinkedCorp"
+                      placeholder="e.g., Linford Corp."
                       className="w-full px-4 py-3 sm:py-4 border border-[#F1F1F1] rounded-[8px] bg-[#FFFFFFD9]"
                       whileFocus={{ boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.4)" }}
                       required
@@ -569,10 +573,11 @@ const LandingHero = () => {
                     <motion.select
                       name="primaryUser"
                       value={formData.primaryUser}
+                      // placeholder="I’m building an LMS for…"
                       onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                         handleInputChange(e as unknown as React.ChangeEvent<HTMLInputElement>)
                       }
-                      className=" w-full px-4 py-3 sm:py-4 border border-[#F1F1F1] rounded-[8px] bg-[#FFFFFFD9]"
+                      className="w-full px-4 py-3 sm:py-4 border border-[#F1F1F1] rounded-[8px] bg-[#FFFFFFD9]"
                       whileFocus={{ boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.4)" }}
                       required
                     >

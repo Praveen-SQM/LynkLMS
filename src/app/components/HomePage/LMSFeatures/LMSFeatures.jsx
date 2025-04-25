@@ -1,62 +1,72 @@
 "use client"
 import { motion } from "framer-motion"
 import Image from "next/image"
-
+import { useState } from "react"
 // Import your SVG icons
 // Note: These paths should match your project structure
 import Group from "@/app/utilities/icons/Group.svg"
 import group2 from "@/app/utilities/icons/Group (1).svg"
 import group3 from "@/app/utilities/icons/Group (2).svg"
 import group4 from "@/app/utilities/icons/Group (3).svg"
-
-const FeatureCard = ({ icon: Icon, title, description, delay }) => (
-  <motion.div
-    className="group flex flex-col items-center text-center shadow-[#6459ff16] transition-all hover:shadow-gray-400 hover:bg-[#6559FF] text-gray-900 shadow-2xl rounded-3xl p-4 sm:p-5 md:p-6 lg:py-10"
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay }}
-    viewport={{ once: true }}
-  >
-    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20 bg-[#6559FF] rounded-full flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-white transition-all">
-      <Image
-        src={Icon || "/placeholder.svg"}
-        alt={title}
-        className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white group-hover:text-[#6559FF] transition-all"
-      />
-    </div>
-    <h3 className="text-base sm:text-lg font-Manrope font-bold sm:font-semibold mb-1 group-hover:text-white transition-all">
-      {title}
-    </h3>
-    <p className="text-gray-600 font-Manrope text-xs sm:text-sm max-w-xs group-hover:text-white transition-all">
-      {description}
-    </p>
-  </motion.div>
-)
-
+import Group8 from "@/app/utilities/icons/Group (4).svg"
+import group5 from "@/app/utilities/icons/Group (5).svg"
+import group6 from "@/app/utilities/icons/Group (6).svg"
+import group7 from "@/app/utilities/icons/Group (7).svg"
+const FeatureCard = ({ icon, title, description, delay, hoverIcon }) => {
+  const [isHovered, setIsHovered] = useState(false)
+  return (
+    <motion.div
+      className="group flex flex-col items-center text-center shadow-[#6459ff16] transition-all hover:shadow-gray-400 hover:bg-[#6559FF] text-gray-900 shadow-2xl rounded-3xl p-4 sm:p-5 md:p-6 lg:py-10"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      viewport={{ once: true }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20 bg-[#6559FF] rounded-full flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-white transition-all">
+        <Image
+          src={isHovered ? hoverIcon : icon || "/placeholder.svg"}
+          alt={title}
+          className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white group-hover:text-[#6559FF] transition-all"
+        />
+      </div>
+      <h3 className="text-base sm:text-lg font-Manrope font-bold sm:font-semibold mb-1 group-hover:text-white transition-all">
+        {title}
+      </h3>
+      <p className="text-gray-600 font-Manrope text-xs sm:text-sm max-w-xs group-hover:text-white transition-all">
+        {description}
+      </p>
+    </motion.div>
+  )
+}
 const LMSFeatures = () => {
   const features = [
     {
       icon: Group,
       title: "White-Label Freedom",
       description: "Brand it as your own",
+      hoverIcon: Group8,
     },
     {
       icon: group2,
       title: "Fully Customizable",
       description: "Built around your use case",
+      hoverIcon: group5,
     },
     {
       icon: group3,
       title: "One-Time Purchase",
       description: "Save thousands over time",
+      hoverIcon: group6,
     },
     {
       icon: group4,
       title: "Scalable Infrastructure",
       description: "Built to grow with you",
+      hoverIcon: group7,
     },
   ]
-
   return (
     <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-24 flex flex-col items-center">
       <motion.h2
@@ -71,7 +81,6 @@ const LMSFeatures = () => {
           Platform?
         </span>
       </motion.h2>
-
       <motion.p
         className="text-center text-[#6B7280] font-Manrope font-normal text-sm sm:text-base md:text-lg lg:text-xl max-w-[90%] sm:max-w-[80%] md:max-w-[70%] mb-8 sm:mb-10 md:mb-12 lg:mb-16"
         initial={{ opacity: 0, y: 20 }}
@@ -81,12 +90,12 @@ const LMSFeatures = () => {
       >
         Our LMS gives you complete control — branding, features, and future.
       </motion.p>
-
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 w-full max-w-[90%] sm:max-w-[85%] md:max-w-6xl">
         {features.map((feature, index) => (
           <FeatureCard
             key={feature.title}
             icon={feature.icon}
+            hoverIcon={feature.hoverIcon}
             title={feature.title}
             description={feature.description}
             delay={0.2 + index * 0.1}
@@ -96,5 +105,4 @@ const LMSFeatures = () => {
     </div>
   )
 }
-
 export default LMSFeatures

@@ -371,7 +371,7 @@ height={78}
             </p> */}
           </div>
           <div className="text-gray-500 text-xs">
-            <p>©2023 Lynk. All rights reserved.</p>
+            <p>©2025 Lynk. All rights reserved.</p>
           </div>
         </div>
         {/* Right side - Subscription form */}
@@ -419,7 +419,7 @@ Receive inquiries and{" "}
               onClick={handleSubmit}
               disabled={isSubmitting}
               className={`xl:h-[50px] sm:h-[26px] xl:rounded-[10.7px] rounded-[4px] xl:py-[10.7px] xl:px-[10.7px] sm:py-1 py-[6px] sm:px-2 px-3 ${
-                isSubmitting ? "bg-[#4F4BAF]" : "bg-[#534BEF]"
+                isSubmitting ? "bg-[#195EFF]" : "bg-[#195EFF]"
               } cursor-pointer font-[500] xl:text-[18.73px] xl:leading-[25.6px] sm:text-[13px] sm:leading-[17.6px] text-[12px] leading-[16.3px] text-[#ffffff] flex justify-center items-center text-nowrap transition-all xl:text-[18px] 3xl:leading-[100%] 3xl:py-[14.26px]`}
             >
               {isSubmitting ? "Connecting..." : "Connect Now"}
