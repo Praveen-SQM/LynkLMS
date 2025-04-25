@@ -2,18 +2,12 @@
 import React from "react";
 import { useState } from "react";
 import Image from "next/image";
-import partnerClient from "../../../../public/partner-clients.png";
-import RemoteTeams from "../../../../public/remote-teams.png";
-import trainingProvider from "../../../../public/training-provider.png";
-import corporates from "../../../../public/corporates.svg";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import ContactModal from "../contactModal";
-import { Check, X } from "lucide-react";
 import correct from "../../../../public/green-tick.svg";
 import image from "../../../../public/Frame 63.svg"
 import wrong from "../../../../public/wrong.svg"
-import clsx from "clsx";
-import BenefitsSection from "../E-learning/BenefitsSection";
+
 
 const BenefitsOverviewSection = () => {
     const [contactModalOpen, setContactModalOpen] = useState(false);
