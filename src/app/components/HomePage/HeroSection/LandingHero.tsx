@@ -34,7 +34,7 @@ const LandingHero = () => {
     }
   }, [contact])
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({
       ...prev,
@@ -42,12 +42,12 @@ const LandingHero = () => {
     }))
   }
 
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    return re.test(email)
-  }
+  const validateEmail = (email: string): boolean => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     
     // Validate form data
@@ -148,7 +148,7 @@ const LandingHero = () => {
   }
 
   // Generate email HTML template
-  const generateEmailTemplate = (data) => {
+  const generateEmailTemplate = (data: { fullName: string, email: string, companyName: string, primaryUser: string }): string => {
     return `
 <!DOCTYPE html>
 <html lang="en">
@@ -357,7 +357,7 @@ const LandingHero = () => {
 
   const featureVariants = {
     hidden: { opacity: 0, x: -10 },
-    visible: (i) => ({
+    visible: (i: number) => ({
       opacity: 1,
       x: 0,
       transition: { delay: 0.8 + i * 0.2 },
@@ -569,7 +569,9 @@ const LandingHero = () => {
                     <motion.select
                       name="primaryUser"
                       value={formData.primaryUser}
-                      onChange={handleInputChange}
+                      onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                        handleInputChange(e as unknown as React.ChangeEvent<HTMLInputElement>)
+                      }
                       className="appearance-none w-full px-4 py-3 sm:py-4 border border-[#F1F1F1] rounded-[8px] bg-[#FFFFFFD9]"
                       whileFocus={{ boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.4)" }}
                       required
