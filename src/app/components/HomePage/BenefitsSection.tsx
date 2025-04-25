@@ -6,23 +6,12 @@ import correct from "../../../../public/green-tick.svg";
 import image from "../../../../public/Frame 63.svg"
 import wrong from "../../../../public/wrong.svg"
 import Link from "next/link";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 
 const BenefitsOverviewSection = () => {
     const [contactModalOpen, setContactModalOpen] = useState(false);
     const lynkColumnRef = useRef(null);
-    const [lynkWidth, setLynkWidth] = useState(0);
 
-    useEffect(() => {
-        if (!lynkColumnRef.current) return;
-        const observer = new ResizeObserver((entries) => {
-            for (let entry of entries) {
-                setLynkWidth(entry.contentRect.width);
-            }
-        });
-        observer.observe(lynkColumnRef.current);
-        return () => observer.disconnect();
-    }, []);
 
     const features = [
         { title: "Ownership", lynk: ` Full`, saas: "❌ No Ownership" },
