@@ -379,7 +379,7 @@ const LandingHero = () => {
 
   return (
     <div className="w-full bg-[#F9FAFB] px-4 overflow-hidden">
-      <div className="relative mx-auto max-w-6xl min-h-[600px] sm:min-h-[700px] md:min-h-[750px] lg:min-h-[798px] py-12 sm:py-16 md:py-20 lg:py-24 sm:mt-0 mt-8">
+      <div className="relative mx-auto 3xl:max-w-[1620px] xl:max-w-6xl min-h-[600px] sm:min-h-[700px] md:min-h-[750px] lg:min-h-[798px] py-12 sm:py-16 md:py-20 lg:py-24 sm:mt-0 mt-8">
         {/* Background Logo Image */}
         <motion.div
           className="absolute inset-0 flex justify-center items-center pointer-events-none"
