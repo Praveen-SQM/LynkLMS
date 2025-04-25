@@ -117,7 +117,7 @@ const BenefitsOverviewSection = () => {
                     </div>
                 </div>
                 <div className="relative w-full flex justify-center mt-[24px]">
-  <div className="w-full max-w-[530px] px-4">
+  <div className="w-full max-w-[530px] 3xl:w-full xl:w-[400px] px-4">
     <motion.button
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.97 }}
