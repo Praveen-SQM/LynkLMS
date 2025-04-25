@@ -3,7 +3,6 @@ import { Star, Building2, CircleDollarSign } from "lucide-react";
 import Image from "next/image";
 import logoWhite from "@/app/utilities/images/logo_white.svg";
 import unifiedSolution from "@/app/utilities/icons/group-blue.svg";
-
 const benefitsData = [
   {
     icon: unifiedSolution,
@@ -29,38 +28,33 @@ const benefitsData = [
       "Bundling reduces overall costs compared to sourcing separately.",
   },
 ];
-
 const LMSBenefits = () => {
   return (
     <div className="max-w-6xl mx-auto xl:px-0 px-4 py-[120px] 3xl:min-w-[1590px]">
       <div className="text-center space-y-4 mb-12 flex flex-col items-center">
-        <h1 className="text-3xl sm:text-4xl font-bold 3xl:text-[56px] 3xl:max-w-[1280px] 3xl:leading-[100%]">
-          <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
-            Combine
-          </span>{" "}
+        <h1 className="text-3xl sm:text-4xl font-[600] 3xl:text-[52px] 3xl:max-w-[782px] 3xl:leading-[100%]">
+        <span className="bg-gradient-to-r from-[#3B82F6] via-[#A855F7] to-[#EC4899] bg-clip-text text-transparent">
+  Combine
+</span>{" "}
           LMS and Content for Maximum Impact
         </h1>
-        <p className=" w-full text-sm sm:text-base lg:max-w-2xl text-[#4A4852] 3xl:text-[21px] 3xl:leading-[32px]">
+        <p className="3xl:max-w-[782px] w-full text-sm sm:text-base lg:max-w-2xl text-[#4A4852] 3xl:text-[20px] 3xl:font-[400] 3xl:leading-[32px]">
           Our LMS and e-learning content development services work hand-in-hand
           to create a seamless and efficient training ecosystem.
         </p>
       </div>
-
       <div className="relative grid sm:grid-cols-2 gap-20 sm:gap-24 mt-16">
         {/* Center Icon with Concentric Circles */}
         <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 3xl:w-[300px] 3xl:h-[300px] ">
           {/* Outer circle */}
           <div className="absolute inset-0 rounded-full bg-indigo-50 animate-expand-outer"></div>
-
           {/* Middle circle */}
           <div className="absolute inset-12 rounded-full bg-indigo-100 animate-expand-middle"></div>
-
           {/* Inner circle with icon */}
           <div className="absolute inset-12 3xl:inset-24 rounded-full bg-indigo-500 flex items-center justify-center animate-expand-inner">
             <Image src={logoWhite} alt="Icon" width={60} height={60} />
           </div>
         </div>
-
         {/* Benefits Cards */}
         {benefitsData.map((benefit, index) => (
           <div
@@ -71,16 +65,16 @@ const LMSBenefits = () => {
           >
             <div
               key={index}
-              className="absolute z-10 bg-white rounded-2xl p-4 h-full max-h-36 sm:p-6 shadow-2xl shadow-gray-200 max-w-[230px] lg:max-w-[350px] 3xl:min-w-[489.9114990234375px]"
+              className="absolute z-10 bg-white rounded-2xl p-4 h-full max-h-36 sm:p-6 shadow-2xl shadow-gray-200 max-w-[230px] lg:max-w-[350px] 3xl:max-w-[387px]"
             >
               <div className="flex items-center gap-4 font-semibold mb-2">
                 <div className="p-2 bg-[#5a52f53f] w-fit rounded-md">
                   {benefit.icon === unifiedSolution ? (
                     <Image
-                      width={25}
+                      // width={25}
                       src={unifiedSolution}
                       alt=""
-                      className="h-6"
+                      className="h-6 w-6"
                     />
                   ) : (
                     benefit.icon
@@ -116,5 +110,4 @@ const LMSBenefits = () => {
     </div>
   );
 };
-
 export default LMSBenefits;
