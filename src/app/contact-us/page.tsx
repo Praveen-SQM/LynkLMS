@@ -257,7 +257,7 @@ const ContactForm: React.FC = () => {
                 toast.success(result.message, { duration: 3000 });
                 await axios.post('/api/zoho', {
                     ...formData,
-                    "leadSource":"Lynk Landing Page",
+                    "leadSource":"Lynk LMS Website",
                 });
                 setFormData({
                     firstName: '',
