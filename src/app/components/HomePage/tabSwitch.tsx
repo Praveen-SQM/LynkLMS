@@ -181,7 +181,14 @@ const TabSwitch = () => {
               </p>
               <div
                 onClick={() => setContactModalOpen(true)}
-                className="bg-[#ffffff] flex items-center justify-center cursor-pointer 3xl:h-[76.84px] xl:h-[53px] sm:h-[37px] 3xl:rounded-[17.19px] xl:rounded-[16px] sm:rounded-[7px] 3xl:border-[1.43px] xl:border-[1px] sm:border-[0.58px] 3xl:px-[17.19px] sm:px-3 w-fit font-semibold xl:text-[16px] xl:leading-[21px] sm:text-[12px] sm:leading-[12.16px] text-[#1D1A27]"
+                className="bg-gradient-overlay bg-clip-padding border border-white/50 
+             flex items-center justify-center cursor-pointer w-fit font-semibold 
+             3xl:h-[54px] 3xl:w-[178px] 3xl:rounded-[8px] xl:h-[53px] sm:h-[37px]
+             3xl:rounded-[17.19px] xl:rounded-[10px] sm:rounded-[7px]
+             3xl:border-[1.43px] xl:border-[1px] sm:border-[0.58px]
+             3xl:px-[17.19px] xl:px-[32px] sm:px-3
+             xl:text-[16px] xl:leading-[21px] sm:text-[12px] sm:leading-[12.16px]
+             3xl:text-[18px] 3xl:font-[700] text-[#1D1A27] text-[#FFFFFF]"
               >
                 Connect Now
               </div>
