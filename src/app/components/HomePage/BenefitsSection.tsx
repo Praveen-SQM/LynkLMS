@@ -39,7 +39,7 @@ const BenefitsOverviewSection = () => {
                     <div className="flex gap-0 rounded-[16px] min-w-[640px] sm:w-[1152px] 3xl:w-[1590px]"
                     >
                         {/* Features Column */}
-                        <div className="flex flex-col flex-1 rounded-tl-[16px] rounded-bl-[16px] overflow-hidden " >
+                        <div className="flex flex-col basis-[40%] flex-1 rounded-tl-[16px] rounded-bl-[16px] overflow-hidden " >
                             {/* Features header */}
                             <div className=" text-[#1D1A27] xl:text-[18px] 3xl:text-[20px] lg:text-[16px] sm-text-[14px] font-[600] h-[100px] w-full px-[10px] xl:px-[48px] lg:px-[30px] sm:px-[10px] flex items-center border-b border-[#6B728080] bg-white" 
                               >
@@ -67,7 +67,7 @@ const BenefitsOverviewSection = () => {
                         {/* Lynk Column */}
                         <div
                             ref={lynkColumnRef}
-                            className="flex flex-col flex-1 relative rounded-[16px] p-[1px] z-10"
+                            className="flex flex-col basis-[27.5%] flex-1 relative rounded-[16px] p-[1px] z-10"
                             style={{
                                 background: "linear-gradient(90deg, #3B82F6, #A855F7, #EC4899)",
                             }}
@@ -114,7 +114,7 @@ const BenefitsOverviewSection = () => {
                         </div>
                         {/* Typical SaaS LMS Column */}
                         {/* Typical SaaS LMS Column */}
-                        <div className="flex flex-col flex-1 rounded-tr-[16px] rounded-br-[16px] overflow-hidden">
+                        <div className="flex flex-col basis-[27.5%] flex-1 rounded-tr-[16px] rounded-br-[16px] overflow-hidden">
                             <div className="h-[100px] flex items-center justify-between px-[10px] xl:px-[48px] lg:px-[30px] sm:px-[10px] text-[#1D1A27] border-b font-[600] xl:text-[20px] border-[#6B728080] bg-white">
                                 <span className="xl:text-[18px] 3xl:text-[20px] font-[600] lg:text-[14px] sm-text-[14px] text-nowrap text-[#1D1A27]">
                                     Typical SaaS LMS
