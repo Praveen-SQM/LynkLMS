@@ -246,13 +246,14 @@ const Footer = () => {
       const result = await response.json();
       if (response.ok) {
         toast.success("Request on email Requested successfully");
-        await axios.post('/api/zoho', {
-          "firstName":"From Lynk",
-          "lastName":"website",
-          "email": email,
-          "phoneNumber":"Not Provided",
-          "message":"Requested a callback on email provided for more information from lynk lms",
-          "leadSource":"Lynk LMS Website",
+        await axios.post("/api/zoho", {
+          firstName: "From Lynk",
+          lastName: "website",
+          email: email,
+          phoneNumber: "Not Provided",
+          message:
+            "Requested a callback on email provided for more information from lynk lms",
+          leadSource: "Lynk Landing Page",
         });
         setIsSubmitting(false);
         setSubmitted(true);
