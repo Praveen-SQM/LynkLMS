@@ -91,6 +91,7 @@ const LandingHero = () => {
         primaryUser: formData.primaryUser,
         message: "Demo Request",
         leadSource: "Lynk LMS Website",
+        service:""
       };
       
       // First, send email notification

@@ -263,7 +263,8 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
         toast.success(result.message, { duration: 3000 });
         await axios.post('/api/zoho', {
           ...formData,
-          "leadSource":"Lynk LMS Website"
+          "leadSource":"Lynk LMS Website",
+          "service":""
         });
         setFormData({
           firstName: '',
