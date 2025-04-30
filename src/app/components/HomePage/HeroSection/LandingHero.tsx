@@ -90,7 +90,7 @@ const LandingHero = () => {
         companyName: formData.companyName,
         primaryUser: formData.primaryUser,
         message: "Demo Request",
-        leadSource: "Lynk LMS Website",
+        leadSource: "Lynk Landing Page",
         service:""
       };
       
