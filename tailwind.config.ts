@@ -80,6 +80,9 @@ export default {
         "expand-middle": "expand 1.5s 0.5s infinite ease-in-out", // Slight delay
         "expand-inner": "expand 1.5s 1.0s infinite ease-in-out", // More delay
       },
+      backgroundImage: {
+        'text-gradient': 'linear-gradient(90deg, #3B82F6 0%, #A855F7 50%, #EC4899 100%)',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
