@@ -61,8 +61,7 @@ export default function RootLayout({
   `}
         </Script>
 
-        {/* Google Tag Manager */}
-        <Script
+        {/* <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-17084294991"
           strategy="afterInteractive"
         />
@@ -73,8 +72,7 @@ export default function RootLayout({
     gtag('js', new Date());
     gtag('config', 'AW-17084294991');
   `}
-        </Script>
-        {/* End Google Tag Manager */}
+        </Script> */}
       </head>
       <body className={`${manrope.variable} antialiased`}>
         <noscript>
@@ -91,7 +89,20 @@ export default function RootLayout({
         {children}
 
         <Footer />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17084294991"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17084294991');
+          `}
+        </Script>
       </body>
+      
     </html>
   );
 }
