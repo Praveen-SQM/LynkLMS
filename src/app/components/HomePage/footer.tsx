@@ -63,7 +63,7 @@ const Footer = () => {
         },
         {
           text: "Privacy Policy",
-          href: "/",
+          href: "/privacy-policy",
         },
       ],
     },
