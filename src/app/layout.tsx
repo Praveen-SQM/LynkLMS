@@ -99,10 +99,14 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-17084294991');
+
+            gtag('event', 'conversion', {
+      send_to: 'AW-17084294991/11N7CNOdv8gaEM_OttI_'
+    });
           `}
         </Script>
       </body>
-      
+
     </html>
   );
 }
