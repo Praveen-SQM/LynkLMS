@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import phoneIcon from "@/app/utilities/icons/phone-icon-contact.svg"
 import salesIcon from "@/app/utilities/icons/sales-icon.svg"
@@ -10,7 +10,7 @@ import 'react-phone-input-2/lib/style.css'
 import Image from 'next/image';
 import { FloatingBackground } from '@/app/components/ContactUsPage/LMSLanding/FloatingTriangles';
 import toast from "react-hot-toast";
-import { Loader2 } from "lucide-react";
+import { Loader2, ChevronDown, ChevronUp } from "lucide-react";
 import { useRouter } from 'next/navigation';
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
@@ -22,6 +22,7 @@ const ContactForm: React.FC = () => {
         email: '',
         phoneNumber: '',
         message: '',
+        service: ''
     });
 
     const [messageCount, setMessageCount] = useState(0);
@@ -52,6 +53,11 @@ const ContactForm: React.FC = () => {
             return;
         }
 
+        if (!formData.service) {
+            toast.error('Please Select a value for Service', { duration: 3000 });
+            return;
+        }
+
         console.log("formData.phoneNumber.length", formData.phoneNumber)
         if (formData.phoneNumber.replace(/\D/g, '').length < 12) {
             toast.error('Phone number should consist of at least 10 digits', { duration: 3000 });
@@ -69,7 +75,7 @@ const ContactForm: React.FC = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     to: [process.env.NEXT_PUBLIC_EMAIL_TO],
-                    cc: [process.env.NEXT_PUBLIC_EMAIL_CC, process.env.NEXT_PUBLIC_EMAIL_CC_2, process.env.NEXT_PUBLIC_EMAIL_CC_3,process.env.NEXT_PUBLIC_LYNK_EMAIL],
+                    cc: [process.env.NEXT_PUBLIC_EMAIL_CC, process.env.NEXT_PUBLIC_EMAIL_CC_2, process.env.NEXT_PUBLIC_EMAIL_CC_3, process.env.NEXT_PUBLIC_EMAIL_CC_4, process.env.NEXT_PUBLIC_LYNK_EMAIL],
                     bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
                     message: {
                         subject: "GENERAL INQUIRY From Lynk website",
@@ -257,8 +263,8 @@ const ContactForm: React.FC = () => {
                 toast.success(result.message, { duration: 3000 });
                 await axios.post('/api/zoho', {
                     ...formData,
-                    "leadSource":"Lynk LMS Website",
-                    "service":""
+                    "leadSource": "Lynk LMS Website",
+                    "service": ""
                 });
                 setFormData({
                     firstName: '',
@@ -266,6 +272,7 @@ const ContactForm: React.FC = () => {
                     email: '',
                     phoneNumber: '',
                     message: '',
+                    service: ''
                 })
                 router.push('/thank-you')
             } else {
@@ -293,6 +300,28 @@ const ContactForm: React.FC = () => {
             number: "+91 7204701593"
         }
     ]
+
+    const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+
+    const services = ["Lynk LMS", "eLearning"];
+
+    const handleSelect = (value: string) => {
+        setFormData(prev => ({ ...prev, service: value }));
+        setIsOpen(false);
+    };
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
 
     return (
         <div className='w-full sm:bg-[#534BEF] sm:bg-gradient-to-br sm:from-[#433BDB] sm:to-[#635BFF] bg-[#FAFAFA] flex flex-col items-center pt-[120px] xl:pb-[111px] sm:pb-[91px]'>
@@ -437,6 +466,53 @@ const ContactForm: React.FC = () => {
                                         }}
                                     />
                                 </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-[19px] gap-4 xl:mb-[38px] mb-4">
+                                <div ref={dropdownRef} className="relative">
+                                    <label
+                                        htmlFor="service"
+                                        className="block font-normal text-[14px] leading-[19px] text-[#131313] mb-2 "
+                                    >
+                                        Service<span className="text-red-500">*</span>
+                                    </label>
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            setIsOpen(!isOpen);
+                                        }}
+                                        className={`w-full text-left px-4 py-3 border bg-[#FFFFFF] border-[#ECEEF3] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-purple-600 text-[14px] leading-[19px] text-[#131313] relative`}
+                                    >
+                                        <span className={`${formData.service ? 'text-[#131313]' : 'text-[#888888]'}`}>
+                                            {formData.service || 'Select'}
+                                        </span>
+                                        <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#888888]">
+                                            {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                                        </span>
+                                    </button>
+
+                                    {isOpen && (
+                                        <ul className="absolute z-10 w-full bg-white mt-1 border border-[#ECEEF3] rounded-[4px] font-400 shadow-sm  max-h-[150px] overflow-y-auto">
+                                            {services.map(service => (
+                                                <li
+                                                    key={service}
+                                                    onClick={() => handleSelect(service)}
+                                                    className={`px-4 py-3 text-[14px] cursor-pointer hover:bg-[#dfdefd] hover:text-[#534BEF] ${formData.service === service ? 'bg-purple-100' : ''
+                                                        }`}
+                                                >
+                                                    {service}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </div>
+
+                                <input
+                                    type="hidden"
+                                    name="service"
+                                    value={formData.service}
+                                    required
+                                />
                             </div>
 
                             <div className="xl:mb-8 mb-6">
