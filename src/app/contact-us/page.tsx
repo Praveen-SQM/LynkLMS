@@ -233,6 +233,7 @@ const ContactForm: React.FC = () => {
                         <li><strong>Name:</strong> ${formData?.firstName}</li>
                         <li><strong>Email:</strong> ${formData?.email} </li>
                         <li><strong>Phone:</strong> ${formData?.phoneNumber}</li>
+                        <li><strong>Service:</strong> ${formData?.service}</li>
                         <li><strong>Message:</strong> ${formData?.message}</li>
                     </ul>
                 </div>
