@@ -101,7 +101,9 @@ export default function RootLayout({
             gtag('config', 'AW-17084294991');
 
             gtag('event', 'conversion', {
-      send_to: 'AW-17084294991/11N7CNOdv8gaEM_OttI_'
+      send_to: 'AW-17084294991/11N7CNOdv8gaEM_OttI_',
+       'value': 1.0,
+      'currency': 'INR'
     });
           `}
         </Script>
